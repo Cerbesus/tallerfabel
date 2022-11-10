@@ -2,9 +2,9 @@
 
 $conn = require "../database.php";
 
-$stm = $conn->query("select * from offices order by officeCode");
+$stm = $conn->query("select * from actuaciones order by SUBSTRING(Referencia,2,100)*1");
 $stm->execute();
-$offices = $stm->fetchAll();
+$actuaciones = $stm->fetchAll();
 
 $stm = null;
 $conn = null;
@@ -17,42 +17,29 @@ $conn = null;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oficinas</title>
+    <title>actuaciones</title>
 </head>
 <body>
-    <h1>Listado de oficinas</h1>
+    <h1>Listado de actuaciones</h1>
     <table>
         <tr>
-            <th>code</th>
-            <th>ciudad</th>
-            <th>phone</th>
-            <th>addressLine1</th>
-            <th>addressLine2</th>
-            <th>state</th>
-            <th>country</th>
-            <th>postalCode</th>
-            <th>territory</th>
+            <th>Referencia</th>
+            <th>Descripcion</th>
+            <th>TiempoEstimado</th>
+            <th>Importe</th>
         </tr>
 
-        <?php foreach($offices as $office): ?>
+        <?php foreach($actuaciones as $recambio): ?>
             <tr>
                 <td>
-                    <a href="show.php?officeCode=<?=$office['officeCode']?>">
-                        <?=$office['officeCode']?>
-                    </a>
+                    <a href="show.php?Referencia=<?=$recambio['Referencia']?>"><?=$recambio['Referencia']?></a>
                 </td>
-                <td><?=$office['city']?></td>
-                <td><?=$office['phone']?></td>
-                <td><?=$office['addressLine1']?></td>
-                <td><?=$office['addressLine2']?></td>
-                <td><?=$office['state']?></td>
-                <td><?=$office['country']?></td>
-                <td><?=$office['postalCode']?></td>
-                <td><?=$office['territory']?></td>
+                <td><?=$recambio['Descripcion']?></td>
+                <td><?=$recambio['TiempoEstimado']?></td>
+                <td><?=$recambio['Importe']?></td>             
             </tr>
         <?php endforeach; ?>
     </table>
-
-    <a href="form.php">Nueva Oficina</a>
+    <a href="form.php">Nueva actuacion</a>
 </body>
 </html>
