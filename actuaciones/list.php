@@ -2,7 +2,7 @@
 
 $conn = require "../database.php";
 
-$stm = $conn->query("select * from actuaciones order by SUBSTRING(Referencia,2,100)*1");
+$stm = $conn->query("select * from actuaciones order by Referencia,SUBSTRING(Referencia,2,100)*1");
 $stm->execute();
 $actuaciones = $stm->fetchAll();
 
