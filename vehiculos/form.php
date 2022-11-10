@@ -17,24 +17,27 @@ if (isset($_POST['save'])) {
         'CodCliente' => $_POST['CodCliente']
     );
 
+    $stm = $conn->prepare("select * from vehiculos");
+    $stm -> execute();
+    $vehiculos = $stm->fetchAll();
+    
     $errores = array();
     if(strlen($vehiculo['Matricula'])<=0) {
         $errores['Matricula'] = 'se debe indicar el Matricula';
     }
- 
+
     if(count($errores) == 0){
-        if(strlen($vehiculo['Matricula']) >0){
+        if (in_array($vehiculo['Matricula'], $vehiculos)){
+            $existe = true;    
+        } else {
+            $existe = false;
+        }
+
+        if($existe){
             $stm = $conn->prepare("update vehiculos set Marca=:Marca, Modelo=:Modelo, Color=:Color, FechaMatriculacion=:FechaMatriculacion, CodCliente=:CodCliente  where Matricula=:Matricula");
 
-        } else {
-
-            // $stm=$conn->prepare("select max(Matricula) as maxMatricula from vehiculos");
-            // $stm->execute();
-            // $result=$stm->fetch();
-
-            $vehiculo['Matricula'] = $_POST['Matricula'];
-            
-            return $stm = $conn->prepare("INSERT INTO vehiculos (Matricula,Marca,Modelo,Color,FechaMatriculacion,CodCliente) VALUES (:Matricula,:Marca,:Modelo,:Color,:FechaMatriculacion,:CodCliente)");
+        } else if (!$existe) {           
+            $stm = $conn->prepare("INSERT INTO vehiculos (Matricula,Marca,Modelo,Color,FechaMatriculacion,CodCliente) VALUES (:Matricula,:Marca,:Modelo,:Color,:FechaMatriculacion,:CodCliente)");
         }
 
         $stm->execute($vehiculo);
