@@ -2,9 +2,9 @@
 
 $conn = require "../database.php";
 
-$stm = $conn->query("select * from intervienen order by SUBSTRING(CodEmpleado,2,100)*1,IdReparacion");
+$stm = $conn->query("select * from realizan order by IdReparacion,Referencia,SUBSTRING(Referencia,2,100)*1");
 $stm->execute();
-$intervienen1 = $stm->fetchAll();
+$realizan1 = $stm->fetchAll();
 
 $stm = null;
 $conn = null;
@@ -20,26 +20,26 @@ $conn = null;
     <title>Clientes</title>
 </head>
 <body>
-    <h1>Listado de intervienen</h1>
+    <h1>Listado de realizan</h1>
     <table>
         <tr>
-            <th>CodEmpleado</th>
             <th>IdReparacion</th>
+            <th>Referencia</th>
             <th>Horas</th>
         </tr>
 
-        <?php foreach($intervienen1 as $intervienen2): ?>
+        <?php foreach($realizan1 as $realizan2): ?>
             <tr>
                 <td>
-                    <a href="show.php?CodEmpleado=<?=$intervienen2['CodEmpleado']?>&IdReparacion=<?=$intervienen2['IdReparacion']?>"><?=$intervienen2['CodEmpleado']?></a>
+                    <a href="show.php?Referencia=<?=$realizan2['Referencia']?>&IdReparacion=<?=$realizan2['IdReparacion']?>"><?=$realizan2['IdReparacion']?></a>
                 </td>
                 <td>
-                    <a href="show.php?CodEmpleado=<?=$intervienen2['CodEmpleado']?>&IdReparacion=<?=$intervienen2['IdReparacion']?>"><?=$intervienen2['IdReparacion']?></a>
+                    <a href="show.php?Referencia=<?=$realizan2['Referencia']?>&IdReparacion=<?=$realizan2['IdReparacion']?>"><?=$realizan2['Referencia']?></a>
                 </td>
-                <td><?=$intervienen2['Horas']?></td>               
+                <td><?=$realizan2['Horas']?></td>               
             </tr>
         <?php endforeach; ?>
     </table>
-    <a href="form.php">Nuevo cliente</a>
+    <a href="form.php">Nuevo realizan</a>
 </body>
 </html>

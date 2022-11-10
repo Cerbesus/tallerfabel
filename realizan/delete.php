@@ -5,8 +5,8 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar la ofi
 } else if (isset($_POST['delete'])){ //has seleccionado que quieres eliminar la oficina
     $conn = require "../database.php";
 
-    $stm = $conn->prepare("DELETE from intervienen where CodEmpleado = :CodEmpleado AND IdReparacion = :IdReparacion");
-    $stm->execute(array(':CodEmpleado' => $_POST['CodEmpleado'],':IdReparacion' => $_POST['IdReparacion']));
+    $stm = $conn->prepare("DELETE from realizan where IdReparacion = :IdReparacion AND Referencia = :Referencia");
+    $stm->execute(array(':IdReparacion' => $_POST['IdReparacion'],':Referencia' => $_POST['Referencia']));
 
     $stm = null; //se cierra la conexión
     $conn = null;
@@ -25,10 +25,10 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar la ofi
 </head>
 <body>
     <form action="delete.php" method="post">
-        <input type="hidden" name="CodEmpleado" value="<?=$_GET['CodEmpleado']?>">
         <input type="hidden" name="IdReparacion" value="<?=$_GET['IdReparacion']?>">
+        <input type="hidden" name="Referencia" value="<?=$_GET['Referencia']?>">
 
-        ¿Seguro que quiere eliminar la relacion del empleado con código <?=$_GET['CodEmpleado']?> y la reparación <?=$_GET['IdReparacion']?>?
+        ¿Seguro que quiere eliminar la relacion de la reparacion con código <?=$_GET['IdReparacion']?> y la actuación con código <?=$_GET['Referencia']?>?
 
         <input type="submit" name="delete" value="Eliminar">
         <input type="submit" name="cancel" value="Cancelar">

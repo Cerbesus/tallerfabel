@@ -8,69 +8,73 @@ if(isset($_POST['cancel'])) {
 $conn = require "../database.php";
 
 if (isset($_POST['save'])) {
-    $intervienen = array(
-        'CodEmpleado' => $_POST['CodEmpleado'],
+    $realizan = array(
+        'Referencia' => $_POST['Referencia'],
         'IdReparacion' => $_POST['IdReparacion'],
         'Horas' => $_POST['Horas']
     );
 
-    $stm = $conn->prepare("SELECT * from intervienen");
+    $stm = $conn->prepare("SELECT * from realizan order by IdReparacion,SUBSTRING(Referencia,2,100)*1");
     $stm->execute();
-    $intervienen2 = $stm->fetchAll();
+    $realizan2 = $stm->fetchAll();
 
     $errores = array();
-    if(strlen($intervienen['CodEmpleado'])<=0) {
-        $errores['CodEmpleado'] = 'se debe indicar el CodEmpleado';
+    if(strlen($realizan['Referencia'])<=0) {
+        $errores['Referencia'] = 'se debe indicar el Referencia';
     }
-    if(strlen($intervienen['IdReparacion'])<=0) {
+    if(strlen($realizan['IdReparacion'])<=0) {
         $errores['IdReparacion'] = 'se debe indicar el IdReparacion';
     }
 
     if(count($errores) == 0){
 
-        $valorquecoincide = array_intersect_assoc($intervienen,$intervienen2);
+        $coincide = false;
 
-        if ($valorquecoincide > 0){
-            $existe = true;    
-        } else {
-            $existe = false;
+        foreach ($realizan2 as $realizan3) {  
+            unset($realizan3[0]);  
+            unset($realizan3[1]);  
+            unset($realizan3[2]);
+
+            if ($realizan['Referencia'] == $realizan3['Referencia'] && $realizan['IdReparacion'] == $realizan3['IdReparacion']) {
+                $coincide = true;
+            }
         }
 
-        if($existe){
-            $stm = $conn->prepare("UPDATE intervienen set Horas=:Horas where CodEmpleado=:CodEmpleado and IdReparacion=:IdReparacion");
+        if($coincide){
+            $stm = $conn->prepare("UPDATE realizan set Horas=:Horas where Referencia=:Referencia and IdReparacion=:IdReparacion");
 
-        } else if (!$existe) {           
-            $stm = $conn->prepare("INSERT into intervienen (CodEmpleado, IdReparacion, Horas) values (:CodEmpleado, :IdReparacion, :Horas)");
+        } else if (!$coincide) {           
+            $stm = $conn->prepare("INSERT into realizan (Referencia, IdReparacion, Horas) values (:Referencia, :IdReparacion, :Horas)");
         }
 
-        $stm->execute($intervienen);
+        $stm->execute($realizan);
         $stm = null;
         $conn = null;
-        header("location: show.php?CodEmpleado=".$intervienen['CodEmpleado']."&IdReparacion=".$intervienen['IdReparacion']);
+        header("location: show.php?Referencia=".$realizan['Referencia']."&IdReparacion=".$realizan['IdReparacion']);
         die();
     }
  
-} else if (isset($_GET['CodEmpleado']) and isset($_GET['IdReparacion'])){
-    $stm = $conn->prepare("SELECT * from intervienen where CodEmpleado=:CodEmpleado and IdReparacion=:IdReparacion");
-    $stm->execute(array(':CodEmpleado' => $_GET['CodEmpleado'],':IdReparacion' => $_GET['IdReparacion']));
+} else if (isset($_GET['Referencia']) and isset($_GET['IdReparacion'])){
+    $stm = $conn->prepare("SELECT * from realizan where Referencia=:Referencia and IdReparacion=:IdReparacion");
+    $stm->execute(array(':Referencia' => $_GET['Referencia'],':IdReparacion' => $_GET['IdReparacion']));
 
-    $intervienen = $stm->fetch();
+    $realizan = $stm->fetch();
 
 } else {
-    $intervienen = array(
-        'CodEmpleado' => '',
+    $realizan = array(
+        'Referencia' => '',
         'IdReparacion'       => '',
         'Horas'      => ''
     );
 }
 
-$stm = $conn->prepare("select * from reparaciones order by (IdReparacion)");
+$stm = $conn->prepare("select * from reparaciones order by IdReparacion");
 $stm -> execute();
 $reparaciones = $stm->fetchAll();
 
-$stm = $conn->prepare("select * from empleados order by SUBSTRING(CodEmpleado,2,100)*1");
+$stm = $conn->prepare("select * from actuaciones order by Referencia,SUBSTRING(Referencia,2,100)*1");
 $stm -> execute();
-$empleados = $stm->fetchAll();
+$actuaciones = $stm->fetchAll();
 
 $stm = null;
 $conn = null;
@@ -82,7 +86,7 @@ $conn = null;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar intervienen</title>
+    <title>Editar realizan</title>
 </head>
 <body>
     <?php if (isset($errores) && count($errores) > 0): ?>
@@ -93,32 +97,33 @@ $conn = null;
     <?php endif; ?>
 
     <form action="form.php" method="post">
-            <input type="hidden" name="CodEmpleado" value="<?=$intervienen['CodEmpleado']?>">
-            <input type="hidden" name="IdReparacion" value="<?=$intervienen['IdReparacion']?>">
-            <p>
-            <label for="CodEmpleado">CodEmpleado: </label>
-                <select name="CodEmpleado">
-                    <?php foreach($empleados as $empleado): ?>
-                        <option value="<?=$empleado['CodEmpleado']?>"
-                            <?=$intervienen['CodEmpleado']==$empleado['CodEmpleado']? 'selected': ''?>>
-                            <?=$empleado['CodEmpleado'].' - '.$empleado['DNI'].' '.$empleado['Nombre'] ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </p>              
-            <label for="IdReparacion">IdReparacion: </label>
+            <input type="hidden" name="Referencia" value="<?=$realizan['Referencia']?>">
+            <input type="hidden" name="IdReparacion" value="<?=$realizan['IdReparacion']?>">
+            <p>            
+                <label for="IdReparacion">IdReparacion: </label>
                 <select name="IdReparacion">
                     <?php foreach($reparaciones as $reparacion): ?>
                         <option value="<?=$reparacion['IdReparacion']?>"
-                            <?=$intervienen['IdReparacion']==$reparacion['IdReparacion']? 'selected': ''?>>
-                            <?=$reparacion['IdReparacion'].' - '.$reparacion['Matricula']?>
-                        </option>
+                        <?=$realizan['IdReparacion']==$reparacion['IdReparacion']? 'selected': ''?>>
+                        <?=$reparacion['IdReparacion'].' - '.$reparacion['Matricula']?>
+                    </option>
                     <?php endforeach; ?>
                 </select>
             </p> 
             <p>
+                <label for="Referencia">Referencia: </label>
+                <select name="Referencia">
+                    <?php foreach($actuaciones as $actuacion): ?>
+                        <option value="<?=$actuacion['Referencia']?>"
+                            <?=$realizan['Referencia']==$actuacion['Referencia']? 'selected': ''?>>
+                            <?=$actuacion['Referencia'].' - '.$actuacion['Descripcion']?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </p>
+            <p>
                 <label for="Horas">Horas: </label>
-                <input type="text" name="Horas" id="Horas" placeholder="Horas" value="<?=$intervienen['Horas']?>">
+                <input type="text" name="Horas" id="Horas" placeholder="Horas" value="<?=$realizan['Horas']?>">
             </p>
              
             
