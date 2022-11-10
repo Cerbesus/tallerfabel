@@ -37,7 +37,7 @@ IdReparacion INTEGER NOT NULL AUTO_INCREMENT,
 Matricula VARCHAR(8) NOT NULL,
 FechaEntrada DATE,
 Km DECIMAL(8,2),
-Avería VARCHAR(200),
+Averia VARCHAR(200),
 FechaSalida DATE,
 Reparado  TINYINT(1),
 Observaciones VARCHAR(250),
@@ -56,7 +56,7 @@ CodEmpleado VARCHAR(5) NOT NULL,
 DNI VARCHAR(10) NOT NULL,
 Nombre VARCHAR(25),
 Apellidos VARCHAR(50),
-Dirección VARCHAR(50),
+Direccion VARCHAR(50),
 Telefono VARCHAR(9),
 CP VARCHAR(5),
 FechaAlta DATE,
@@ -364,367 +364,367 @@ INSERT INTO actuaciones (Referencia,Descripcion,TiempoEstimado,Importe) VALUES (
 
 
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E4','68582672W','Rik','Clark','WesWay',NULL,'16740','2000-01-01 00:00','Glass Blower');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E4','68582672W','Rik','Clark','WesWay',NULL,'16740','2000-01-01 00:00','Glass Blower');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E5','47447066I','Katie','Patricelli','Fourth Ave','157414520','99330','2000-01-02 00:00','Scientific Glassblower');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E5','47447066I','Katie','Patricelli','Fourth Ave','157414520','99330','2000-01-02 00:00','Scientific Glassblower');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E6','66686231S','Lotte','Prior',NULL,NULL,'80998','2000-01-03 00:00','Collection Manager');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E6','66686231S','Lotte','Prior',NULL,NULL,'80998','2000-01-03 00:00','Collection Manager');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E7','89404978K','Lauren','Cramer','ChurchRoad','445537323','53911','2000-01-04 00:00','Automobile Service Station Manager');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E7','89404978K','Lauren','Cramer','ChurchRoad','445537323','53911','2000-01-04 00:00','Automobile Service Station Manager');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E8','81471203R','Charlie','Slocum','Cedar Way','930968445','71526','2000-01-05 00:00','Manager Purchasing');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E8','81471203R','Charlie','Slocum','Cedar Way','930968445','71526','2000-01-05 00:00','Manager Purchasing');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E9','77887392J','Leontien','Markovi','GrangeWay','842544345','73016','2000-01-06 00:00','Telephone Operator Chief');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E9','77887392J','Leontien','Markovi','GrangeWay','842544345','73016','2000-01-06 00:00','Telephone Operator Chief');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E10','89841191K','Tomasz','Shapiro','High Way',NULL,'45055','2000-01-07 00:00','Alcohol Abuse Counselor');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E10','89841191K','Tomasz','Shapiro','High Way',NULL,'45055','2000-01-07 00:00','Alcohol Abuse Counselor');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E11','67927180R','Leontien','Pensec','ElmStreet','882706343','80200','2000-01-08 00:00','Nursing Services Director');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E11','67927180R','Leontien','Pensec','ElmStreet','882706343','80200','2000-01-08 00:00','Nursing Services Director');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E12','17458925R','Maximilian','Dulisse','NinthStreet','112684715','12453','2000-01-09 00:00','Grinder Operator Cement');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E12','17458925R','Maximilian','Dulisse','NinthStreet','112684715','12453','2000-01-09 00:00','Grinder Operator Cement');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E13','27140247U','Luke','Trainor','Queens Street','658305804',NULL,'2000-01-10 00:00','Union Business Representative');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E13','27140247U','Luke','Trainor','Queens Street','658305804',NULL,'2000-01-10 00:00','Union Business Representative');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E14','09490938T','Steph','Van Dinter','FirstLane','249795370','93707','2000-01-11 00:00','Personnel Plant Manager');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E14','09490938T','Steph','Van Dinter','FirstLane','249795370','93707','2000-01-11 00:00','Personnel Plant Manager');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E15','58518486Z','Camila','Ladaille','ThirdLane','065854456','76340','2000-01-12 00:00','Collection Clerk Banking');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E15','58518486Z','Camila','Ladaille','ThirdLane','065854456','76340','2000-01-12 00:00','Collection Clerk Banking');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E16','21826083O','Jo','Bergdahl','LondonDrive','305042858','57326','2000-01-13 00:00','Machine Operator');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E16','21826083O','Jo','Bergdahl','LondonDrive','305042858','57326','2000-01-13 00:00','Machine Operator');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E17','40978209Q','Benjamin','DeBerg','GeorgeRoad',NULL,'90402','2000-01-14 00:00','Pest Control Technician');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E17','40978209Q','Benjamin','DeBerg','GeorgeRoad',NULL,'90402','2000-01-14 00:00','Pest Control Technician');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E18','96707103S','Lia','Ayers','SeventhDrive','719621330','24962','2000-01-15 00:00','Reservation Clerk');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E18','96707103S','Lia','Ayers','SeventhDrive','719621330','24962','2000-01-15 00:00','Reservation Clerk');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E19','47562662C','Joey','Ostanik','Alexander Way','631215221','18769','2000-01-16 00:00','Engineer Stationary');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E19','47562662C','Joey','Ostanik','Alexander Way','631215221','18769','2000-01-16 00:00','Engineer Stationary');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E20','67179188O','Luis','Kuehn',NULL,'831841040',NULL,'2000-01-17 00:00','Drafter Geological');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E20','67179188O','Luis','Kuehn',NULL,'831841040',NULL,'2000-01-17 00:00','Drafter Geological');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E21','64128050Z','Ed','Noteboom','Wes Way','899637155',NULL,'2000-01-18 00:00','Traffic Clerk');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E21','64128050Z','Ed','Noteboom','Wes Way','899637155',NULL,'2000-01-18 00:00','Traffic Clerk');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E22','50680095M','Talita','Freed','YorkWay','769423014','72858','2000-01-19 00:00','Floor-Covering-Tile Layer');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E22','50680095M','Talita','Freed','YorkWay','769423014','72858','2000-01-19 00:00','Floor-Covering-Tile Layer');
  
  
-INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Dirección,Telefono,CP,FechaAlta,Categoria) VALUES ('E23','62206539P','Joey','Freed',NULL,'474547514','26027','2000-01-20 00:00','Construction Helper');
+INSERT INTO empleados (CodEmpleado,DNI,Nombre,Apellidos,Direccion,Telefono,CP,FechaAlta,Categoria) VALUES ('E23','62206539P','Joey','Freed',NULL,'474547514','26027','2000-01-20 00:00','Construction Helper');
  
 
 
 
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (1,'6112TWY','2015-01-07 00:36',382.56,NULL,'2015-02-24 03:24',0,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (1,'6112TWY','2015-01-07 00:36',382.56,NULL,'2015-02-24 03:24',0,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (2,'623CMS','2015-01-07 00:36',1.06,'This is a description 8688158','2015-05-23 04:25',1,'RzgZxF4h7msbCMOQh1uwgFgP4WBHJAcD8Q2LYi47S6ruYSBzMgUyKTt2e6tDrvNxdZygXkkawDtvG4iF0SYPfekWmk56nV3KkPxxQkHGlv5qd8O5LWk3KWScplRUt0v');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (2,'623CMS','2015-01-07 00:36',1.06,'This is a description 8688158','2015-05-23 04:25',1,'RzgZxF4h7msbCMOQh1uwgFgP4WBHJAcD8Q2LYi47S6ruYSBzMgUyKTt2e6tDrvNxdZygXkkawDtvG4iF0SYPfekWmk56nV3KkPxxQkHGlv5qd8O5LWk3KWScplRUt0v');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (3,'545KOI',NULL,NULL,'Description number 8420464','2015-01-02 00:11',1,'cRBtp3AOoSG7vR5rlQhlDNzQgbnjuW8pmJcqKhH4afuwvQeZBMmZR00x5TNqLsfbjKjLgvj7UFLA2Xqy41ECd5JtFUkZh0ll5iWaoJYCx3');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (3,'545KOI',NULL,NULL,'Description number 8420464','2015-01-02 00:11',1,'cRBtp3AOoSG7vR5rlQhlDNzQgbnjuW8pmJcqKhH4afuwvQeZBMmZR00x5TNqLsfbjKjLgvj7UFLA2Xqy41ECd5JtFUkZh0ll5iWaoJYCx3');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (4,'648LXW',NULL,3782.87,'This is a description 0897997',NULL,1,'mhRsvLbVnlKuqCg1');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (4,'648LXW',NULL,3782.87,'This is a description 0897997',NULL,1,'mhRsvLbVnlKuqCg1');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (5,'6112TWY',NULL,8804.14,NULL,'2015-05-23 09:10',1,'Dy8GS21IkUILCf5R');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (5,'6112TWY',NULL,8804.14,NULL,'2015-05-23 09:10',1,'Dy8GS21IkUILCf5R');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (6,'623CMS','2015-01-18 08:15',4742.66,'This is a description 9647899','2015-02-05 06:03',0,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (6,'623CMS','2015-01-18 08:15',4742.66,'This is a description 9647899','2015-02-05 06:03',0,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (7,'6112TWY','2015-01-11 08:38',4426.38,NULL,'2015-03-13 01:14',0,'7ZqNHVl7WgB8IFYE6nDPtmkORWFSJwhOOUwNy83kYYwUqZuhnvgKHZRybvVcVzuEMhNptRqy3tCScv5fP11xhJezQpKSQNXg5z');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (7,'6112TWY','2015-01-11 08:38',4426.38,NULL,'2015-03-13 01:14',0,'7ZqNHVl7WgB8IFYE6nDPtmkORWFSJwhOOUwNy83kYYwUqZuhnvgKHZRybvVcVzuEMhNptRqy3tCScv5fP11xhJezQpKSQNXg5z');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (8,'4811DUO','2015-01-11 08:38',8.64,'Description number 2971364','2015-03-03 04:36',1,'QsxFMyNVuA5iSDjAEDThVqggn18ptjeY6eD4uHPdVkx8mwwt7ewSYUfgwWKcEj6xccmIFgy57B1yB3z2Rfo7Fz6MQwBov0mL41cg3QImFE3TsmKjy3fGV2C6oSieeZ0dqCtRdt1PcEfPsl8R3sSBm0Hrjt4Crk1hwPoUDyJ1g0y80wiCsIFkV8ntTa4ccRxnYgybpAzjq');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (8,'4811DUO','2015-01-11 08:38',8.64,'Description number 2971364','2015-03-03 04:36',1,'QsxFMyNVuA5iSDjAEDThVqggn18ptjeY6eD4uHPdVkx8mwwt7ewSYUfgwWKcEj6xccmIFgy57B1yB3z2Rfo7Fz6MQwBov0mL41cg3QImFE3TsmKjy3fGV2C6oSieeZ0dqCtRdt1PcEfPsl8R3sSBm0Hrjt4Crk1hwPoUDyJ1g0y80wiCsIFkV8ntTa4ccRxnYgybpAzjq');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (9,'049BEX','2015-01-09 05:37',702.35,NULL,'2015-02-09 03:02',0,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (9,'049BEX','2015-01-09 05:37',702.35,NULL,'2015-02-09 03:02',0,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (10,'207OAM','2015-01-29 08:46',889.83,'Description number 6056388','2015-02-11 04:08',1,'zyCMwPalV4UsrCCeGsitaEgguWPrebNE86CUApZYL5612ub7nRlZiHbSx5uheYFwBt1xK02akTshWCnoK2Q1fXs1vFhmg8k5Mf3M8oSWQ0m');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (10,'207OAM','2015-01-29 08:46',889.83,'Description number 6056388','2015-02-11 04:08',1,'zyCMwPalV4UsrCCeGsitaEgguWPrebNE86CUApZYL5612ub7nRlZiHbSx5uheYFwBt1xK02akTshWCnoK2Q1fXs1vFhmg8k5Mf3M8oSWQ0m');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (11,'1410YPZ','2015-01-29 08:46',8080.45,'Description number 0614016',NULL,1,'WySjl1T3eRA5XV1G6lr05JBHBssT5twRJFcEMsufHiVh8IHGxgNCpj7A5yohzVE1SDUBOmd6i76PW8etS5N');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (11,'1410YPZ','2015-01-29 08:46',8080.45,'Description number 0614016',NULL,1,'WySjl1T3eRA5XV1G6lr05JBHBssT5twRJFcEMsufHiVh8IHGxgNCpj7A5yohzVE1SDUBOmd6i76PW8etS5N');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (12,'316VSH','2015-01-29 08:46',4915.67,'Description number 7886132','2015-01-14 01:56',1,'tIIThgZOqsht6Kry7XVIVo6nJHyhhx7b6PJ2rygZ4f2J8VLIBvZ5t3DrjQgDOj07f1YSgfm0vTdwRmt7pEF5CJ6cmhnQVRdzmkH0igLoDE1OEUyy5TpVQ');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (12,'316VSH','2015-01-29 08:46',4915.67,'Description number 7886132','2015-01-14 01:56',1,'tIIThgZOqsht6Kry7XVIVo6nJHyhhx7b6PJ2rygZ4f2J8VLIBvZ5t3DrjQgDOj07f1YSgfm0vTdwRmt7pEF5CJ6cmhnQVRdzmkH0igLoDE1OEUyy5TpVQ');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (13,'244ZTQ','2015-02-11 06:57',233.34,'This is a description 9068793','2015-03-19 05:26',1,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (13,'244ZTQ','2015-02-11 06:57',233.34,'This is a description 9068793','2015-03-19 05:26',1,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (14,'244ZTQ','2015-01-13 06:44',742.68,'Description number 4144786','2015-05-22 04:09',0,'Yb7tP8CSNcSm2SaSanV3kdgoizMmrNnNxLhA7jA3S0uk4Qq2Z7FouE1HAL0UMLv2tlp38PUPEx8xXekscGXbzuR1s4AxJwqiv4gZYcqFCNwgiXtGpo7FhLDmHPVUEqkumFt003d5aoTdIvGC6zo8J6FV5tXb6EbKuKkoJPyocLsrIoH');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (14,'244ZTQ','2015-01-13 06:44',742.68,'Description number 4144786','2015-05-22 04:09',0,'Yb7tP8CSNcSm2SaSanV3kdgoizMmrNnNxLhA7jA3S0uk4Qq2Z7FouE1HAL0UMLv2tlp38PUPEx8xXekscGXbzuR1s4AxJwqiv4gZYcqFCNwgiXtGpo7FhLDmHPVUEqkumFt003d5aoTdIvGC6zo8J6FV5tXb6EbKuKkoJPyocLsrIoH');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (15,'316VSH','2015-01-13 06:44',NULL,'This is a description 5736304','2015-02-04 08:49',1,'uFbZsBnfEL5I6zHF4lmgiPGuFugiuNhqPxAtGg5GOzAB86MTavDWI3ZQ0uLcvnkJ5V6k5Da48Tw6D2WTX4HBCS0zVoYuszfVRsYclk4oVxMu3wQoQzK6nS16Jkp3S0XY');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (15,'316VSH','2015-01-13 06:44',NULL,'This is a description 5736304','2015-02-04 08:49',1,'uFbZsBnfEL5I6zHF4lmgiPGuFugiuNhqPxAtGg5GOzAB86MTavDWI3ZQ0uLcvnkJ5V6k5Da48Tw6D2WTX4HBCS0zVoYuszfVRsYclk4oVxMu3wQoQzK6nS16Jkp3S0XY');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (16,'6112TWY',NULL,NULL,NULL,NULL,0,'qKWEK5g0DvaTayHqmGvWOf88toyeq2rmJIIIgIGNpx7PDwCgnUNVxlmW57VhSOrexZpX8DOnJ8N0FJ0');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (16,'6112TWY',NULL,NULL,NULL,NULL,0,'qKWEK5g0DvaTayHqmGvWOf88toyeq2rmJIIIgIGNpx7PDwCgnUNVxlmW57VhSOrexZpX8DOnJ8N0FJ0');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (17,'207OAM',NULL,8298.78,NULL,'2015-04-17 03:29',1,'8gCTz3epOZkeyRcXDHoz6t2ILCBAjLLtEktUtUISKufaBP52yzikdZDf0vrEWCUmqCvI2iT4CU74Lf58vBSqcQbMrTqLKQA8SpGrskJS6EKHH6tMfUbFeUtcyvvaBNQMvd7xjLGStkiuM8dgPhiiJAljj8hNVZCeWpdWfvFERgkiHaQqciRuOzmPIzhwuPADyShs6pIpoQV3e6e7SJywXYQNbamzEnwKDO7ogkwgP4F5');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (17,'207OAM',NULL,8298.78,NULL,'2015-04-17 03:29',1,'8gCTz3epOZkeyRcXDHoz6t2ILCBAjLLtEktUtUISKufaBP52yzikdZDf0vrEWCUmqCvI2iT4CU74Lf58vBSqcQbMrTqLKQA8SpGrskJS6EKHH6tMfUbFeUtcyvvaBNQMvd7xjLGStkiuM8dgPhiiJAljj8hNVZCeWpdWfvFERgkiHaQqciRuOzmPIzhwuPADyShs6pIpoQV3e6e7SJywXYQNbamzEnwKDO7ogkwgP4F5');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (18,'623CMS','2015-01-05 10:26',NULL,NULL,NULL,NULL,'gI42bnEbpDGebZ3Dz5gPO3rtkzSmNXDzFN3nhBt1YCD0HgBcL0cIyDJ5MnPECt2JrYu2vywaVWvkG');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (18,'623CMS','2015-01-05 10:26',NULL,NULL,NULL,NULL,'gI42bnEbpDGebZ3Dz5gPO3rtkzSmNXDzFN3nhBt1YCD0HgBcL0cIyDJ5MnPECt2JrYu2vywaVWvkG');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (19,'4811DUO','2015-01-05 10:26',29541.07,'Description number 8577548','2015-03-04 02:33',1,'7rZwqUKNkyswAOr7GXnxVyK3H5bMY0AKzwywIrmpcGOUCKnXrd08ZOwJpGVGPYl0osOmdXre2');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (19,'4811DUO','2015-01-05 10:26',29541.07,'Description number 8577548','2015-03-04 02:33',1,'7rZwqUKNkyswAOr7GXnxVyK3H5bMY0AKzwywIrmpcGOUCKnXrd08ZOwJpGVGPYl0osOmdXre2');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (20,'244ZTQ','2015-01-28 09:20',4,'Description number 0952696','2015-05-09 03:31',0,'Rueb8CMecvJASojfHy03fXXEKPW5migJmyZiV5bhNUBvG3rnKFA6y0J5E33nlHvMELjxvFV7PUmOoQrNpiByPUsRyCBhnETnY1H34h0nRqYHQVFCdCMkSTPkTeo1EDxxUXrETlwj4TATsXbYix7xNO6epbc3PwNLAwbn4mWC5nOwQKtxhNnZCKywyWcjpriABGD22QrHiwMUEFJIwZxBByQ66KTi6MUwbyJ');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (20,'244ZTQ','2015-01-28 09:20',4,'Description number 0952696','2015-05-09 03:31',0,'Rueb8CMecvJASojfHy03fXXEKPW5migJmyZiV5bhNUBvG3rnKFA6y0J5E33nlHvMELjxvFV7PUmOoQrNpiByPUsRyCBhnETnY1H34h0nRqYHQVFCdCMkSTPkTeo1EDxxUXrETlwj4TATsXbYix7xNO6epbc3PwNLAwbn4mWC5nOwQKtxhNnZCKywyWcjpriABGD22QrHiwMUEFJIwZxBByQ66KTi6MUwbyJ');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (21,'6112TWY','2015-01-11 04:14',244899.6,'This is a description 1956901','2015-06-09 00:36',0,'atet2VKRESf5DGgjVj6xNgu103LKv0q3uIq8Pjt1bWlQjVpL4qgvqf');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (21,'6112TWY','2015-01-11 04:14',244899.6,'This is a description 1956901','2015-06-09 00:36',0,'atet2VKRESf5DGgjVj6xNgu103LKv0q3uIq8Pjt1bWlQjVpL4qgvqf');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (22,'244ZTQ','2015-01-11 04:14',22.92,NULL,NULL,1,'HgctbWpnFwflg0FhGZzidIBL3OrajZD4p3IQheKqjaWzjLBTayI0QLeZ4Ij2e1rQka0c3q3iEfYSyTCMhad12xO2R6QFhZimLUJjlOObchBOb2ic5SexvY7Q1KrkuN1kniHDWlYg4YWwmYVlAAwWGBBmg0zdnmZZSZSMYaY08ngb72gh48zmJoIJIF');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (22,'244ZTQ','2015-01-11 04:14',22.92,NULL,NULL,1,'HgctbWpnFwflg0FhGZzidIBL3OrajZD4p3IQheKqjaWzjLBTayI0QLeZ4Ij2e1rQka0c3q3iEfYSyTCMhad12xO2R6QFhZimLUJjlOObchBOb2ic5SexvY7Q1KrkuN1kniHDWlYg4YWwmYVlAAwWGBBmg0zdnmZZSZSMYaY08ngb72gh48zmJoIJIF');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (23,'244ZTQ','2015-01-11 04:14',767.98,'This is a description 6522146','2015-06-06 05:24',0,'BFBAvo6cN7nmQSCdgE72j6q7nTVwFYN8IToqOSpRZUldhzEWzKHTZqS5qWMNNCZEmQVfNOl7xPa5Hj71bPUrCWMUzWBbjeYu4CFU5LbUb18UHlM6');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (23,'244ZTQ','2015-01-11 04:14',767.98,'This is a description 6522146','2015-06-06 05:24',0,'BFBAvo6cN7nmQSCdgE72j6q7nTVwFYN8IToqOSpRZUldhzEWzKHTZqS5qWMNNCZEmQVfNOl7xPa5Hj71bPUrCWMUzWBbjeYu4CFU5LbUb18UHlM6');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (24,'316VSH','2015-01-24 06:27',29.73,NULL,'2015-04-04 05:50',NULL,'QAlTjPKrROiN3cvXUKiKDzHEtLbnl2HI4NPAqta2VIjSiYE1LXc4TKfosT5xsxJDsrULdnxTqonx5XDx11nDTTgimsrLLmOF148vsAEYfcUR0rTZ7m1gJba38xkC4TNBMqNQjIGXkLlR1SengZRPiBguN8VSgsn5o5raHNBoKc1Gv4Pawfq3ZrIEPZjfOcRUqcLhDBGLCVqfhZZD7hhVEu82AHt');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (24,'316VSH','2015-01-24 06:27',29.73,NULL,'2015-04-04 05:50',NULL,'QAlTjPKrROiN3cvXUKiKDzHEtLbnl2HI4NPAqta2VIjSiYE1LXc4TKfosT5xsxJDsrULdnxTqonx5XDx11nDTTgimsrLLmOF148vsAEYfcUR0rTZ7m1gJba38xkC4TNBMqNQjIGXkLlR1SengZRPiBguN8VSgsn5o5raHNBoKc1Gv4Pawfq3ZrIEPZjfOcRUqcLhDBGLCVqfhZZD7hhVEu82AHt');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (25,'648LXW','2015-01-24 06:27',8997.26,'Description number 4102805','2015-02-04 09:15',0,'vejy0KpRh8tKhOOh87J3do6XFVKCTwpk6Facl6cStyyqjgFGTdEJJjoN1o26HOYpt4CZx1zvyFwapMGJk0l2cMPRbmqRci2HMYOQpzK8qyRpykcyTP1FhoevGMAtxX4K6PMrhY07I7R2rhGzMALIXZ2ksLDxhclNA32Fx5L8E1mhVkDUELkDWSdjERW3WP5kQ0NZnE34YTytCZEDub1ng8SOwOVlt7MeJcGcK');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (25,'648LXW','2015-01-24 06:27',8997.26,'Description number 4102805','2015-02-04 09:15',0,'vejy0KpRh8tKhOOh87J3do6XFVKCTwpk6Facl6cStyyqjgFGTdEJJjoN1o26HOYpt4CZx1zvyFwapMGJk0l2cMPRbmqRci2HMYOQpzK8qyRpykcyTP1FhoevGMAtxX4K6PMrhY07I7R2rhGzMALIXZ2ksLDxhclNA32Fx5L8E1mhVkDUELkDWSdjERW3WP5kQ0NZnE34YTytCZEDub1ng8SOwOVlt7MeJcGcK');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (26,'545KOI','2015-01-14 05:35',194.78,'This is a description 4535700','2015-02-23 01:46',1,'qpqKycOfcXD4l06D5uw4A3Of13OAam575xFdKZVhgC4EJBJVYZLovg5QbMeaSHNhz0YTArsxRXrhl7jpx2QKKp2nufIF706WeOJzvAjbE8lr3SOPDoqc5DtNYV4RYPpqdlzBIEcQhjIOKpNA1ibixbqPB1Ir4HUey5SYDYAHG3flnvAcJQATi38H0lmSxjOhfb3zrvwQpLzLufCF6');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (26,'545KOI','2015-01-14 05:35',194.78,'This is a description 4535700','2015-02-23 01:46',1,'qpqKycOfcXD4l06D5uw4A3Of13OAam575xFdKZVhgC4EJBJVYZLovg5QbMeaSHNhz0YTArsxRXrhl7jpx2QKKp2nufIF706WeOJzvAjbE8lr3SOPDoqc5DtNYV4RYPpqdlzBIEcQhjIOKpNA1ibixbqPB1Ir4HUey5SYDYAHG3flnvAcJQATi38H0lmSxjOhfb3zrvwQpLzLufCF6');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (27,'4811DUO','2015-01-14 05:35',4.41,'This is a description 3023700','2015-03-09 05:33',0,'EdbqI3LJ62TrAOzqFptX');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (27,'4811DUO','2015-01-14 05:35',4.41,'This is a description 3023700','2015-03-09 05:33',0,'EdbqI3LJ62TrAOzqFptX');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (28,'244ZTQ','2015-02-06 02:04',98.79,'This is a description 4229573','2015-05-20 00:04',NULL,'lMyU7bkWIuJxyykZml7kVy4zrxyV657lj0hz0PJrr6OTGDxOPTAzp');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (28,'244ZTQ','2015-02-06 02:04',98.79,'This is a description 4229573','2015-05-20 00:04',NULL,'lMyU7bkWIuJxyykZml7kVy4zrxyV657lj0hz0PJrr6OTGDxOPTAzp');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (29,'545KOI','2015-02-09 02:03',412.25,'This is a description 0010574','2015-06-11 08:02',0,'aBtPXqiUQQKHfU2nJFYk5MmIX74sWaTko3b5VbYjpMxAx5264EKjPqo1PgrTeeROvRuRkD8Y2T8y2SbVYptPPUfYFVabcm0ifxYQK3NYpBdE4OV46darQFoHxEVIp');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (29,'545KOI','2015-02-09 02:03',412.25,'This is a description 0010574','2015-06-11 08:02',0,'aBtPXqiUQQKHfU2nJFYk5MmIX74sWaTko3b5VbYjpMxAx5264EKjPqo1PgrTeeROvRuRkD8Y2T8y2SbVYptPPUfYFVabcm0ifxYQK3NYpBdE4OV46darQFoHxEVIp');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (30,'244ZTQ','2015-02-09 02:03',NULL,'Description number 0070919','2015-05-25 05:05',0,'Zduogelmp0hqXrsea5Kpu2SZmhSLt5zaHhinZHRptnWedB1AGWBbIqp0AcbcZDyp6iEbMstRrRAh2PnNlhNoxl3SHJ2y6jQYZEHAUITOfPUXC55SyuVTajLrbDhziDJNcPNaKjT1zniZsnRLoQjuK0JAwKPI8E8UaIWCggtfCMhTNWXZHvxsmEd5PKqlLRp0ByDHCMWLSwVxNRkruX');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (30,'244ZTQ','2015-02-09 02:03',NULL,'Description number 0070919','2015-05-25 05:05',0,'Zduogelmp0hqXrsea5Kpu2SZmhSLt5zaHhinZHRptnWedB1AGWBbIqp0AcbcZDyp6iEbMstRrRAh2PnNlhNoxl3SHJ2y6jQYZEHAUITOfPUXC55SyuVTajLrbDhziDJNcPNaKjT1zniZsnRLoQjuK0JAwKPI8E8UaIWCggtfCMhTNWXZHvxsmEd5PKqlLRp0ByDHCMWLSwVxNRkruX');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (31,'049BEX','2015-01-25 10:50',8.38,'Description number 6979918','2015-06-03 02:40',1,'tO1APPUnCyQPUERxOvsZ7W17Nukt3x5BWdysI6uD');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (31,'049BEX','2015-01-25 10:50',8.38,'Description number 6979918','2015-06-03 02:40',1,'tO1APPUnCyQPUERxOvsZ7W17Nukt3x5BWdysI6uD');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (32,'648LXW','2015-01-25 10:50',8233,'Description number 0955911','2015-04-18 02:50',0,'pl1VqHbAyoCcO2cenFjpJngSLvAc5tVEi8tGUjDxFo7EXUHz3TsDxJzWMfxjMiu5mJRfzv6WnAccNd4wzdfKyBDMxskEhnt3hQODAigzAURJQfeGZf458F84eEBJvCzboOQjDHCkhBtMCRMjIkQewaFZAtWQ3Jb1BZNKJxhAuo60AQekbTP5fQgkn20MyiGkz8iXynLYHwiUuphAahBCGOXYSANVGGEw6ScbilJs');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (32,'648LXW','2015-01-25 10:50',8233,'Description number 0955911','2015-04-18 02:50',0,'pl1VqHbAyoCcO2cenFjpJngSLvAc5tVEi8tGUjDxFo7EXUHz3TsDxJzWMfxjMiu5mJRfzv6WnAccNd4wzdfKyBDMxskEhnt3hQODAigzAURJQfeGZf458F84eEBJvCzboOQjDHCkhBtMCRMjIkQewaFZAtWQ3Jb1BZNKJxhAuo60AQekbTP5fQgkn20MyiGkz8iXynLYHwiUuphAahBCGOXYSANVGGEw6ScbilJs');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (33,'316VSH','2015-01-28 03:04',NULL,'This is a description 8476317','2015-05-28 09:51',0,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (33,'316VSH','2015-01-28 03:04',NULL,'This is a description 8476317','2015-05-28 09:51',0,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (34,'4811DUO','2015-01-28 03:04',NULL,'Description number 7978478','2015-05-17 00:30',0,'XUvbTcjdr81xmGVbSJiL43czf7pluSqdMkghNUcJQemFcvNeZS7C2FEwpHtlkrhND4jfH6rOXtbYxcyKLuu2Re8vI557ssnfiz7DcupWDtq6KQ8nKJxe8A083orF5ACtyt8SHqkR5zoa3Tz7OGD5jm3688c1K6');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (34,'4811DUO','2015-01-28 03:04',NULL,'Description number 7978478','2015-05-17 00:30',0,'XUvbTcjdr81xmGVbSJiL43czf7pluSqdMkghNUcJQemFcvNeZS7C2FEwpHtlkrhND4jfH6rOXtbYxcyKLuu2Re8vI557ssnfiz7DcupWDtq6KQ8nKJxe8A083orF5ACtyt8SHqkR5zoa3Tz7OGD5jm3688c1K6');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (35,'244ZTQ','2015-01-28 03:04',184253.42,'Description number 1096187','2015-01-04 05:25',1,'jukgGOCmSKWTTajf7hiinTCpEzrDNcCDTxCIGubT1RGA3bZOFO6r7YxYvFwHABWweYWDsKDlI0Wq1Dl1FmuQqKcGABVahnMTfjKQxZKVGyz8sOGPFe7sVW46lvDpUYzH');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (35,'244ZTQ','2015-01-28 03:04',184253.42,'Description number 1096187','2015-01-04 05:25',1,'jukgGOCmSKWTTajf7hiinTCpEzrDNcCDTxCIGubT1RGA3bZOFO6r7YxYvFwHABWweYWDsKDlI0Wq1Dl1FmuQqKcGABVahnMTfjKQxZKVGyz8sOGPFe7sVW46lvDpUYzH');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (36,'648LXW','2015-01-10 05:05',799.83,'This is a description 3595540','2015-03-25 01:46',1,'sNx0DpL7dgCqRs81sZhaQ73qTlFFJLaTBdN5dIwtjmUSdpbr4b6i3tlgy70goqsFMMhWoFE5RtIihDNMhoTY68odMsnQKXJ4g');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (36,'648LXW','2015-01-10 05:05',799.83,'This is a description 3595540','2015-03-25 01:46',1,'sNx0DpL7dgCqRs81sZhaQ73qTlFFJLaTBdN5dIwtjmUSdpbr4b6i3tlgy70goqsFMMhWoFE5RtIihDNMhoTY68odMsnQKXJ4g');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (37,'049BEX','2015-01-10 05:05',NULL,NULL,'2015-05-25 00:17',1,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (37,'049BEX','2015-01-10 05:05',NULL,NULL,'2015-05-25 00:17',1,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (38,'545KOI','2015-01-10 05:05',186907.74,NULL,'2015-05-25 10:26',NULL,'5ZRSEyPIGOjbO3oy7YNSoMoaTcLUr6ZF8aVSYWS5zfDx8ZgXrJjk3zctUgBOLEmTYkdSDZi5EhysBzqYzTALcyyN0uzyRFPASYcTFqKUz1hN7aTUrzkhcOKaK6YstoNFlVtReRwCAzT8YIlPWwuRWzG8JJvZnkh5RWYi4FKVzL6kGbYqD7rn0dlsBsJTTomb4ktjtoWB5sIrVxLLI4QjbstXQ');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (38,'545KOI','2015-01-10 05:05',186907.74,NULL,'2015-05-25 10:26',NULL,'5ZRSEyPIGOjbO3oy7YNSoMoaTcLUr6ZF8aVSYWS5zfDx8ZgXrJjk3zctUgBOLEmTYkdSDZi5EhysBzqYzTALcyyN0uzyRFPASYcTFqKUz1hN7aTUrzkhcOKaK6YstoNFlVtReRwCAzT8YIlPWwuRWzG8JJvZnkh5RWYi4FKVzL6kGbYqD7rn0dlsBsJTTomb4ktjtoWB5sIrVxLLI4QjbstXQ');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (39,'316VSH',NULL,44.35,'This is a description 8891379','2015-01-15 04:44',NULL,'TYmVbBPJMFrifqTxvVVuFUY0eHsGqh2KlABEVQUL12lruCRSflBsObIVP2hA6E2TOwJqh1Gpdr1WlRMfXVK3yh7u4B3kTxyJFGOKJVA1PJ5rrszF56f0PqUzuFcOe4ugST5qTCHP2yfgTQ1XvJiZ1TKBzflB4LNvuVzxcveVoa35GsBKlraziR');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (39,'316VSH',NULL,44.35,'This is a description 8891379','2015-01-15 04:44',NULL,'TYmVbBPJMFrifqTxvVVuFUY0eHsGqh2KlABEVQUL12lruCRSflBsObIVP2hA6E2TOwJqh1Gpdr1WlRMfXVK3yh7u4B3kTxyJFGOKJVA1PJ5rrszF56f0PqUzuFcOe4ugST5qTCHP2yfgTQ1XvJiZ1TKBzflB4LNvuVzxcveVoa35GsBKlraziR');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (40,'4811DUO',NULL,199373.64,'This is a description 2405856','2015-01-04 07:25',0,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (40,'4811DUO',NULL,199373.64,'This is a description 2405856','2015-01-04 07:25',0,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (41,'207OAM',NULL,7136.06,'This is a description 1066341','2015-06-07 10:00',1,'TXw35sBW3xLM2ff3MoFqRADGd11l86');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (41,'207OAM',NULL,7136.06,'This is a description 1066341','2015-06-07 10:00',1,'TXw35sBW3xLM2ff3MoFqRADGd11l86');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (42,'623CMS','2015-01-16 00:47',65,'Description number 9453092','2015-03-26 02:46',NULL,'KD8yOqnrk850wyDodpq7iXF0Uc7tgw4pUIjTmeITXhrbKDgXaxUFhwURXrLjgTU0g7xjGfAsQraj3wK4IVGTiv6jon1Enkzv7qGaCmMrLek0yyuyEUkzPWwt0FONzZ0BcewIROGbtPfAEa8ARBPUH42oeVBSkLkgQLOmJPI2CNSy5pUHFaigHENiCGbklPkIJ7LnYvwDsK5yybTEQnCirCpeyC5vrssOo7lNj2JiO3TEfXs5CO');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (42,'623CMS','2015-01-16 00:47',65,'Description number 9453092','2015-03-26 02:46',NULL,'KD8yOqnrk850wyDodpq7iXF0Uc7tgw4pUIjTmeITXhrbKDgXaxUFhwURXrLjgTU0g7xjGfAsQraj3wK4IVGTiv6jon1Enkzv7qGaCmMrLek0yyuyEUkzPWwt0FONzZ0BcewIROGbtPfAEa8ARBPUH42oeVBSkLkgQLOmJPI2CNSy5pUHFaigHENiCGbklPkIJ7LnYvwDsK5yybTEQnCirCpeyC5vrssOo7lNj2JiO3TEfXs5CO');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (43,'1410YPZ','2015-01-16 00:47',52.39,'Description number 5998011','2015-02-03 06:27',NULL,'jvJUey8TPCTJVvBJVaNFTSkRjNwAo8MHGduqIsl5Ctb7FsGl7QaJEMjjyjSmPxCr5pQHobzhWS6ZRgDLhj8IcAb1141LPfQoIcSabQs5Y27Z');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (43,'1410YPZ','2015-01-16 00:47',52.39,'Description number 5998011','2015-02-03 06:27',NULL,'jvJUey8TPCTJVvBJVaNFTSkRjNwAo8MHGduqIsl5Ctb7FsGl7QaJEMjjyjSmPxCr5pQHobzhWS6ZRgDLhj8IcAb1141LPfQoIcSabQs5Y27Z');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (44,'545KOI',NULL,634.05,NULL,'2015-03-30 08:30',0,'lg7lklqLuzAqQS3lHJulm8iFzxtKIYJDZ4MewlJEG5UgUswypDcwwFLh5as24GRob0AVmGbYbx5jnFoE85rkvoUL4eqO7RpQBEcb');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (44,'545KOI',NULL,634.05,NULL,'2015-03-30 08:30',0,'lg7lklqLuzAqQS3lHJulm8iFzxtKIYJDZ4MewlJEG5UgUswypDcwwFLh5as24GRob0AVmGbYbx5jnFoE85rkvoUL4eqO7RpQBEcb');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (45,'648LXW',NULL,730.51,NULL,NULL,0,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (45,'648LXW',NULL,730.51,NULL,NULL,0,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (46,'545KOI','2015-01-15 00:00',8288.45,'This is a description 7012799','2015-03-16 05:10',NULL,'aEkzkO2ARkAKDhxzoE4gzdouV8xws3DGYPUiuAPH2pDrOjl0G2gD0Y6u3xmi0pNr0sNJhVKqo2NdntbeXaKhVKrITd8AwT382JC1z8Vr2BuAFw0y70QTnuxBVKgaSIkxRhRtCWASRQbLsRZt7srzME6AJhzG71pNSZOzw3aV2WAazJM1Ou');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (46,'545KOI','2015-01-15 00:00',8288.45,'This is a description 7012799','2015-03-16 05:10',NULL,'aEkzkO2ARkAKDhxzoE4gzdouV8xws3DGYPUiuAPH2pDrOjl0G2gD0Y6u3xmi0pNr0sNJhVKqo2NdntbeXaKhVKrITd8AwT382JC1z8Vr2BuAFw0y70QTnuxBVKgaSIkxRhRtCWASRQbLsRZt7srzME6AJhzG71pNSZOzw3aV2WAazJM1Ou');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (47,'1410YPZ','2015-01-15 00:00',61.12,'Description number 0677669','2015-03-15 02:42',0,'p1M0jlNjfc6ZZtsppOLZnbCAYyrImGUtJHLO0lCBvJyMQTrds');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (47,'1410YPZ','2015-01-15 00:00',61.12,'Description number 0677669','2015-03-15 02:42',0,'p1M0jlNjfc6ZZtsppOLZnbCAYyrImGUtJHLO0lCBvJyMQTrds');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (48,'244ZTQ','2015-01-15 00:00',81.04,'Description number 6885558','2015-04-04 03:06',0,'ZknIDk5xI6mc5pW7gv1FwLs8HvKpLdCGciCedDV5t2ami2jJyRjJorM2IjLlFn');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (48,'244ZTQ','2015-01-15 00:00',81.04,'Description number 6885558','2015-04-04 03:06',0,'ZknIDk5xI6mc5pW7gv1FwLs8HvKpLdCGciCedDV5t2ami2jJyRjJorM2IjLlFn');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (49,'244ZTQ',NULL,64034.58,NULL,NULL,NULL,'DJ1dLcrgAO7rGPyUf2Q8R8PfoeXY7C0iz4Af0KALUfejnt3dOxjUVI3wfJQoxoYua66ZnhJAFxexcCXt45IntflUIhaqR3aKRA4uXc2teL7SbEQmImJqtuo54ppbQbu1q5NgYx1BZ8GHtWknaLmxKzMViGbA0chR4');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (49,'244ZTQ',NULL,64034.58,NULL,NULL,NULL,'DJ1dLcrgAO7rGPyUf2Q8R8PfoeXY7C0iz4Af0KALUfejnt3dOxjUVI3wfJQoxoYua66ZnhJAFxexcCXt45IntflUIhaqR3aKRA4uXc2teL7SbEQmImJqtuo54ppbQbu1q5NgYx1BZ8GHtWknaLmxKzMViGbA0chR4');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (50,'316VSH','2015-02-05 05:35',27521.91,'This is a description 1990876',NULL,NULL,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (50,'316VSH','2015-02-05 05:35',27521.91,'This is a description 1990876',NULL,NULL,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (51,'623CMS','2015-01-24 04:19',NULL,'This is a description 3803084','2015-02-15 01:11',NULL,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (51,'623CMS','2015-01-24 04:19',NULL,'This is a description 3803084','2015-02-15 01:11',NULL,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (52,'6112TWY','2015-02-10 07:22',NULL,NULL,NULL,0,'LUWtrIBpk8EzWuzCNGv2tct');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (52,'6112TWY','2015-02-10 07:22',NULL,NULL,NULL,0,'LUWtrIBpk8EzWuzCNGv2tct');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (53,'648LXW','2015-02-12 04:30',474.82,'This is a description 8126939',NULL,1,'AnqLvNhhUkIVxXKWfufhtAkhsmvK');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (53,'648LXW','2015-02-12 04:30',474.82,'This is a description 8126939',NULL,1,'AnqLvNhhUkIVxXKWfufhtAkhsmvK');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (54,'244ZTQ','2015-02-12 04:30',6912.25,'This is a description 5905121',NULL,NULL,'nB27LlXm31iEmqYclEMV3cYZO477V22GIntvNlyFPouTI1czZGk7OVxlGX06vkJA0jaBXP4yGGUeCF8mKEvHsVlk8El0SqO2mVxKioJBeZpJQ75uCQvwZ83MFj2G7wZXLjWnHJvYRu7bUFK2Nuj6zHtGP2UKTUIYF4o5cHQWG4jvKZ1vd71hp2ztFEnH34gUW8Bkdd1WuMPgfR7aDWKYPcS4SD2OUCahVDGdnid4j4K0');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (54,'244ZTQ','2015-02-12 04:30',6912.25,'This is a description 5905121',NULL,NULL,'nB27LlXm31iEmqYclEMV3cYZO477V22GIntvNlyFPouTI1czZGk7OVxlGX06vkJA0jaBXP4yGGUeCF8mKEvHsVlk8El0SqO2mVxKioJBeZpJQ75uCQvwZ83MFj2G7wZXLjWnHJvYRu7bUFK2Nuj6zHtGP2UKTUIYF4o5cHQWG4jvKZ1vd71hp2ztFEnH34gUW8Bkdd1WuMPgfR7aDWKYPcS4SD2OUCahVDGdnid4j4K0');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (55,'244ZTQ','2015-02-12 04:30',19.01,NULL,'2015-04-26 05:40',0,'fK5Dkk4Q1RLLYUNl4bZumTW8vSnVF8fweHqQ4z1i16g7Zu5LPydPmmeFSSRbTKqHmRMYni2lrM3tQTGRwPOieMVUPnu6TQF7ivnpCWDIpuD0BdjscU8irN8deaaklJLl85Fx6dm5EGXRQxdUFqFK8SUXx87c1Gty5s');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (55,'244ZTQ','2015-02-12 04:30',19.01,NULL,'2015-04-26 05:40',0,'fK5Dkk4Q1RLLYUNl4bZumTW8vSnVF8fweHqQ4z1i16g7Zu5LPydPmmeFSSRbTKqHmRMYni2lrM3tQTGRwPOieMVUPnu6TQF7ivnpCWDIpuD0BdjscU8irN8deaaklJLl85Fx6dm5EGXRQxdUFqFK8SUXx87c1Gty5s');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (56,'207OAM','2015-01-14 04:17',NULL,'This is a description 6111467','2015-05-27 06:05',0,'HZqYPaRfwo0H3ifI1LsFtqiiwUKJmpXXXLgK2GC7rJWb2LitI8t');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (56,'207OAM','2015-01-14 04:17',NULL,'This is a description 6111467','2015-05-27 06:05',0,'HZqYPaRfwo0H3ifI1LsFtqiiwUKJmpXXXLgK2GC7rJWb2LitI8t');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (57,'6112TWY','2015-01-14 04:17',59343.19,'Description number 4748913','2015-05-24 01:31',0,'nDkXyWUM01qwoNW8gE5Z5sYjxnWEYThz3bckANHK8c1LTgLBts7i8D1oqmMQMMszL800hKOA3iVXytQ5jpkb1yIDBDC2LQbTXfTj3POKT0iWmfBwt1vjpKtLKhp1oRqut0rJxJ0blB07QMEb22Z3zvVSnqUkYUP86HxKjuEySJURIzl7vXrNMX2Afi53Zb3K2ThkbAgEbCj5DxPbxwq3ijmyjbyWpy');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (57,'6112TWY','2015-01-14 04:17',59343.19,'Description number 4748913','2015-05-24 01:31',0,'nDkXyWUM01qwoNW8gE5Z5sYjxnWEYThz3bckANHK8c1LTgLBts7i8D1oqmMQMMszL800hKOA3iVXytQ5jpkb1yIDBDC2LQbTXfTj3POKT0iWmfBwt1vjpKtLKhp1oRqut0rJxJ0blB07QMEb22Z3zvVSnqUkYUP86HxKjuEySJURIzl7vXrNMX2Afi53Zb3K2ThkbAgEbCj5DxPbxwq3ijmyjbyWpy');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (58,'244ZTQ','2015-01-14 04:17',187.37,'This is a description 3872988','2015-03-28 09:16',NULL,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (58,'244ZTQ','2015-01-14 04:17',187.37,'This is a description 3872988','2015-03-28 09:16',NULL,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (59,'1410YPZ',NULL,NULL,'Description number 9898418','2015-01-13 09:48',0,'w');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (59,'1410YPZ',NULL,NULL,'Description number 9898418','2015-01-13 09:48',0,'w');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (60,'545KOI',NULL,NULL,'This is a description 2818805',NULL,1,'jzC77E1MvBQqxxiHa6s3Q2gygo2FN8HwRA7Ze53xqSYOOzOyru1nyKr03v0fBtXD7knnFjBJNV3sG0ngmAo8YnJVgkOW3VhTFCcvsgeap36W5dts3AgNL6EatrenCkpTnUY8VTfS0a1v30GadbC7YdX8XbfOz8iXst8PmIyFlkBQvK1JqjMRmXs6fI34LHWP6rhmKFYOnSZAv5tbwHBcXimRNmM1WTeYHaaJp6IbIrPgj');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (60,'545KOI',NULL,NULL,'This is a description 2818805',NULL,1,'jzC77E1MvBQqxxiHa6s3Q2gygo2FN8HwRA7Ze53xqSYOOzOyru1nyKr03v0fBtXD7knnFjBJNV3sG0ngmAo8YnJVgkOW3VhTFCcvsgeap36W5dts3AgNL6EatrenCkpTnUY8VTfS0a1v30GadbC7YdX8XbfOz8iXst8PmIyFlkBQvK1JqjMRmXs6fI34LHWP6rhmKFYOnSZAv5tbwHBcXimRNmM1WTeYHaaJp6IbIrPgj');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (61,'623CMS',NULL,65.36,'This is a description 5318423',NULL,1,'xVFtosF8eqPrpB0p0xJFGY6YqL14bdt0dgpZuXvMZjSgzpu5a7lSml5PmtvvvFkMPVwKwJIpkQMcwcJFINNUp0JTgSBYb3yNrzLdbfAXsoedA');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (61,'623CMS',NULL,65.36,'This is a description 5318423',NULL,1,'xVFtosF8eqPrpB0p0xJFGY6YqL14bdt0dgpZuXvMZjSgzpu5a7lSml5PmtvvvFkMPVwKwJIpkQMcwcJFINNUp0JTgSBYb3yNrzLdbfAXsoedA');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (62,'244ZTQ','2015-01-01 04:46',2.95,'This is a description 8630681','2015-05-24 01:11',NULL,'ofSXxs0bLm8rWKraNDqSJ3swIKlpYsvAvAXmQVcLGpldOteNSRUSxxCfzZddSlQCnLWjerzbGC0dND5Ilcv3JrRsck4dgydjlxwEPvOHlIwivzgymegz5Q01cQ4JwpFoELruUTNL83BT15MmL5qXboce5WxXdwpCS3jxWSBm6W6mAdiVvyNuxznsRKq7AyPBCRFz6havl04EnG4ZNa6jg');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (62,'244ZTQ','2015-01-01 04:46',2.95,'This is a description 8630681','2015-05-24 01:11',NULL,'ofSXxs0bLm8rWKraNDqSJ3swIKlpYsvAvAXmQVcLGpldOteNSRUSxxCfzZddSlQCnLWjerzbGC0dND5Ilcv3JrRsck4dgydjlxwEPvOHlIwivzgymegz5Q01cQ4JwpFoELruUTNL83BT15MmL5qXboce5WxXdwpCS3jxWSBm6W6mAdiVvyNuxznsRKq7AyPBCRFz6havl04EnG4ZNa6jg');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (63,'207OAM','2015-01-01 04:46',274.45,'This is a description 1363173','2015-05-09 10:53',1,'0Y4aAWS');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (63,'207OAM','2015-01-01 04:46',274.45,'This is a description 1363173','2015-05-09 10:53',1,'0Y4aAWS');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (64,'545KOI','2015-01-01 04:46',9.7,'Description number 9046173','2015-06-09 05:27',0,'DuEC8PmeQtRuGZHS2ljnDMzKPSJplJRuUUEwtY8ERuFuWxv2gn1aRqXQATmqvCHVbrr1PzI24EN3oWqLCAWGjciuL4KKbnxSjIIcxWgnanrd7MdxYzaoiCB6wRg5HT8HSOTQfXp1bkodMi7fBHmMdOi8x0b3i1FvshAigRx4DDYAoBVpcQX');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (64,'545KOI','2015-01-01 04:46',9.7,'Description number 9046173','2015-06-09 05:27',0,'DuEC8PmeQtRuGZHS2ljnDMzKPSJplJRuUUEwtY8ERuFuWxv2gn1aRqXQATmqvCHVbrr1PzI24EN3oWqLCAWGjciuL4KKbnxSjIIcxWgnanrd7MdxYzaoiCB6wRg5HT8HSOTQfXp1bkodMi7fBHmMdOi8x0b3i1FvshAigRx4DDYAoBVpcQX');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (65,'623CMS','2015-01-10 03:56',42.79,'This is a description 3693511','2015-04-25 00:07',1,'m5kfQJOhP0wTpnRPqJqKRQhok40vPR4G67mn3VLjQBjxniZJwJ7rL68x2vNTAyx5sYeiaQHbpIXsQj5wWDv1KJT8koWsjWpd2cWF4qXvMQK1H8zUONi4T6');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (65,'623CMS','2015-01-10 03:56',42.79,'This is a description 3693511','2015-04-25 00:07',1,'m5kfQJOhP0wTpnRPqJqKRQhok40vPR4G67mn3VLjQBjxniZJwJ7rL68x2vNTAyx5sYeiaQHbpIXsQj5wWDv1KJT8koWsjWpd2cWF4qXvMQK1H8zUONi4T6');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (66,'1410YPZ','2015-01-10 03:56',83414.9,'Description number 8612016','2015-02-04 07:08',0,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (66,'1410YPZ','2015-01-10 03:56',83414.9,'Description number 8612016','2015-02-04 07:08',0,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (67,'244ZTQ','2015-01-10 03:56',31.28,'Description number 3763748',NULL,0,'3OEDZY7oOPsi5g');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (67,'244ZTQ','2015-01-10 03:56',31.28,'Description number 3763748',NULL,0,'3OEDZY7oOPsi5g');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (68,'244ZTQ','2015-02-12 08:19',6851.07,'Description number 7653226','2015-04-23 02:13',0,'wVKL1Pu52CiqEIL26vxuWkhxqkWaoq85ahTGmqkW4eauSd7Hm7v7KyYKw6PU1QprkooMkcG1houBlayx0Zgg3Oo66xR7EIOevJYsMNpaEE7ALBVN4dWVWuq2M3YL4HDRsgjywUoOUu63p2ZMtqfrzqWDrNgwzUCLbkJTcEnTJXYj5OO1P6W7rWjTg0QuXsx3nQVN5RhXOBjaYvMsOeCqNYLpmQyhToS');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (68,'244ZTQ','2015-02-12 08:19',6851.07,'Description number 7653226','2015-04-23 02:13',0,'wVKL1Pu52CiqEIL26vxuWkhxqkWaoq85ahTGmqkW4eauSd7Hm7v7KyYKw6PU1QprkooMkcG1houBlayx0Zgg3Oo66xR7EIOevJYsMNpaEE7ALBVN4dWVWuq2M3YL4HDRsgjywUoOUu63p2ZMtqfrzqWDrNgwzUCLbkJTcEnTJXYj5OO1P6W7rWjTg0QuXsx3nQVN5RhXOBjaYvMsOeCqNYLpmQyhToS');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (69,'6112TWY','2015-01-19 03:03',20.79,'This is a description 1315496','2015-02-20 08:49',0,'sVwRQSMXaWVQAqSX1jVFEyJ2iNkAj84F5kCXhk6OTVnH8T37xOse8dSqMRr4DK7YolK8WoVupzj0SkXhaHLnB65nUkkgRCzjXsnggKq84UXqJezFbp6DS6GECGwghJdWboBBsgQMLlaqcImHAnN8cR7UkWlmarOopkmcdYohI');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (69,'6112TWY','2015-01-19 03:03',20.79,'This is a description 1315496','2015-02-20 08:49',0,'sVwRQSMXaWVQAqSX1jVFEyJ2iNkAj84F5kCXhk6OTVnH8T37xOse8dSqMRr4DK7YolK8WoVupzj0SkXhaHLnB65nUkkgRCzjXsnggKq84UXqJezFbp6DS6GECGwghJdWboBBsgQMLlaqcImHAnN8cR7UkWlmarOopkmcdYohI');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (70,'244ZTQ','2015-01-19 03:03',47.64,NULL,'2015-02-15 08:56',1,'8xDe1BDyKRec1QtFJBJuEbcG');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (70,'244ZTQ','2015-01-19 03:03',47.64,NULL,'2015-02-15 08:56',1,'8xDe1BDyKRec1QtFJBJuEbcG');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (71,'316VSH','2015-01-16 01:12',2976.01,NULL,'2015-05-10 10:32',NULL,'A02rxM64nRDRm2oBtvmUnYJn2bceTi6dMUz5HrlCQdHY6Aemae45jcbunJOjtNU12E0IjP0b4ICQ2g6N1n54jbwhQPJPKgyqnJp6NtmJ75bnmI6kGSAtMCBJKlWmekVEpqvBeHy7xq8Fuf2NiUOAvafDUzOzy4D6eMavWwsNbItT14cz8LejeS6O0lX1f8xwovXnEucdaAocufJEoWHQwDexkoMChzbeDWBxQE');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (71,'316VSH','2015-01-16 01:12',2976.01,NULL,'2015-05-10 10:32',NULL,'A02rxM64nRDRm2oBtvmUnYJn2bceTi6dMUz5HrlCQdHY6Aemae45jcbunJOjtNU12E0IjP0b4ICQ2g6N1n54jbwhQPJPKgyqnJp6NtmJ75bnmI6kGSAtMCBJKlWmekVEpqvBeHy7xq8Fuf2NiUOAvafDUzOzy4D6eMavWwsNbItT14cz8LejeS6O0lX1f8xwovXnEucdaAocufJEoWHQwDexkoMChzbeDWBxQE');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (72,'207OAM','2015-02-01 04:40',NULL,'Description number 6703271',NULL,1,'Jta1FOiOwSMfvkqhNcGYy2OMCYEt2JXuMnExhZz7fjSXpE7VtdhdeQundfpNPyAEEsXDfAeD2t2IPVlt0tPySyxH02x');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (72,'207OAM','2015-02-01 04:40',NULL,'Description number 6703271',NULL,1,'Jta1FOiOwSMfvkqhNcGYy2OMCYEt2JXuMnExhZz7fjSXpE7VtdhdeQundfpNPyAEEsXDfAeD2t2IPVlt0tPySyxH02x');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (73,'648LXW','2015-02-01 04:40',271.97,'This is a description 9943928','2015-01-25 09:45',1,'RjTMY1w22VOy25J5WfbaDRLhgmQbD5QbvFvJ');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (73,'648LXW','2015-02-01 04:40',271.97,'This is a description 9943928','2015-01-25 09:45',1,'RjTMY1w22VOy25J5WfbaDRLhgmQbD5QbvFvJ');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (74,'648LXW','2015-01-30 00:35',8.45,'This is a description 1411242',NULL,1,'E4O423yWDIUSTqc37TmhpIttHNqVwhxrd6l85vfkSU26DQP1yH0JMvUGxmulK3npgEIeqgkkbnUgDta0Myy7e8O71cOPLwZsKu365JIEWHTLsfV4rTIuyiuIftqCwaQEIcibi');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (74,'648LXW','2015-01-30 00:35',8.45,'This is a description 1411242',NULL,1,'E4O423yWDIUSTqc37TmhpIttHNqVwhxrd6l85vfkSU26DQP1yH0JMvUGxmulK3npgEIeqgkkbnUgDta0Myy7e8O71cOPLwZsKu365JIEWHTLsfV4rTIuyiuIftqCwaQEIcibi');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (75,'648LXW','2015-01-30 00:35',NULL,'Description number 2589141','2015-01-11 06:46',0,'LdI57hWTuPm5qC8g6cZxDWZZUmNG1LknGvhefX0J0Oj6ug0hBwsgtMDxSuNbmSsIb8ijQp72ItOwfIBiL8wnqaXRwGxgtzdAtqp');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (75,'648LXW','2015-01-30 00:35',NULL,'Description number 2589141','2015-01-11 06:46',0,'LdI57hWTuPm5qC8g6cZxDWZZUmNG1LknGvhefX0J0Oj6ug0hBwsgtMDxSuNbmSsIb8ijQp72ItOwfIBiL8wnqaXRwGxgtzdAtqp');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (76,'207OAM','2015-02-04 08:50',940.4,'Description number 1862826','2015-03-29 06:36',0,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (76,'207OAM','2015-02-04 08:50',940.4,'Description number 1862826','2015-03-29 06:36',0,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (77,'545KOI','2015-02-02 09:09',9.21,NULL,'2015-02-23 10:28',NULL,'yR2XUxFzWrdst6CdkXjDnFaAZdfCTqlLKBFnYBxBCq01Z17NFyuB3nxTBSQMHMUzPvTcHnrPlNicPpwTejDzJUgvWnijVA73iPmHhLJE7O2FT2YmkViqCPEGXnlAliGteTUEIXtqIxNkepQrIVyKlRSAFOL0ziyDmVaN82qPPWhxzMjulwflWOsu0qBSWfdKFN42r3gjYxdxqX4O');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (77,'545KOI','2015-02-02 09:09',9.21,NULL,'2015-02-23 10:28',NULL,'yR2XUxFzWrdst6CdkXjDnFaAZdfCTqlLKBFnYBxBCq01Z17NFyuB3nxTBSQMHMUzPvTcHnrPlNicPpwTejDzJUgvWnijVA73iPmHhLJE7O2FT2YmkViqCPEGXnlAliGteTUEIXtqIxNkepQrIVyKlRSAFOL0ziyDmVaN82qPPWhxzMjulwflWOsu0qBSWfdKFN42r3gjYxdxqX4O');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (78,'316VSH','2015-02-13 07:28',9.49,'Description number 4346878','2015-03-17 08:37',0,'vPSOi0D3DcPxkN0xez8KqacFsGu6TcxqrCA7qhjhF4XEFariEsb5kd6RgZeTR31dDE');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (78,'316VSH','2015-02-13 07:28',9.49,'Description number 4346878','2015-03-17 08:37',0,'vPSOi0D3DcPxkN0xez8KqacFsGu6TcxqrCA7qhjhF4XEFariEsb5kd6RgZeTR31dDE');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (79,'623CMS','2015-02-13 07:28',33.99,'Description number 3231629',NULL,1,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (79,'623CMS','2015-02-13 07:28',33.99,'Description number 3231629',NULL,1,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (80,'545KOI','2015-02-13 07:28',NULL,'Description number 6349371','2015-03-24 10:58',1,'F50xvYxPZsuCsOVHC1fVQbuQRiuBHRuMJToBF6vVpKdMyVay6sffRb0d77BoTyTW6bvwnLBMU7mxrcTneEc2q2LreLl4o3osCBPUkU8HQusZAjGmuOVsXr');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (80,'545KOI','2015-02-13 07:28',NULL,'Description number 6349371','2015-03-24 10:58',1,'F50xvYxPZsuCsOVHC1fVQbuQRiuBHRuMJToBF6vVpKdMyVay6sffRb0d77BoTyTW6bvwnLBMU7mxrcTneEc2q2LreLl4o3osCBPUkU8HQusZAjGmuOVsXr');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (81,'049BEX','2015-01-10 09:55',5.76,NULL,'2015-03-22 06:46',0,'GmgiPFdDMvman7TjrSQekbFYGMjZZLOjI8nUP2UNYXoFGcAn4eXp8Y6FHYOVeOrmmaP5RZSbaugAtQf1juHbuAyKWAyB20jyTcJlCo8IqOOOl3OeOFxNN0d7aTHgbcZvtcPlBp8iZgbblr');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (81,'049BEX','2015-01-10 09:55',5.76,NULL,'2015-03-22 06:46',0,'GmgiPFdDMvman7TjrSQekbFYGMjZZLOjI8nUP2UNYXoFGcAn4eXp8Y6FHYOVeOrmmaP5RZSbaugAtQf1juHbuAyKWAyB20jyTcJlCo8IqOOOl3OeOFxNN0d7aTHgbcZvtcPlBp8iZgbblr');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (82,'623CMS','2015-01-10 09:55',98.21,'This is a description 1645784','2015-03-04 03:29',0,'JyEonNaBQOpz2LJJfJIvatGof34CFumuC88shBNobPvcZU3kNgKkh8d1Zw0Rh24FWJSoNg8SrnbWs81j8eLwUQdKJePh');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (82,'623CMS','2015-01-10 09:55',98.21,'This is a description 1645784','2015-03-04 03:29',0,'JyEonNaBQOpz2LJJfJIvatGof34CFumuC88shBNobPvcZU3kNgKkh8d1Zw0Rh24FWJSoNg8SrnbWs81j8eLwUQdKJePh');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (83,'545KOI',NULL,84849.86,'Description number 1550257','2015-02-06 07:20',1,'Siz7qb78PDY1Pftmj3BYv3Jwk0zqkAsVNsGNeRYzDQqA5KJuexUHLA2NpzOInp8m7Oo4x1C1Lig1p5J4eOAP5HrTRV57xjee1f5aZ38OVlGLGimAgjYL6OS5oz5Jz7Guy7QaLUfZt3zc6TDBc17xafBRdfKhPlOq7QygdjRhes4sUETa');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (83,'545KOI',NULL,84849.86,'Description number 1550257','2015-02-06 07:20',1,'Siz7qb78PDY1Pftmj3BYv3Jwk0zqkAsVNsGNeRYzDQqA5KJuexUHLA2NpzOInp8m7Oo4x1C1Lig1p5J4eOAP5HrTRV57xjee1f5aZ38OVlGLGimAgjYL6OS5oz5Jz7Guy7QaLUfZt3zc6TDBc17xafBRdfKhPlOq7QygdjRhes4sUETa');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (84,'6112TWY','2015-02-12 03:31',NULL,'This is a description 4348160','2015-03-03 04:35',1,'3QIg6N0fRK0Igjzf8Y3JqyOc1yRBgOedS3KOLdzEqnZqZXDCJ3ZeHGrUUyFZZNahaTlS4DbwPAvRJxHYVqOztLtrIyJNYiYgpMeMuHQSspRAY8BwPfeLvwVZQRticv6AiLeAIC6JbIZb3e8tQudcUpPofjislVr8J5CjvsDvpVFbVo0GFkTjgU0EmweqK7wgWnoub8fTyTFImkG8DQCT8nkGu');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (84,'6112TWY','2015-02-12 03:31',NULL,'This is a description 4348160','2015-03-03 04:35',1,'3QIg6N0fRK0Igjzf8Y3JqyOc1yRBgOedS3KOLdzEqnZqZXDCJ3ZeHGrUUyFZZNahaTlS4DbwPAvRJxHYVqOztLtrIyJNYiYgpMeMuHQSspRAY8BwPfeLvwVZQRticv6AiLeAIC6JbIZb3e8tQudcUpPofjislVr8J5CjvsDvpVFbVo0GFkTjgU0EmweqK7wgWnoub8fTyTFImkG8DQCT8nkGu');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (85,'6112TWY','2015-02-12 03:31',64003.32,NULL,'2015-02-20 06:12',1,'LzfwqMPvMA2pDRYZeefkdjt2iDqUysbHvVEXzXG4LWKLiPDJamG7UeDv3aFO2OwW4CTPG2UbvzfOy6V5rQaItNGFsb6a7pyV0kLxAVnRMGy3dBnxmvP');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (85,'6112TWY','2015-02-12 03:31',64003.32,NULL,'2015-02-20 06:12',1,'LzfwqMPvMA2pDRYZeefkdjt2iDqUysbHvVEXzXG4LWKLiPDJamG7UeDv3aFO2OwW4CTPG2UbvzfOy6V5rQaItNGFsb6a7pyV0kLxAVnRMGy3dBnxmvP');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (86,'623CMS','2015-02-12 03:31',70078.58,'This is a description 8549848','2015-03-22 07:48',1,'3AoOkonKfW6YnV5dOjhKfjRuWIrWNRJqjOQ7PARxXweyGyAzjilXVuXGv27QqzmwgVRgv53vbZD27wvtdl8AXgi1Xc0TDXIGI3JdbJJ8jmo86OlR0sJBTcWech0pKDLB6PMKofytoW21R6tCXgo6u8XyzI7bYusUhPiU1KnasViRKB7nQwQIYTdKmZiFIJVifKumDsuOpq4he868Qaiecruk03uVSfyrG5ZwdTNgl');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (86,'623CMS','2015-02-12 03:31',70078.58,'This is a description 8549848','2015-03-22 07:48',1,'3AoOkonKfW6YnV5dOjhKfjRuWIrWNRJqjOQ7PARxXweyGyAzjilXVuXGv27QqzmwgVRgv53vbZD27wvtdl8AXgi1Xc0TDXIGI3JdbJJ8jmo86OlR0sJBTcWech0pKDLB6PMKofytoW21R6tCXgo6u8XyzI7bYusUhPiU1KnasViRKB7nQwQIYTdKmZiFIJVifKumDsuOpq4he868Qaiecruk03uVSfyrG5ZwdTNgl');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (87,'545KOI',NULL,NULL,'Description number 3330807','2015-01-28 09:25',1,'Qgn8pxxMby');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (87,'545KOI',NULL,NULL,'Description number 3330807','2015-01-28 09:25',1,'Qgn8pxxMby');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (88,'244ZTQ','2015-01-20 08:12',8.21,'This is a description 4253009','2015-02-01 07:48',1,'djGBA0isEZHnO4YBEf0D22hnivhnWo8FsZCpjHhAGWgSetilDNhX5peGNBxijJFADswcmHJHGFegOOe28IS33jPZ1JJxz5WM8ZbkBKuUcRcQkwAyK7x0i2CrIQL2ttZ6A7os2Miz7iapTKDrBarLD7OeObOni8nuJ3NOZzQzaSkgAFUYfDHqeS1j7MovdkVtmegzyAZN7qjlaUaKXxmQHiDxlyirfjBpZzQDjvZjVlmN4C');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (88,'244ZTQ','2015-01-20 08:12',8.21,'This is a description 4253009','2015-02-01 07:48',1,'djGBA0isEZHnO4YBEf0D22hnivhnWo8FsZCpjHhAGWgSetilDNhX5peGNBxijJFADswcmHJHGFegOOe28IS33jPZ1JJxz5WM8ZbkBKuUcRcQkwAyK7x0i2CrIQL2ttZ6A7os2Miz7iapTKDrBarLD7OeObOni8nuJ3NOZzQzaSkgAFUYfDHqeS1j7MovdkVtmegzyAZN7qjlaUaKXxmQHiDxlyirfjBpZzQDjvZjVlmN4C');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (89,'244ZTQ',NULL,1408.93,'Description number 6198261','2015-01-25 00:17',0,'JECE6UgP4wm1RK6rkq01CjVxB');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (89,'244ZTQ',NULL,1408.93,'Description number 6198261','2015-01-25 00:17',0,'JECE6UgP4wm1RK6rkq01CjVxB');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (90,'623CMS',NULL,3.24,'This is a description 4720530','2015-01-13 10:15',1,'6unCthsYOKAfnaMaZUj');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (90,'623CMS',NULL,3.24,'This is a description 4720530','2015-01-13 10:15',1,'6unCthsYOKAfnaMaZUj');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (91,'623CMS','2015-02-06 09:12',73.78,NULL,'2015-06-08 03:21',1,'ZvHYY27KIv08jyjUxYdibg56vIEIOMP66KxUXKJru6FCapu1nKckI26Nmzgz8xCBp0Dv0Hs5wKZfykmYyO1iNNVVWqY4z20qfLsldgvWPhwoqTaEzdcM');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (91,'623CMS','2015-02-06 09:12',73.78,NULL,'2015-06-08 03:21',1,'ZvHYY27KIv08jyjUxYdibg56vIEIOMP66KxUXKJru6FCapu1nKckI26Nmzgz8xCBp0Dv0Hs5wKZfykmYyO1iNNVVWqY4z20qfLsldgvWPhwoqTaEzdcM');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (92,'623CMS','2015-02-06 09:12',65198.63,'This is a description 6199544','2015-04-17 00:32',1,'FV0bovkJZ8s2SWoU2Pt14DJ4wWmP2p4pNG5jmjUfrheB1iFYT1MGyAGAnohhVXrII2eIZbjcMdy6cqJBUkSS2rJG1uQ2fIKyT0mxsNmmsh0ZW52fcGwX566Zq8DO24TDlvAyQ20MSCSmJRzojz5RTESOLngpGtYP');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (92,'623CMS','2015-02-06 09:12',65198.63,'This is a description 6199544','2015-04-17 00:32',1,'FV0bovkJZ8s2SWoU2Pt14DJ4wWmP2p4pNG5jmjUfrheB1iFYT1MGyAGAnohhVXrII2eIZbjcMdy6cqJBUkSS2rJG1uQ2fIKyT0mxsNmmsh0ZW52fcGwX566Zq8DO24TDlvAyQ20MSCSmJRzojz5RTESOLngpGtYP');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (93,'207OAM','2015-01-08 06:47',NULL,NULL,'2015-03-27 00:44',1,'W5N4b2mnYNb5dHZwjpb4DI8WEw1362xBc6NGJ7uMPLhk5btXW7vVsz7mXFVnZK4BbkBXCoq1arCCCT5AOHWUKSJEZtTLHIkac1wgpXAJGXioXuaFYAS4HPg7Gv');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (93,'207OAM','2015-01-08 06:47',NULL,NULL,'2015-03-27 00:44',1,'W5N4b2mnYNb5dHZwjpb4DI8WEw1362xBc6NGJ7uMPLhk5btXW7vVsz7mXFVnZK4BbkBXCoq1arCCCT5AOHWUKSJEZtTLHIkac1wgpXAJGXioXuaFYAS4HPg7Gv');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (94,'1410YPZ','2015-01-08 06:47',NULL,'Description number 6979617','2015-06-13 00:20',1,'xMh124zEo2lIEVwPnPXtBZ3TJXDOxBEQQKvhvJ1w85zVaopZjHwRx4wPm4hOUnGTq51CWAhkbESGh3lfImRaoxB0rruhlfj7E64TgGmWqkr1lQ1jOVuEDQRF6zHclXFwP1MR5kknvzfKE1HE6EyJktp7j5poLnSumQpNMjJ0NGb4TxqDLXMsHR4JexnbcWm3v8FAzBTjYUYBKCSMsS5lTxMnte');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (94,'1410YPZ','2015-01-08 06:47',NULL,'Description number 6979617','2015-06-13 00:20',1,'xMh124zEo2lIEVwPnPXtBZ3TJXDOxBEQQKvhvJ1w85zVaopZjHwRx4wPm4hOUnGTq51CWAhkbESGh3lfImRaoxB0rruhlfj7E64TgGmWqkr1lQ1jOVuEDQRF6zHclXFwP1MR5kknvzfKE1HE6EyJktp7j5poLnSumQpNMjJ0NGb4TxqDLXMsHR4JexnbcWm3v8FAzBTjYUYBKCSMsS5lTxMnte');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (95,'623CMS','2015-01-08 06:47',74.15,'Description number 8448423',NULL,NULL,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (95,'623CMS','2015-01-08 06:47',74.15,'Description number 8448423',NULL,NULL,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (96,'1410YPZ','2015-01-28 06:11',7.29,'This is a description 8888098','2015-02-03 02:38',1,'ut7A3lZw4QksW3rcJNeTB5TOvfSfozolGXOvsqUoXIAmJKgjXVauF05yYaSa4wyTkH33HTsuAOVbwkPptVCDGxLcmFvPOsgEbCiNVNkKMWosx2G83dyrwsn3uC4DQA4JDxw58uBZJ88SwxefMK6Y6x2hbIRgQSvt86wjZUi3uB1s8ryZJc1mGCTB1Km88sD7GAseYb71VnTuGwu2PRqlmI4834sdwNL');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (96,'1410YPZ','2015-01-28 06:11',7.29,'This is a description 8888098','2015-02-03 02:38',1,'ut7A3lZw4QksW3rcJNeTB5TOvfSfozolGXOvsqUoXIAmJKgjXVauF05yYaSa4wyTkH33HTsuAOVbwkPptVCDGxLcmFvPOsgEbCiNVNkKMWosx2G83dyrwsn3uC4DQA4JDxw58uBZJ88SwxefMK6Y6x2hbIRgQSvt86wjZUi3uB1s8ryZJc1mGCTB1Km88sD7GAseYb71VnTuGwu2PRqlmI4834sdwNL');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (97,'545KOI','2015-01-28 06:11',NULL,'This is a description 6805220','2015-03-20 03:56',1,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (97,'545KOI','2015-01-28 06:11',NULL,'This is a description 6805220','2015-03-20 03:56',1,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (98,'244ZTQ','2015-01-21 03:07',36672.33,'Description number 7126307',NULL,1,NULL);
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (98,'244ZTQ','2015-01-21 03:07',36672.33,'Description number 7126307',NULL,1,NULL);
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (99,'244ZTQ','2015-01-21 03:07',38379.01,NULL,'2015-03-03 03:30',1,'vxpOLnXtWgEPcwiftyIn6txZQvvlyCd4IPkJn5oFygDQSP1z7MB2zZfnX6OnYlvb0zOz74');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (99,'244ZTQ','2015-01-21 03:07',38379.01,NULL,'2015-03-03 03:30',1,'vxpOLnXtWgEPcwiftyIn6txZQvvlyCd4IPkJn5oFygDQSP1z7MB2zZfnX6OnYlvb0zOz74');
  
  
-INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Avería,FechaSalida,Reparado,Observaciones) VALUES (100,'207OAM','2015-02-15 00:21',176.47,'Description number 3916138','2015-03-12 03:23',1,'pYjFbkQjy5sOXn7ihp2gAOPiGjjFdAOsXQXBGqNGBHyRxOAIeJcQg1kvSGkhr8MQWjtVsdk0XDgwRBD5Un6GZ1ylJ2ZoshOmdflzDWI0MSBGQLa64GWqv');
+INSERT INTO reparaciones (IdReparacion,Matricula,FechaEntrada,Km,Averia,FechaSalida,Reparado,Observaciones) VALUES (100,'207OAM','2015-02-15 00:21',176.47,'Description number 3916138','2015-03-12 03:23',1,'pYjFbkQjy5sOXn7ihp2gAOPiGjjFdAOsXQXBGqNGBHyRxOAIeJcQg1kvSGkhr8MQWjtVsdk0XDgwRBD5Un6GZ1ylJ2ZoshOmdflzDWI0MSBGQLa64GWqv');
  
 
 
