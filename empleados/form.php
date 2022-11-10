@@ -1,103 +1,83 @@
 <?php declare(strict_types=1);
 
-if (isset($_POST['cancel'])) { // el usuario cancela la posible modificación
-    header("location: list.php");
-} else if (isset($_POST['save'])) { //guarda una oficina nueva o modifica una ya registrada
-    $office = array(
-        'currentOfficeCode' => $_POST['currentOfficeCode'],
-        'officeCode' => $_POST['officeCode'],
-        'city'       => $_POST['city'],
-        'phone'       => $_POST['phone'],
-        'addressLine1'       => $_POST['addressLine1'],
-        'addressLine2'       => $_POST['addressLine2'],
-        'state'       => $_POST['state'],
-        'country'       => $_POST['country'],
-        'postalCode'       => $_POST['postalCode'],
-        'territory'       => $_POST['territory']
+if(isset($_POST['cancel'])) {
+   header("location: list.php");
+   die();
+} 
+
+$conn = require "../database.php";
+
+if (isset($_POST['save'])) {
+    $empleado = array(
+        'CodEmpleado' => $_POST['CodEmpleado'],
+        'DNI' => $_POST['DNI'],
+        'Apellidos' => $_POST['Apellidos'],
+        'Nombre' => $_POST['Nombre'],
+        'Direccion' => $_POST['Direccion'],
+        'Telefono' => $_POST['Telefono'],
+        'CP' => $_POST['CP'],
+        'FechaAlta' => $_POST['FechaAlta'],
+        'Categoria' => $_POST['Categoria']
     );
 
+    $errores = array();
 
-  //validación
-  $errores = array();
+    if(strlen($empleado['DNI'])<=0) {
+        $errores['DNI'] = 'se debe indicar el DNI';
+    }
+ 
+    if(count($errores) == 0){
+        if(strlen($empleado['CodEmpleado']) >0){
+            $stm = $conn->prepare("update empleados set Apellidos=:Apellidos,DNI=:DNI, Nombre=:Nombre, Direccion=:Direccion, Telefono=:Telefono,CP=:CP, FechaAlta=:FechaAlta, Categoria=:Categoria where CodEmpleado=:CodEmpleado");
 
-  if (strlen($office['city']) <=0) {
-    $errores['city'] = 'Se debe indicar la city';
-  }
-  if (strlen($office['phone']) <=0) {
-    $errores['phone'] = 'Se debe indicar la phone';
-  }
-  if (strlen($office['addressLine1']) <=0) {
-    $errores['addressLine1'] = 'Se debe indicar la addressLine1';
-  }
-  if (strlen($office['country']) <=0) {
-    $errores['country'] = 'Se debe indicar la country';
-  }
-  if (strlen($office['postalCode']) <=0) {
-    $errores['postalCode'] = 'Se debe indicar la postalCode';
-  }
-  if (strlen($office['territory']) <=0) {
-    $errores['territory'] = 'Se debe indicar la territory';
-  }
+        } else {
 
-  if (count($errores) == 0) {
-    //no hay errores de validación por lo que  se procede a insertar una oficina o a actualizar una ya creada
-    $conn = require "../database.php";
+            $stm=$conn->prepare("select max(SUBSTRING(CodEmpleado,2,100)*1) as maxCodEmpleado from empleados");
+            $stm->execute();
+            $result=$stm->fetch();
 
-    if (strlen($office['currentOfficeCode']) > 0) { //se desea modificar una oficina ya registrada porque ya tiene un codigo asignado
-        $stm = $conn->prepare("update offices set city=:city, officeCode=:officeCode, phone=:phone,addressLine1=:addressLine1,addressLine2=:addressLine2,state=:state,country=:country,postalCode=:postalCode,territory=:territory where officeCode=:currentOfficeCode");
-        $params = $office;
-    } else { //se crea una nueva oficina
-        $stm = $conn->prepare("select max(CAST(officeCode AS UNSIGNED)) as maxOfficeCode from offices");
-        $stm->execute();
-        $result=$stm->fetch();
-
-        $office['officeCode'] = $result['maxOfficeCode'] + 1; //el código de la nueva oficina se asigna directamente
-
-        $stm = $conn->prepare("insert into offices (officeCode, city, phone,addressLine1,addressLine2,state,country,postalCode,territory) values (:officeCode, :city, :phone,:addressLine1,:addressLine2,:state,:country,:postalCode,:territory)");
-        //se inserta la oficina en la abse de datos
-        $params = array_slice($office, 1); //se excluye 'currentOfficeCode' que no se usa en la sql de insert
-
+            $empleado['CodEmpleado'] = "E".$result['maxCodEmpleado'] + 1;
+            
+            $stm = $conn->prepare("insert into empleados (CodEmpleado, DNI, Apellidos, Nombre, Direccion, Telefono,CP,FechaAlta,Categoria) values (:CodEmpleado, :DNI, :Apellidos, :Nombre, :Direccion, :Telefono,:CP,:FechaAlta,:Categoria)");
         }
 
-        $stm->execute($params);
+        $stm->execute($empleado);
         $stm = null;
         $conn = null;
-        header("location: list.php");
+        header("location: show.php?CodEmpleado=".$empleado['CodEmpleado']);
+        die();
     }
-} else if (isset($_GET['officeCode'])) { // modificar una oficina ya registrada
-    $conn = require "../database.php";
+} else if (isset($_GET['CodEmpleado'])){
+    $stm = $conn->prepare("select * from empleados where CodEmpleado=:CodEmpleado");
+    $stm->execute(array(':CodEmpleado' => $_GET['CodEmpleado']));
 
-    $stm = $conn->prepare("select * from offices where officeCode =:officeCode");
-    $stm->execute(array(':officeCode' => $_GET['officeCode']));
+    $empleado = $stm->fetch();
 
-    $office = $stm->fetch();
-    $office['currentOfficeCode'] = $office['officeCode'];
-
-    $stm = null;
-    $conn = null;
-}else{ //se desea crear una nueva oficina
-    $office = array(
-        'currentOfficeCode' => '',
-        'officeCode' => '',
-        'city' => '',
-        'phone' => '',
-        'addressLine1' => '',
-        'addressLine2' => '',
-        'state' => '',
-        'country' => '',
-        'postalCode' => '',
-        'territory' => ''
+} else {
+    $empleado = array(
+        'CodEmpleado' => '',
+        'DNI'       => '',
+        'Apellidos'      => '',
+        'Nombre'      => '',
+        'Direccion'          => '',
+        'Telefono'     => '',
+        'CP'     => '',
+        'FechaAlta'     => '',
+        'Categoria'     => '',
     );
 }
-?>
 
+$stm = null;
+$conn = null;
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar oficina</title>
+    <title>Editar empleados</title>
 </head>
 <body>
     <?php if (isset($errores) && count($errores) > 0): ?>
@@ -108,47 +88,47 @@ if (isset($_POST['cancel'])) { // el usuario cancela la posible modificación
     <?php endif; ?>
 
     <form action="form.php" method="post">
-        <input type="hidden" name="currentOfficeCode" value="<?=$office['currentOfficeCode']?>">
-        <p>
-            <label for="officeCode">Código de Oficina</label>
-            <input type="text" name="officeCode" id="city" value="<?=$office['officeCode']?>" readonly>
-    
-        </p>
-        <p>
-            <label for="city">city</label>
-            <input type="text" name="city" id="city" value="<?=$office['city']?>">
-        </p>
-        <p>
-            <label for="phone">phone</label>
-            <input type="text" name="phone" id="phone" value="<?=$office['phone']?>">
-        </p>
-        <p>
-            <label for="addressLine1">addressLine1</label>
-            <input type="text" name="addressLine1" id="addressLine1" value="<?=$office['addressLine1']?>">
-        </p>
-        <p>
-            <label for="addressLine2">addressLine2</label>
-            <input type="text" name="addressLine2" id="addressLine2" value="<?=$office['addressLine2']?>">
-        </p>
-        <p>
-            <label for="state">state</label>
-            <input type="text" name="state" id="state" value="<?=$office['state']?>">
-        </p>
-        <p>
-            <label for="country">country</label>
-            <input type="text" name="country" id="country" value="<?=$office['country']?>">
-        </p>
-        <p>
-            <label for="postalCode">postalCode</label>
-            <input type="text" name="postalCode" id="postalCode" value="<?=$office['postalCode']?>">
-        </p>
-        <p>
-            <label for="territory">territory</label>
-            <input type="text" name="territory" id="territory" value="<?=$office['territory']?>">
-        </p>
-
-        <input type="submit" name="save" value="Guardar">
-        <input type="submit" name="cancel" value="Cancelar">
-    </form>
+            <input type="hidden" name="CodEmpleado" value="<?=$empleado['CodEmpleado']?>">
+            <p>
+                <label for="CodEmpleado">CodEmpleado (automático): </label>
+                <input type="text" name="CodEmpleado" id="CodEmpleado" placeholder="CodEmpleado" value="<?=$empleado['CodEmpleado']?>" readonly>
+            </p>
+            <p>
+                <label for="DNI">DNI: </label>
+                <input type="text" name="DNI" id="DNI" placeholder="DNI" value="<?=$empleado['DNI']?>">
+            </p>
+            <p>
+                <label for="Apellidos">Apellidos: </label>
+                <input type="text" name="Apellidos" id="Apellidos" placeholder="Apellidos" value="<?=$empleado['Apellidos']?>">
+            </p>
+            <p>
+                <label for="Nombre">Nombre: </label>
+                <input type="text" name="Nombre" id="Nombre" placeholder="Nombre" value="<?=$empleado['Nombre']?>">
+            </p>
+            <p>
+                <label for="Direccion">Direccion: </label>
+                <input type="text" name="Direccion" id="Direccion" placeholder="Direccion" value="<?=$empleado['Direccion']?>">
+            </p>
+            <p>
+                <label for="Telefono">Telefono: </label>
+                <input type="text" name="Telefono" id="Telefono" placeholder="Telefono" value="<?=$empleado['Telefono']?>">
+            </p>
+            <p>
+                <label for="CP">CP: </label>
+                <input type="text" name="CP" id="CP" placeholder="CP" value="<?=$empleado['CP']?>">
+            </p>
+            <p>
+                <label for="FechaAlta">FechaAlta: </label>
+                <input type="text" name="FechaAlta" id="FechaAlta" placeholder="FechaAlta" value="<?=$empleado['FechaAlta']?>">
+            </p>
+            <p>
+                <label for="Categoria">Categoria: </label>
+                <input type="text" name="Categoria" id="Categoria" placeholder="Categoria" value="<?=$empleado['Categoria']?>">
+            </p>
+            
+            
+            <input type="submit" name="save" value="Guardar">
+            <input type="submit" name="cancel" value="Cancelar">
+        </form>
 </body>
 </html>
