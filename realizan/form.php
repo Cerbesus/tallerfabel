@@ -1,103 +1,88 @@
 <?php declare(strict_types=1);
 
-if (isset($_POST['cancel'])) { // el usuario cancela la posible modificación
-    header("location: list.php");
-} else if (isset($_POST['save'])) { //guarda una oficina nueva o modifica una ya registrada
-    $office = array(
-        'currentOfficeCode' => $_POST['currentOfficeCode'],
-        'officeCode' => $_POST['officeCode'],
-        'city'       => $_POST['city'],
-        'phone'       => $_POST['phone'],
-        'addressLine1'       => $_POST['addressLine1'],
-        'addressLine2'       => $_POST['addressLine2'],
-        'state'       => $_POST['state'],
-        'country'       => $_POST['country'],
-        'postalCode'       => $_POST['postalCode'],
-        'territory'       => $_POST['territory']
+if(isset($_POST['cancel'])) {
+   header("location: list.php");
+   die();
+} 
+
+$conn = require "../database.php";
+
+if (isset($_POST['save'])) {
+    $intervienen = array(
+        'CodEmpleado' => $_POST['CodEmpleado'],
+        'IdReparacion' => $_POST['IdReparacion'],
+        'Horas' => $_POST['Horas']
     );
 
+    $stm = $conn->prepare("SELECT * from intervienen");
+    $stm->execute();
+    $intervienen2 = $stm->fetchAll();
 
-  //validación
-  $errores = array();
+    $errores = array();
+    if(strlen($intervienen['CodEmpleado'])<=0) {
+        $errores['CodEmpleado'] = 'se debe indicar el CodEmpleado';
+    }
+    if(strlen($intervienen['IdReparacion'])<=0) {
+        $errores['IdReparacion'] = 'se debe indicar el IdReparacion';
+    }
 
-  if (strlen($office['city']) <=0) {
-    $errores['city'] = 'Se debe indicar la city';
-  }
-  if (strlen($office['phone']) <=0) {
-    $errores['phone'] = 'Se debe indicar la phone';
-  }
-  if (strlen($office['addressLine1']) <=0) {
-    $errores['addressLine1'] = 'Se debe indicar la addressLine1';
-  }
-  if (strlen($office['country']) <=0) {
-    $errores['country'] = 'Se debe indicar la country';
-  }
-  if (strlen($office['postalCode']) <=0) {
-    $errores['postalCode'] = 'Se debe indicar la postalCode';
-  }
-  if (strlen($office['territory']) <=0) {
-    $errores['territory'] = 'Se debe indicar la territory';
-  }
+    if(count($errores) == 0){
 
-  if (count($errores) == 0) {
-    //no hay errores de validación por lo que  se procede a insertar una oficina o a actualizar una ya creada
-    $conn = require "../database.php";
+        $valorquecoincide = array_intersect_assoc($intervienen,$intervienen2);
 
-    if (strlen($office['currentOfficeCode']) > 0) { //se desea modificar una oficina ya registrada porque ya tiene un codigo asignado
-        $stm = $conn->prepare("update offices set city=:city, officeCode=:officeCode, phone=:phone,addressLine1=:addressLine1,addressLine2=:addressLine2,state=:state,country=:country,postalCode=:postalCode,territory=:territory where officeCode=:currentOfficeCode");
-        $params = $office;
-    } else { //se crea una nueva oficina
-        $stm = $conn->prepare("select max(CAST(officeCode AS UNSIGNED)) as maxOfficeCode from offices");
-        $stm->execute();
-        $result=$stm->fetch();
-
-        $office['officeCode'] = $result['maxOfficeCode'] + 1; //el código de la nueva oficina se asigna directamente
-
-        $stm = $conn->prepare("insert into offices (officeCode, city, phone,addressLine1,addressLine2,state,country,postalCode,territory) values (:officeCode, :city, :phone,:addressLine1,:addressLine2,:state,:country,:postalCode,:territory)");
-        //se inserta la oficina en la abse de datos
-        $params = array_slice($office, 1); //se excluye 'currentOfficeCode' que no se usa en la sql de insert
-
+        if ($valorquecoincide > 0){
+            $existe = true;    
+        } else {
+            $existe = false;
         }
 
-        $stm->execute($params);
+        if($existe){
+            $stm = $conn->prepare("UPDATE intervienen set Horas=:Horas where CodEmpleado=:CodEmpleado and IdReparacion=:IdReparacion");
+
+        } else if (!$existe) {           
+            $stm = $conn->prepare("INSERT into intervienen (CodEmpleado, IdReparacion, Horas) values (:CodEmpleado, :IdReparacion, :Horas)");
+        }
+
+        $stm->execute($intervienen);
         $stm = null;
         $conn = null;
-        header("location: list.php");
+        header("location: show.php?CodEmpleado=".$intervienen['CodEmpleado']."&IdReparacion=".$intervienen['IdReparacion']);
+        die();
     }
-} else if (isset($_GET['officeCode'])) { // modificar una oficina ya registrada
-    $conn = require "../database.php";
+ 
+} else if (isset($_GET['CodEmpleado']) and isset($_GET['IdReparacion'])){
+    $stm = $conn->prepare("SELECT * from intervienen where CodEmpleado=:CodEmpleado and IdReparacion=:IdReparacion");
+    $stm->execute(array(':CodEmpleado' => $_GET['CodEmpleado'],':IdReparacion' => $_GET['IdReparacion']));
 
-    $stm = $conn->prepare("select * from offices where officeCode =:officeCode");
-    $stm->execute(array(':officeCode' => $_GET['officeCode']));
+    $intervienen = $stm->fetch();
 
-    $office = $stm->fetch();
-    $office['currentOfficeCode'] = $office['officeCode'];
-
-    $stm = null;
-    $conn = null;
-}else{ //se desea crear una nueva oficina
-    $office = array(
-        'currentOfficeCode' => '',
-        'officeCode' => '',
-        'city' => '',
-        'phone' => '',
-        'addressLine1' => '',
-        'addressLine2' => '',
-        'state' => '',
-        'country' => '',
-        'postalCode' => '',
-        'territory' => ''
+} else {
+    $intervienen = array(
+        'CodEmpleado' => '',
+        'IdReparacion'       => '',
+        'Horas'      => ''
     );
 }
-?>
 
+$stm = $conn->prepare("select * from reparaciones order by (IdReparacion)");
+$stm -> execute();
+$reparaciones = $stm->fetchAll();
+
+$stm = $conn->prepare("select * from empleados order by SUBSTRING(CodEmpleado,2,100)*1");
+$stm -> execute();
+$empleados = $stm->fetchAll();
+
+$stm = null;
+$conn = null;
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar oficina</title>
+    <title>Editar intervienen</title>
 </head>
 <body>
     <?php if (isset($errores) && count($errores) > 0): ?>
@@ -108,47 +93,37 @@ if (isset($_POST['cancel'])) { // el usuario cancela la posible modificación
     <?php endif; ?>
 
     <form action="form.php" method="post">
-        <input type="hidden" name="currentOfficeCode" value="<?=$office['currentOfficeCode']?>">
-        <p>
-            <label for="officeCode">Código de Oficina</label>
-            <input type="text" name="officeCode" id="city" value="<?=$office['officeCode']?>" readonly>
-    
-        </p>
-        <p>
-            <label for="city">city</label>
-            <input type="text" name="city" id="city" value="<?=$office['city']?>">
-        </p>
-        <p>
-            <label for="phone">phone</label>
-            <input type="text" name="phone" id="phone" value="<?=$office['phone']?>">
-        </p>
-        <p>
-            <label for="addressLine1">addressLine1</label>
-            <input type="text" name="addressLine1" id="addressLine1" value="<?=$office['addressLine1']?>">
-        </p>
-        <p>
-            <label for="addressLine2">addressLine2</label>
-            <input type="text" name="addressLine2" id="addressLine2" value="<?=$office['addressLine2']?>">
-        </p>
-        <p>
-            <label for="state">state</label>
-            <input type="text" name="state" id="state" value="<?=$office['state']?>">
-        </p>
-        <p>
-            <label for="country">country</label>
-            <input type="text" name="country" id="country" value="<?=$office['country']?>">
-        </p>
-        <p>
-            <label for="postalCode">postalCode</label>
-            <input type="text" name="postalCode" id="postalCode" value="<?=$office['postalCode']?>">
-        </p>
-        <p>
-            <label for="territory">territory</label>
-            <input type="text" name="territory" id="territory" value="<?=$office['territory']?>">
-        </p>
-
-        <input type="submit" name="save" value="Guardar">
-        <input type="submit" name="cancel" value="Cancelar">
-    </form>
+            <input type="hidden" name="CodEmpleado" value="<?=$intervienen['CodEmpleado']?>">
+            <input type="hidden" name="IdReparacion" value="<?=$intervienen['IdReparacion']?>">
+            <p>
+            <label for="CodEmpleado">CodEmpleado: </label>
+                <select name="CodEmpleado">
+                    <?php foreach($empleados as $empleado): ?>
+                        <option value="<?=$empleado['CodEmpleado']?>"
+                            <?=$intervienen['CodEmpleado']==$empleado['CodEmpleado']? 'selected': ''?>>
+                            <?=$empleado['CodEmpleado'].' - '.$empleado['DNI'].' '.$empleado['Nombre'] ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </p>              
+            <label for="IdReparacion">IdReparacion: </label>
+                <select name="IdReparacion">
+                    <?php foreach($reparaciones as $reparacion): ?>
+                        <option value="<?=$reparacion['IdReparacion']?>"
+                            <?=$intervienen['IdReparacion']==$reparacion['IdReparacion']? 'selected': ''?>>
+                            <?=$reparacion['IdReparacion'].' - '.$reparacion['Matricula']?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </p> 
+            <p>
+                <label for="Horas">Horas: </label>
+                <input type="text" name="Horas" id="Horas" placeholder="Horas" value="<?=$intervienen['Horas']?>">
+            </p>
+             
+            
+            <input type="submit" name="save" value="Guardar">
+            <input type="submit" name="cancel" value="Cancelar">
+        </form>
 </body>
 </html>

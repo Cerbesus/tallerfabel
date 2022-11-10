@@ -28,18 +28,22 @@ if (isset($_POST['save'])) {
 
     if(count($errores) == 0){
 
-        $valorquecoincide = array_intersect_assoc($intervienen,$intervienen2);
+        $coincide = false;
 
-        if ($valorquecoincide > 0){
-            $existe = true;    
-        } else {
-            $existe = false;
+        foreach ($intervienen2 as $intervienen3) {  
+            unset($intervienen3[0]);  
+            unset($intervienen3[1]);  
+            unset($intervienen3[2]);
+
+            if ($intervienen['CodEmpleado'] == $intervienen3['CodEmpleado'] && $intervienen['IdReparacion'] == $intervienen3['IdReparacion']) {
+                $coincide = true;
+            }
         }
 
-        if($existe){
+        if($coincide){
             $stm = $conn->prepare("UPDATE intervienen set Horas=:Horas where CodEmpleado=:CodEmpleado and IdReparacion=:IdReparacion");
 
-        } else if (!$existe) {           
+        } else if (!$coincide) {           
             $stm = $conn->prepare("INSERT into intervienen (CodEmpleado, IdReparacion, Horas) values (:CodEmpleado, :IdReparacion, :Horas)");
         }
 

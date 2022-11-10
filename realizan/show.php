@@ -2,10 +2,10 @@
 
 $conn = require "../database.php";
 
-$stm = $conn->prepare("select * from offices where officeCode = :officeCode");
-$stm -> execute(array(':officeCode' => $_GET['officeCode']));
+$stm = $conn->prepare("SELECT * from intervienen where CodEmpleado = :CodEmpleado and IdReparacion= :IdReparacion");
+$stm->execute(array(':CodEmpleado' => $_GET['CodEmpleado'],':IdReparacion' => $_GET['IdReparacion']));
 
-$office = $stm->fetch();
+$intervienen = $stm->fetch();
 
 $stm = null;
 $conn = null;
@@ -20,45 +20,21 @@ $conn = null;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oficina</title>
+    <title>Cliente</title>
 </head>
 <body>
-    <h1>Oficina</h1>
+    <h1>Clientes</h1>
+    <p>CodEmpleado: <?=$intervienen['CodEmpleado'] ?></p>
+    <p>IdReparacion: <?=$intervienen['IdReparacion'] ?></p>
+    <p>Horas: <?=$intervienen['Horas'] ?></p>
     <p>
-        officeCode: <?=$office['officeCode'] ?>
+        <a href="list.php">Ver todos los clientes</a>
     </p>
     <p>
-        city: <?=$office['city'] ?>
+        <a href="form.php?CodEmpleado=<?=$intervienen['CodEmpleado']."&IdReparacion=".$intervienen['IdReparacion']?>">Modificar</a>
     </p>
     <p>
-        phone: <?=$office['phone'] ?>
-    </p>
-    <p>
-        addressLine1: <?=$office['addressLine1'] ?>
-    </p>
-    <p>
-        addressLine2: <?=$office['addressLine2'] ?>
-    </p>
-    <p>
-        state: <?=$office['state'] ?>
-    </p>
-    <p>
-        country: <?=$office['country'] ?>
-    </p>
-    <p>
-        postalCode: <?=$office['postalCode'] ?>
-    </p>
-    <p>
-        territory: <?=$office['territory'] ?>
-    </p>
-    <p>
-        <a href="list.php">Ver todas las oficina</a>
-    </p>
-    <p>
-        <a href="form.php?officeCode=<?=$office['officeCode']?>">Modificar</a>
-    </p>
-    <p>
-        <a href="delete.php?officeCode=<?=$office['officeCode']?>">Eliminar</a>
+        <a href="delete.php?CodEmpleado=<?=$intervienen['CodEmpleado']."&IdReparacion=".$intervienen['IdReparacion']?>">Eliminar</a>
     </p>
 </body>
 </html>

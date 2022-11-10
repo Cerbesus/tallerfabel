@@ -2,10 +2,10 @@
 
 $conn = require "../database.php";
 
-$stm = $conn->prepare("select * from offices where officeCode = :officeCode");
-$stm -> execute(array(':officeCode' => $_GET['officeCode']));
+$stm = $conn->prepare("SELECT * from incluyen where IdRecambio = :IdRecambio and IdReparacion= :IdReparacion");
+$stm->execute(array(':IdRecambio' => $_GET['IdRecambio'],':IdReparacion' => $_GET['IdReparacion']));
 
-$office = $stm->fetch();
+$incluyen = $stm->fetch();
 
 $stm = null;
 $conn = null;
@@ -20,45 +20,21 @@ $conn = null;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oficina</title>
+    <title>Cliente</title>
 </head>
 <body>
-    <h1>Oficina</h1>
+    <h1>incluyen</h1>
+    <p>IdRecambio: <?=$incluyen['IdRecambio']?></p>
+    <p>IdReparacion: <?=$incluyen['IdReparacion']?></p>
+    <p>Unidades: <?=$incluyen['Unidades']?></p>
     <p>
-        officeCode: <?=$office['officeCode'] ?>
+        <a href="list.php">Ver todos los incluyen</a>
     </p>
     <p>
-        city: <?=$office['city'] ?>
+        <a href="form.php?IdRecambio=<?=$incluyen['IdRecambio']."&IdReparacion=".$incluyen['IdReparacion']?>">Modificar</a>
     </p>
     <p>
-        phone: <?=$office['phone'] ?>
-    </p>
-    <p>
-        addressLine1: <?=$office['addressLine1'] ?>
-    </p>
-    <p>
-        addressLine2: <?=$office['addressLine2'] ?>
-    </p>
-    <p>
-        state: <?=$office['state'] ?>
-    </p>
-    <p>
-        country: <?=$office['country'] ?>
-    </p>
-    <p>
-        postalCode: <?=$office['postalCode'] ?>
-    </p>
-    <p>
-        territory: <?=$office['territory'] ?>
-    </p>
-    <p>
-        <a href="list.php">Ver todas las oficina</a>
-    </p>
-    <p>
-        <a href="form.php?officeCode=<?=$office['officeCode']?>">Modificar</a>
-    </p>
-    <p>
-        <a href="delete.php?officeCode=<?=$office['officeCode']?>">Eliminar</a>
+        <a href="delete.php?IdRecambio=<?=$incluyen['IdRecambio']."&IdReparacion=".$incluyen['IdReparacion']?>">Eliminar</a>
     </p>
 </body>
 </html>
