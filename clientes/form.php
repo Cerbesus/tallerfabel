@@ -18,9 +18,7 @@ if (isset($_POST['save'])) {
     );
 
     $errores = array();
-    // if(strlen($cliente['CodCliente'])<=0) {
-    //     $errores['CodCliente'] = 'se debe indicar el CodCliente';
-    // }
+
     if(strlen($cliente['DNI'])<=0) {
         $errores['DNI'] = 'se debe indicar el DNI';
     }

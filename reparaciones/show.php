@@ -2,10 +2,10 @@
 
 $conn = require "../database.php";
 
-$stm = $conn->prepare("select * from offices where officeCode = :officeCode");
-$stm -> execute(array(':officeCode' => $_GET['officeCode']));
+$stm = $conn->prepare("select * from reparaciones where IdReparacion = :IdReparacion");
+$stm -> execute(array(':IdReparacion' => $_GET['IdReparacion']));
 
-$office = $stm->fetch();
+$reparacion = $stm->fetch();
 
 $stm = null;
 $conn = null;
@@ -20,45 +20,42 @@ $conn = null;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oficina</title>
+    <title>Reparacion</title>
 </head>
 <body>
     <h1>Oficina</h1>
     <p>
-        officeCode: <?=$office['officeCode'] ?>
+        IdReparacion: <?=$reparacion['IdReparacion'] ?>
     </p>
     <p>
-        city: <?=$office['city'] ?>
+        Matricula: <?=$reparacion['Matricula'] ?>
     </p>
     <p>
-        phone: <?=$office['phone'] ?>
+        FechaEntrada: <?=$reparacion['FechaEntrada'] ?>
     </p>
     <p>
-        addressLine1: <?=$office['addressLine1'] ?>
+        Km: <?=$reparacion['Km'] ?>
     </p>
     <p>
-        addressLine2: <?=$office['addressLine2'] ?>
+        Averia: <?=$reparacion['Averia'] ?>
     </p>
     <p>
-        state: <?=$office['state'] ?>
+        FechaSalida: <?=$reparacion['FechaSalida'] ?>
     </p>
     <p>
-        country: <?=$office['country'] ?>
+        Reparado: <?=$reparacion['Reparado'] ?>
     </p>
     <p>
-        postalCode: <?=$office['postalCode'] ?>
+        Observaciones: <?=$reparacion['Observaciones'] ?>
     </p>
     <p>
-        territory: <?=$office['territory'] ?>
+        <a href="list.php">Ver todas las reparaciones</a>
     </p>
     <p>
-        <a href="list.php">Ver todas las oficina</a>
+        <a href="form.php?IdReparacion=<?=$reparacion['IdReparacion']?>">Modificar</a>
     </p>
     <p>
-        <a href="form.php?officeCode=<?=$office['officeCode']?>">Modificar</a>
-    </p>
-    <p>
-        <a href="delete.php?officeCode=<?=$office['officeCode']?>">Eliminar</a>
+        <a href="delete.php?IdReparacion=<?=$reparacion['IdReparacion']?>">Eliminar</a>
     </p>
 </body>
 </html>
