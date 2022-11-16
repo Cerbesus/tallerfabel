@@ -1,5 +1,12 @@
 <?php declare(strict_types=1);
 
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('location:../form_login.php');
+    exit();
+}
+
 if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar al empleado
     header("location: list.php"); //vuelves al listado de actuaciones
 } else if (isset($_POST['delete'])){ //has seleccionado que quieres eliminar el actuaciones

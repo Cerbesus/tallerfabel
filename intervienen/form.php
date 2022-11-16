@@ -1,5 +1,12 @@
 <?php declare(strict_types=1);
 
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('location:../form_login.php');
+    exit();
+}
+
 if(isset($_POST['cancel'])) {
    header("location: list.php");
    die();

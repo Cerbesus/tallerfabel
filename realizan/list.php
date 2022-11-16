@@ -1,5 +1,12 @@
 <?php declare(strict_types=1);
 
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('location:../form_login.php');
+    exit();
+}
+
 $conn = require "../database.php";
 
 $stm = $conn->query("select * from realizan order by IdReparacion,Referencia,SUBSTRING(Referencia,2,100)*1");
