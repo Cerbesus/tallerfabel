@@ -7,6 +7,11 @@ if(isset($_POST['cancel'])) {
 
 $conn = require "../database.php";
 
+$stm = $conn->prepare("select * from vehiculos");
+$stm -> execute();
+$vehiculos = $stm->fetchAll();
+
+
 if (isset($_POST['save'])) {
     $vehiculo = array(
         'Matricula' => $_POST['Matricula'],
@@ -17,26 +22,25 @@ if (isset($_POST['save'])) {
         'CodCliente' => $_POST['CodCliente']
     );
 
-    $stm = $conn->prepare("select * from vehiculos");
-    $stm -> execute();
-    $vehiculos = $stm->fetchAll();
-    
+    foreach ($vehiculos as $v) {
+        if(in_array($vehiculo['Matricula'], $v)){
+            $existe = true;
+        }
+    }
+
     $errores = array();
     if(strlen($vehiculo['Matricula'])<=0) {
         $errores['Matricula'] = 'se debe indicar el Matricula';
     }
 
+    $hola = in_array($vehiculo['Matricula'], $vehiculos);
+    
+
     if(count($errores) == 0){
-        if (in_array($vehiculo['Matricula'], $vehiculos)){
-            $existe = true;    
-        } else {
-            $existe = false;
-        }
-
         if($existe){
-            $stm = $conn->prepare("update vehiculos set Marca=:Marca, Modelo=:Modelo, Color=:Color, FechaMatriculacion=:FechaMatriculacion, CodCliente=:CodCliente  where Matricula=:Matricula");
+            $stm = $conn->prepare("update vehiculos set Marca=:Marca, Modelo=:Modelo, Color=:Color, FechaMatriculacion=:FechaMatriculacion, CodCliente=:CodCliente where Matricula=:Matricula");
 
-        } else if (!$existe) {           
+        } else {           
             $stm = $conn->prepare("INSERT INTO vehiculos (Matricula,Marca,Modelo,Color,FechaMatriculacion,CodCliente) VALUES (:Matricula,:Marca,:Modelo,:Color,:FechaMatriculacion,:CodCliente)");
         }
 
