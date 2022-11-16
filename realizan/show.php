@@ -30,18 +30,12 @@ $conn = null;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
     <title>Cliente</title>
 </head>
 <body>
@@ -118,7 +112,7 @@ $conn = null;
         </a>
       </li>
       <li>
-        <a href="../realizan/list.php" class="nav-link text-white">
+        <a href="../realizan/list.php" class="nav-link active">
           <i class="fa-solid fa-screwdriver-wrench" width="16" height="16"></i>
           <i class="fa-solid fa-plus"></i>
           <i class="fa-solid fa-ticket bi me-2" width="16" height="16"></i>
