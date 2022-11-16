@@ -37,7 +37,7 @@ $conn = null;
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -130,26 +130,36 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <h1>actuaciones</h1>
-    <table>
-        <tr>
-            <th>Referencia</th>
-            <th>Descripcion</th>
-            <th>TiempoEstimado</th>
-            <th>Importe</th>
-        </tr>
-
-        <?php foreach($actuaciones as $recambio): ?>
-            <tr>
-                <td>
-                    <a href="show.php?Referencia=<?=$recambio['Referencia']?>"><?=$recambio['Referencia']?></a>
-                </td>
-                <td><?=$recambio['Descripcion']?></td>
-                <td><?=$recambio['TiempoEstimado']?></td>
-                <td><?=$recambio['Importe']?></td>             
-            </tr>
-        <?php endforeach; ?>
-    </table>
-    <a href="form.php">Nueva actuacion</a>
+  <div class="main-container">
+    <main class="st_viewport contenedor">
+      <div class="st_wrap_table" data-table_id="0">
+        <header class="st_table_header bg-dark">
+          <h2>Actuaciones<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir actuación</a></h2>
+          <div class="st_row">
+            <div class="st_column Referencia">Referencia</div>
+            <div class="st_column Descripcion">Descripcion</div>
+            <div class="st_column Tiempo">Tiempo estimado</div>
+            <div class="st_column Importe">Importe</div>
+            <div class="st_column Acciones">Acciones</div>
+          </div>
+        </header>
+        <div class="st_table">
+          <?php foreach($actuaciones as $recambio): ?>
+              <div class="st_row">
+                  <div class="st_column Referencia"><?=$recambio['Referencia']?></div>
+                  <div class="st_column Descripcion"><?=$recambio['Descripcion']?></div>
+                  <div class="st_column Tiempo"><?=$recambio['TiempoEstimado']?></div>
+                  <div class="st_column Importe"><?=$recambio['Importe']?></div> 
+                  <div class="st_column Acciones">
+                    <a href="show.php?Referencia=<?=$recambio['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
+                    <a href="form.php?Referencia=<?=$recambio['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                    <a href="delete.php?Referencia=<?=$recambio['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                  </div>            
+              </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </main>
+  </div> 
 </body>
 </html>

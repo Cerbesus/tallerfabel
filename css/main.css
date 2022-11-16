@@ -90,8 +90,11 @@ body
   }
   .st_table_header h2{
     font-weight: 400;
-    margin: 0 20px 20px;
-    padding: 20px 0 0;
+    margin-left: 20px;
+    padding-top: 20px;
+  }
+  .st_table_header a{
+    margin-left: 20px;
   }
   .st_table_header .st_row{
     color: rgba(220,220,220, .9);
@@ -128,35 +131,30 @@ body
     padding: 10px 20px;
     word-wrap: break-word;
   }
-.CodCliente
+.Referencia
 {
-  width: 16.66%;
+  width:20%;
   min-width: 120px;
 }
-.DNI
+.Descripcion
 {
-  width: 16.66%;
+  width:20%;
   min-width: 130px;
 }
-.Apellidos
+.Tiempo
 {
-  width: 16.66%;
+  width:20%;
   min-width: 140px;
 }
-.Nombre
+.Importe
 {
-  width: 16.66%;
+  width:20%;
   min-width: 120px;
 }
-.Dirección
+.Acciones
 {
-  width: 16.66%;
+  width:20%;
   min-width: 180px;
-}
-.Teléfono
-{
-  width: 16.66%;
-  min-width: 140px;
 }
 
   .st_column_facturas{

@@ -130,7 +130,7 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <h1>vehiculos</h1>
+    <div.main.container>main.st_viewport.contenedor>div.st_wrap_table>header.st_table_header <h1>vehiculos</h1>
     <table>
         <tr>
             <th>Matricula</th>
