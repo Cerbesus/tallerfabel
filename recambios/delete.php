@@ -46,6 +46,100 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar al emp
     <title>Eliminar</title>
 </head>
 <body>
+    <!-- Barra de navegación -->
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
+      <span class="fs-4">Taller Faber</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="../main.php" class="nav-link text-white" aria-current="page">
+          <i class="fa-solid fa-house bi me-2" width="16" height="16"></i>
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a href="../clientes/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-user bi me-2" width="16" height="16"></i>
+          Clientes
+        </a>
+      </li>
+      <li>
+        <a href="../facturas/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-file bi me-2" width="16" height="16"></i>
+          Facturas
+        </a>
+      </li>
+      <li>
+        <a href="../vehiculos/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-car bi me-2" width="16" height="16"></i>
+          Vehículos
+        </a>
+      </li>
+      <li>
+        <a href="../reparaciones/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-screwdriver-wrench bi me-2" width="16" height="16"></i>
+          Reparaciones
+        </a>
+      </li>
+      <li>
+        <a href="../empleados/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-briefcase bi me-2" width="16" height="16"></i>
+          Empleados
+        </a>
+      </li>
+      <li>
+        <a href="../intervienen/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-screwdriver-wrench" width="16" height="16"></i>
+          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-briefcase bi me-2" width="16" height="16"></i>
+          Intervienen
+        </a>
+      </li>
+      <li>
+          <a href="../recambios/list.php" class="nav-link text-white">
+            <i class="fa-solid fa-rotate-right bi me-2" width="16" height="16"></i>
+            Recambios
+          </a>
+      </li>
+      <li>
+        <a href="../incluyen/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-screwdriver-wrench" width="16" height="16"></i>
+          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-rotate-right bi me-2" width="16" height="16"></i>
+          Incluyen
+        </a>
+      </li>
+      <li>
+        <a href="../actuaciones/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-ticket bi me-2" width="16" height="16"></i>
+          Actuaciones
+        </a>
+      </li>
+      <li>
+        <a href="../realizan/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-screwdriver-wrench" width="16" height="16"></i>
+          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-ticket bi me-2" width="16" height="16"></i>
+          Realizan
+        </a>
+      </li>
+    </ul>
+    <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="../img/profile.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong><?=$_SESSION['user']?></strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+        <li><a class="dropdown-item" href="#">Preferencias</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="logout.php" onclick="cierreSesion()">Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </div>
     <form action="delete.php" method="post">
         <input type="hidden" name="IdRecambio" value="<?=$_GET['IdRecambio']?>">
 
