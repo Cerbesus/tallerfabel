@@ -16,7 +16,7 @@ if (!isset($_SESSION['user'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
@@ -36,7 +36,7 @@ if (!isset($_SESSION['user'])) {
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
+        <a href="main.php" class="nav-link active" aria-current="page">
           <i class="fa-solid fa-house bi me-2" width="16" height="16"></i>
           Inicio
         </a>
@@ -49,8 +49,14 @@ if (!isset($_SESSION['user'])) {
       </li>
       <li>
         <a href="facturas/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-table-cells bi me-2" width="16" height="16"></i>
+          <i class="fa-solid fa-file bi me-2" width="16" height="16"></i>
           Facturas
+        </a>
+      </li>
+      <li>
+        <a href="vehiculos/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-car bi me-2" width="16" height="16"></i>
+          Vehículos
         </a>
       </li>
       <li>
@@ -60,9 +66,21 @@ if (!isset($_SESSION['user'])) {
         </a>
       </li>
       <li>
-        <a href="vehiculos/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-car bi me-2" width="16" height="16"></i>
-          Vehículos
+        <a href="empleados/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-briefcase bi me-2" width="16" height="16"></i>
+          Empleados
+        </a>
+      </li>
+      <li>
+        <a href="recambios/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-rotate-right bi me-2" width="16" height="16"></i>
+          Recambios
+        </a>
+      </li>
+      <li>
+        <a href="actuaciones/list.php" class="nav-link text-white">
+          <i class="fa-solid fa-ticket bi me-2" width="16" height="16"></i>
+          Actuaciones
         </a>
       </li>
     </ul>
