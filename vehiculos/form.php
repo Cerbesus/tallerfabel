@@ -18,6 +18,13 @@ $stm = $conn->prepare("select * from vehiculos");
 $stm -> execute();
 $vehiculos = $stm->fetchAll();
 
+if (isset($_GET['Matricula'])) {
+    foreach ($vehiculos as $v) {
+        if(in_array($_GET['Matricula'], $v)){
+            $existeActual = true;
+        }
+    }
+}
 
 if (isset($_POST['save'])) {
     $vehiculo = array(
@@ -31,7 +38,7 @@ if (isset($_POST['save'])) {
 
     foreach ($vehiculos as $v) {
         if(in_array($vehiculo['Matricula'], $v)){
-            $existe = true;
+            $existeForm = true;
         }
     }
 
@@ -41,7 +48,7 @@ if (isset($_POST['save'])) {
     }
     
     if(count($errores) == 0){
-        if($existe){
+        if($existeForm and !$existeActual){
             $stm = $conn->prepare("update vehiculos set Marca=:Marca, Modelo=:Modelo, Color=:Color, FechaMatriculacion=:FechaMatriculacion, CodCliente=:CodCliente where Matricula=:Matricula");
 
         } else {           
@@ -187,7 +194,7 @@ $conn = null;
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
         <li><a class="dropdown-item" href="#">Preferencias</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="logout.php" onclick="cierreSesion()">Cerrar sesión</a></li>
+        <li><a class="dropdown-item" href="../logout.php" onclick="cierreSesion()">Cerrar sesión</a></li>
       </ul>
     </div>
   </div>
