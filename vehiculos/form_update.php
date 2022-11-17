@@ -14,31 +14,28 @@ if(isset($_POST['cancel'])) {
 
 $conn = require "../database.php";
 
-$stm = $conn->prepare("select * from vehiculos");
-$stm -> execute();
-$vehiculos = $stm->fetchAll();
-
-if (isset($_GET['Matricula'])) {
-    foreach ($vehiculos as $v) {
-        if(in_array($_GET['Matricula'], $v)){
-            $existeActual = true;
-        }
-    }
-}
 
 if (isset($_POST['save'])) {
-    $vehiculo = array(
-        'Matricula' => $_POST['Matricula'],
-        'Marca' => $_POST['Marca'],
-        'Modelo' => $_POST['Modelo'],
-        'Color' => $_POST['Color'],
-        'FechaMatriculacion' => $_POST['FechaMatriculacion'],
-        'CodCliente' => $_POST['CodCliente']
+  $vehiculo = array(
+    'Matricula' => $_POST['Matricula'],
+    'Marca' => $_POST['Marca'],
+    'Modelo' => $_POST['Modelo'],
+    'Color' => $_POST['Color'],
+    'FechaMatriculacion' => $_POST['FechaMatriculacion'],
+    'CodCliente' => $_POST['CodCliente']
     );
 
+    $matriculaActual = $_POST['MatriculaActual'];
+
+    $stm = $conn->prepare("select * from vehiculos");
+    $stm -> execute();
+    $vehiculos = $stm->fetchAll();
+
     foreach ($vehiculos as $v) {
-        if(in_array($vehiculo['Matricula'], $v)){
-            $existeForm = true;
+        $existe = false;
+        if(in_array($vehiculo['Matricula'], $v)) {
+            $existe = true;
+            break;
         }
     }
 
@@ -46,14 +43,13 @@ if (isset($_POST['save'])) {
     if(strlen($vehiculo['Matricula'])<=0) {
         $errores['Matricula'] = 'se debe indicar el Matricula';
     }
+    if($existe) {
+        $errores['Matricula'] = 'La matrícula ya existe';
+    }
     
     if(count($errores) == 0){
-        if($existeForm and !$existeActual){
-            $stm = $conn->prepare("update vehiculos set Marca=:Marca, Modelo=:Modelo, Color=:Color, FechaMatriculacion=:FechaMatriculacion, CodCliente=:CodCliente where Matricula=:Matricula");
-
-        } else {           
-            $stm = $conn->prepare("INSERT INTO vehiculos (Matricula,Marca,Modelo,Color,FechaMatriculacion,CodCliente) VALUES (:Matricula,:Marca,:Modelo,:Color,:FechaMatriculacion,:CodCliente)");
-        }
+        
+        $stm = $conn->prepare("update vehiculos set Matricula=:Matricula,Marca=:Marca, Modelo=:Modelo, Color=:Color, FechaMatriculacion=:FechaMatriculacion, CodCliente=:CodCliente where Matricula='$matriculaActual'");
 
         $stm->execute($vehiculo);
         $stm = null;
@@ -61,21 +57,12 @@ if (isset($_POST['save'])) {
         header("location: show.php?Matricula=".$vehiculo['Matricula']);
         die();
     }
-} else if (isset($_GET['Matricula'])){
+} else {
     $stm = $conn->prepare("select * from vehiculos where Matricula=:Matricula");
     $stm->execute(array(':Matricula' => $_GET['Matricula']));
 
     $vehiculo = $stm->fetch();
 
-} else {
-    $vehiculo = array(
-        'Matricula' => '',
-        'Marca'       => '',
-        'Modelo'      => '',
-        'Color'      => '',
-        'FechaMatriculacion'      => '',
-        'CodCliente'      => ''
-    );
 }
 
 $stm = $conn->prepare("select * from clientes");
@@ -205,8 +192,8 @@ $conn = null;
         <?php endforeach; ?>
     <?php endif; ?>
 
-    <form action="form.php" method="post">
-            <input type="hidden" name="Matricula" value="<?=$vehiculo['Matricula']?>">
+    <form action="form_update.php" method="post">
+            <input type="hidden" name="MatriculaActual" value="<?=$vehiculo['Matricula']?>">
             <p>
                 <label for="Matricula">Matricula (automático): </label>
                 <input type="text" name="Matricula" id="Matricula" placeholder="Matricula" value="<?=$vehiculo['Matricula']?>">

@@ -156,7 +156,7 @@ $conn = null;
             </tr>
         <?php endforeach; ?>
       </table>
-      <a href="form.php">Nuevo vehiculo</a>
+      <a href="form_add.php">Nuevo vehiculo</a>
       </main>
     </div> 
 </body>
