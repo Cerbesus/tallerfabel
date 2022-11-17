@@ -39,10 +39,7 @@ if (isset($_POST['save'])) {
     if(strlen($vehiculo['Matricula'])<=0) {
         $errores['Matricula'] = 'se debe indicar el Matricula';
     }
-
-    $hola = in_array($vehiculo['Matricula'], $vehiculos);
     
-
     if(count($errores) == 0){
         if($existe){
             $stm = $conn->prepare("update vehiculos set Marca=:Marca, Modelo=:Modelo, Color=:Color, FechaMatriculacion=:FechaMatriculacion, CodCliente=:CodCliente where Matricula=:Matricula");
