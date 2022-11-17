@@ -62,7 +62,7 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar la ofi
       </li>
       <li>
         <a href="../facturas/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-file bi me-2" width="16" height="16"></i>
+          <i class="fa-solid fa-dollar-sign bi me-2" width="16" height="16"></i>
           Facturas
         </a>
       </li>
@@ -74,7 +74,7 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar la ofi
       </li>
       <li>
         <a href="../reparaciones/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-screwdriver-wrench bi me-2" width="16" height="16"></i>
+          <i class="fa-solid fa-file-pen bi me-2" width="16" height="16"></i>
           Reparaciones
         </a>
       </li>
@@ -86,7 +86,7 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar la ofi
       </li>
       <li>
         <a href="../intervienen/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-screwdriver-wrench" width="16" height="16"></i>
+          <i class="fa-solid fa-file-pen" width="16" height="16"></i>
           <i class="fa-solid fa-plus"></i>
           <i class="fa-solid fa-briefcase bi me-2" width="16" height="16"></i>
           Intervienen
@@ -94,29 +94,29 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar la ofi
       </li>
       <li>
           <a href="../recambios/list.php" class="nav-link text-white">
-            <i class="fa-solid fa-rotate-right bi me-2" width="16" height="16"></i>
+            <i class="fa-solid fa-repeat bi me-2" width="16" height="16"></i>
             Recambios
           </a>
       </li>
       <li>
         <a href="../incluyen/list.php" class="nav-link active">
-          <i class="fa-solid fa-screwdriver-wrench" width="16" height="16"></i>
+          <i class="fa-solid fa-file-pen" width="16" height="16"></i>
           <i class="fa-solid fa-plus"></i>
-          <i class="fa-solid fa-rotate-right bi me-2" width="16" height="16"></i>
+          <i class="fa-solid fa-repeat bi me-2" width="16" height="16"></i>
           Incluyen
         </a>
       </li>
       <li>
         <a href="../actuaciones/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-ticket bi me-2" width="16" height="16"></i>
+          <i class="fa-solid fa-screwdriver-wrench bi me-2" width="16" height="16"></i>
           Actuaciones
         </a>
       </li>
       <li>
         <a href="../realizan/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-screwdriver-wrench" width="16" height="16"></i>
+          <i class="fa-solid fa-file-pen" width="16" height="16"></i>
           <i class="fa-solid fa-plus"></i>
-          <i class="fa-solid fa-ticket bi me-2" width="16" height="16"></i>
+          <i class="fa-solid fa-screwdriver-wrench bi me-2" width="16" height="16"></i>
           Realizan
         </a>
       </li>

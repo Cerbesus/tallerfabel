@@ -58,7 +58,7 @@ $conn = null;
       </li>
       <li>
         <a href="../facturas/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-file bi me-2" width="16" height="16"></i>
+          <i class="fa-solid fa-dollar-sign bi me-2" width="16" height="16"></i>
           Facturas
         </a>
       </li>
@@ -70,7 +70,7 @@ $conn = null;
       </li>
       <li>
         <a href="../reparaciones/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-screwdriver-wrench bi me-2" width="16" height="16"></i>
+          <i class="fa-solid fa-file-pen bi me-2" width="16" height="16"></i>
           Reparaciones
         </a>
       </li>
@@ -82,7 +82,7 @@ $conn = null;
       </li>
       <li>
         <a href="../intervienen/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-screwdriver-wrench" width="16" height="16"></i>
+          <i class="fa-solid fa-file-pen" width="16" height="16"></i>
           <i class="fa-solid fa-plus"></i>
           <i class="fa-solid fa-briefcase bi me-2" width="16" height="16"></i>
           Intervienen
@@ -90,29 +90,29 @@ $conn = null;
       </li>
       <li>
           <a href="../recambios/list.php" class="nav-link text-white">
-            <i class="fa-solid fa-rotate-right bi me-2" width="16" height="16"></i>
+            <i class="fa-solid fa-repeat bi me-2" width="16" height="16"></i>
             Recambios
           </a>
       </li>
       <li>
         <a href="../incluyen/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-screwdriver-wrench" width="16" height="16"></i>
+          <i class="fa-solid fa-file-pen" width="16" height="16"></i>
           <i class="fa-solid fa-plus"></i>
-          <i class="fa-solid fa-rotate-right bi me-2" width="16" height="16"></i>
+          <i class="fa-solid fa-repeat bi me-2" width="16" height="16"></i>
           Incluyen
         </a>
       </li>
       <li>
         <a href="../actuaciones/list.php" class="nav-link active">
-          <i class="fa-solid fa-ticket bi me-2" width="16" height="16"></i>
+          <i class="fa-solid fa-screwdriver-wrench bi me-2" width="16" height="16"></i>
           Actuaciones
         </a>
       </li>
       <li>
         <a href="../realizan/list.php" class="nav-link text-white">
-          <i class="fa-solid fa-screwdriver-wrench" width="16" height="16"></i>
+          <i class="fa-solid fa-file-pen" width="16" height="16"></i>
           <i class="fa-solid fa-plus"></i>
-          <i class="fa-solid fa-ticket bi me-2" width="16" height="16"></i>
+          <i class="fa-solid fa-screwdriver-wrench bi me-2" width="16" height="16"></i>
           Realizan
         </a>
       </li>
@@ -136,24 +136,24 @@ $conn = null;
         <header class="st_table_header bg-dark">
           <h2>Actuaciones<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir actuación</a></h2>
           <div class="st_row">
-            <div class="st_column Referencia">Referencia</div>
-            <div class="st_column Descripcion">Descripcion</div>
-            <div class="st_column Tiempo">Tiempo estimado</div>
-            <div class="st_column Importe">Importe</div>
+            <div class="st_column A-Referencia">Referencia</div>
+            <div class="st_column A-Descripcion">Descripcion</div>
+            <div class="st_column A-Tiempo">Tiempo estimado</div>
+            <div class="st_column A-Importe">Importe</div>
             <div class="st_column Acciones">Acciones</div>
           </div>
         </header>
         <div class="st_table">
           <?php foreach($actuaciones as $recambio): ?>
               <div class="st_row">
-                  <div class="st_column Referencia"><?=$recambio['Referencia']?></div>
-                  <div class="st_column Descripcion"><?=$recambio['Descripcion']?></div>
-                  <div class="st_column Tiempo"><?=$recambio['TiempoEstimado']?></div>
-                  <div class="st_column Importe"><?=$recambio['Importe']?></div> 
+                  <div class="st_column A-Referencia"><?=$recambio['Referencia']?></div>
+                  <div class="st_column A-Descripcion"><?=$recambio['Descripcion']?></div>
+                  <div class="st_column A-Tiempo"><?=$recambio['TiempoEstimado']?></div>
+                  <div class="st_column A-Importe"><?=$recambio['Importe']?></div> 
                   <div class="st_column Acciones">
                     <a href="show.php?Referencia=<?=$recambio['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
                     <a href="form.php?Referencia=<?=$recambio['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
-                    <a href="delete.php?Referencia=<?=$recambio['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                    <a href="delete.php?Referencia=<?=$recambio['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
                   </div>            
               </div>
           <?php endforeach; ?>

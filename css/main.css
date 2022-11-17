@@ -73,7 +73,7 @@ body
   
   /** Sticky table styles **/
   .st_viewport{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.75);
     color: rgb(0, 0, 0);
     margin: 0 0;
     text-align: left;
@@ -95,6 +95,9 @@ body
   }
   .st_table_header a{
     margin-left: 20px;
+  }
+  a.btn.btn-link {
+    text-decoration: none;
   }
   .st_table_header .st_row{
     color: rgba(220,220,220, .9);
@@ -131,52 +134,80 @@ body
     padding: 10px 20px;
     word-wrap: break-word;
   }
-.Referencia
-{
-  width:20%;
-  min-width: 120px;
-}
-.Descripcion
-{
-  width:20%;
-  min-width: 130px;
-}
-.Tiempo
-{
-  width:20%;
-  min-width: 140px;
-}
-.Importe
-{
-  width:20%;
-  min-width: 120px;
-}
-.Acciones
-{
-  width:20%;
-  min-width: 180px;
-}
+/*? Actuaciones */
+.A-Referencia{  width:20%;  min-width: 120px;}
+.A-Descripcion{  width:20%;  min-width: 280px;}
+.A-Tiempo{  width:20%;  min-width: 80px;}
+.A-Importe{  width:20%;  min-width: 100px;}
+.A-Acciones{  width:20%;  min-width: 330px;}
 
-  .st_column_facturas{
-    padding: 10px 20px;
-    width: 25%;
-    min-width: 180px;
-    word-wrap: break-word;
-  }
-  .st_column_reparaciones{
-    padding: 10px 20px;
-    width: 12.5%;
-    min-width: 12.5px;
-    word-wrap: break-word;
-  }
-  .st_column_vehiculos{
-    padding: 10px 20px;
-    width: 200px;
-    min-width: 180px;
-    word-wrap: break-word;
-  }
+/*? Clientes */
+.C-CodCliente{  width:14.28%;  min-width: 120px;}
+.C-DNI{  width:14.28%;  min-width: 280px;}
+.C-Apellidos{  width:14.28%;  min-width: 80px;}
+.C-Nombre{  width:14.28%;  min-width: 100px;}
+.C-Direccion{  width:14.28%;  min-width: 330px;}
+.C-Telefono{  width:14.28%;  min-width: 330px;}
+.C-Acciones{  width:14.28%;  min-width: 330px;}
+/*? Facturas */
+.F-IdFactura{  width:20%;  min-width: 120px;}
+.F-FechaFactura{  width:20%;  min-width: 280px;}
+.F-CodCliente{  width:20%;  min-width: 80px;}
+.F-IdReparacion{  width:20%;  min-width: 100px;}
+.F-Acciones{  width:20%;  min-width: 330px;}
+/*? Vehiculos */
+.V-Matricula{  width:14.28%;  min-width: 120px;}
+.V-Marca{  width:14.28%;  min-width: 280px;}
+.V-Modelo{  width:14.28%;  min-width: 80px;}
+.V-Color{  width:14.28%;  min-width: 100px;}
+.V-FechaMatriculacion{  width:14.28%;  min-width: 100px;}
+.V-CodCliente{  width:14.28%;  min-width: 100px;}
+.V-Acciones{  width:14.28%;  min-width: 330px;}
+/*? Reparaciones */
+.R-IdReparacion{  width:11.11%;  min-width: 120px;}
+.R-Matricula{  width:11.11%;  min-width: 280px;}
+.R-FechaEntrada{  width:11.11%;  min-width: 80px;}
+.R-Km{  width:11.11%;  min-width: 100px;}
+.R-Averia{  width:11.11%;  min-width: 100px;}
+.R-FechaSalida{  width:11.11%;  min-width: 100px;}
+.R-Reparado{  width:11.11%;  min-width: 100px;}
+.R-Observaciones{  width:11.11%;  min-width: 100px;}
+.R-Acciones{  width:11.11%;  min-width: 330px;}
+/*? Empleados */
+.E-CodEmpleado{  width:10%;  min-width: 120px;}
+.E-DNI{  width:10%;  min-width: 280px;}
+.E-Nombre{  width:10%;  min-width: 80px;}
+.E-Apellidos{  width:10%;  min-width: 100px;}
+.E-Direccion{  width:10%;  min-width: 100px;}
+.E-Telefono{  width:10%;  min-width: 100px;}
+.E-CP{  width:10%;  min-width: 100px;}
+.E-FechaAlta{  width:10%;  min-width: 100px;}
+.E-Categoria{  width:10%;  min-width: 100px;}
+.E-Acciones{  width:10%;  min-width: 330px;}
+/*? Intervienen */
+.Int-CodEmpleado{  width:25%;  min-width: 120px;}
+.Int-IdReparacion{  width:25%;  min-width: 280px;}
+.Int-Horas{  width:25%;  min-width: 80px;}
+.Int-Acciones{  width:25%;  min-width: 330px;}
+/*? Incluyen */
+.Inc-IdRecambio{  width:25%;  min-width: 120px;}
+.Inc-IdReparacion{  width:25%;  min-width: 280px;}
+.Inc-Unidades{  width:25%;  min-width: 80px;}
+.Inc-Acciones{  width:25%;  min-width: 330px;}
+/*? Realizan */
+.Rea-IdReparacion{  width:25%;  min-width: 120px;}
+.Rea-Referencia{  width:25%;  min-width: 280px;}
+.Rea-Horas{  width:25%;  min-width: 80px;}
+.Rea-Acciones{  width:25%;  min-width: 330px;}
+/*? Recambios */
+.Rec-IdRecambio{  width:16.66%;  min-width: 120px;}
+.Rec-Descripcion{  width:16.66%;  min-width: 280px;}
+.Rec-UnidadBase{  width:16.66%;  min-width: 80px;}
+.Rec-Stock{  width:16.66%;  min-width: 80px;}
+.Rec-PrecioReferencia{  width:16.66%;  min-width: 80px;}
+.Rec-Acciones{  width:16.66%;  min-width: 330px;}  
 
-  
+
   .title {
     text-align: center;
     padding: 2rem;
