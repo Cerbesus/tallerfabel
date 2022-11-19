@@ -131,32 +131,39 @@ $conn = null;
     </div>
   </div>
   <div class="main-container">
-    
+    <main class="st_viewport contenedor">
+      <div class="st_wrap_table">
+        <header class="st_table_header bg-dark">
+          <h2>Clientes<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir cliente</a></h2>
+          <div class="st_row">
+            <div class="st_column C-CodCliente">CodCliente</div>
+            <div class="st_column C-DNI">DNI</div>
+            <div class="st_column C-Apellidos">Apellidos</div>
+            <div class="st_column C-Nombre">Nombre</div>
+            <div class="st_column C-Direccion">Direccion</div>
+            <div class="st_column C-Telefono">Telefono</div>
+            <div class="st_column C-Acciones">Acciones</div>
+          </div>
+        </header>
+        <div class="st_table">
+          <?php foreach($clientes as $cliente): ?>
+            <div class="st_row">
+              <div class="st_column C-CodCliente"><?=$cliente['CodCliente']?></div>
+              <div class="st_column C-DNI"><?=$cliente['DNI']?></div>
+              <div class="st_column C-Apellidos"><?=$cliente['Apellidos']?></div>
+              <div class="st_column C-Nombre"><?=$cliente['Nombre']?></div>
+              <div class="st_column C-Direccion"><?=$cliente['Direccion']?></div>
+              <div class="st_column C-Telefono"><?=$cliente['Telefono']?></div>
+              <div class="st_column C-Acciones">
+                <a href="show.php?CodCliente=<?=$cliente['CodCliente']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
+                <a href="form.php?CodCliente=<?=$cliente['CodCliente']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                <a href="delete.php?CodCliente=<?=$cliente['CodCliente']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </main>>
   </div>
-  <table>
-        <tr>
-            <th>CodCliente</th>
-            <th>DNI</th>
-            <th>Apellidos</th>
-            <th>Nombre</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-        </tr>
-
-        <?php foreach($clientes as $cliente): ?>
-            <tr>
-                <td>
-                    <a href="show.php?CodCliente=<?=$cliente['CodCliente']?>"><?=$cliente['CodCliente']?></a>
-                </td>
-                <td><?=$cliente['CodCliente']?></td>
-                <td><?=$cliente['DNI']?></td>
-                <td><?=$cliente['Apellidos']?></td>
-                <td><?=$cliente['Nombre']?></td>
-                <td><?=$cliente['Direccion']?></td>
-                <td><?=$cliente['Telefono']?></td>                
-            </tr>
-        <?php endforeach; ?>
-    </table>
-    <a href="form.php">Nuevo cliente</a>
 </body>
 </html>

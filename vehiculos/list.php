@@ -33,7 +33,7 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>vehiculos</title>
+    <title>Vehículos</title>
 </head>
 <body>
     <!-- Barra de navegación -->
@@ -130,33 +130,39 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <div class="main container">
+  <div class="main-container">
       <main class="st_viewport contenedor">
-      <h1>vehiculos</h1>
-      <table>
-        <tr>
-            <th>Matricula</th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Color</th>
-            <th>FechaMatriculacion</th>
-            <th>CodCliente</th>
-        </tr>
-
-        <?php foreach($vehiculos as $vehiculo): ?>
-            <tr>
-                <td>
-                    <a href="show.php?Matricula=<?=$vehiculo['Matricula']?>"><?=$vehiculo['Matricula']?></a>
-                </td>
-                <td><?=$vehiculo['Marca']?></td>
-                <td><?=$vehiculo['Modelo']?></td>           
-                <td><?=$vehiculo['Color']?></td>           
-                <td><?=$vehiculo['FechaMatriculacion']?></td>           
-                <td><?=$vehiculo['CodCliente']?></td>           
-            </tr>
-        <?php endforeach; ?>
-      </table>
-      <a href="form_add.php">Nuevo vehiculo</a>
+        <div class="st_wrap_table">
+          <header class="st_table_header">
+            <h2>Vehículos<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir vehículo</a></h2>
+            <div class="st_row">
+              <div class="st_column V-Matricula">Matricula</div>
+              <div class="st_column V-Marca">Marca</div>
+              <div class="st_column V-Modelo">Modelo</div>
+              <div class="st_column V-Color">Color</div>
+              <div class="st_column V-FechaMatriculacion">FechaMatriculacion</div>
+              <div class="st_column V-CodCliente">CodCliente</div>
+              <div class="st_column V-Acciones">Acciones</div>
+            </div>
+          </header>
+          <div class="st_table">
+            <?php foreach($vehiculos as $vehiculo): ?>
+              <div class="st_row">
+                <div class="st_column V-Matricula"><?=$vehiculo['Matricula']?></div>
+                <div class="st_column V-Marca"><?=$vehiculo['Marca']?></div>
+                <div class="st_column V-Modelo"><?=$vehiculo['Modelo']?></div>
+                <div class="st_column V-Color"><?=$vehiculo['Color']?></div>
+                <div class="st_column V-FechaMatriculacion"><?=$vehiculo['FechaMatriculacion']?></div>
+                <div class="st_column V-CodCliente"><?=$vehiculo['CodCliente']?></div>
+                <div class="st_column V-Acciones">
+                  <a href="show.php?Matricula=<?=$vehiculo['Matricula']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
+                  <a href="form.php?Matricula=<?=$vehiculo['Matricula']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                  <a href="delete.php?Matricula=<?=$vehiculo['Matricula']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
       </main>
     </div> 
 </body>

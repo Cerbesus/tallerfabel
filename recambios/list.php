@@ -33,11 +33,11 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>recambios</title>
+    <title>Recambios</title>
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -130,28 +130,38 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <div.main.container>main.st_viewport.contenedor>div.st_wrap_table>header.st_table_header <h1>recambios</h1>
-    <table>
-        <tr>
-            <th>IdRecambio</th>
-            <th>Descripcion</th>
-            <th>UnidadBase</th>
-            <th>Stock</th>
-            <th>PrecioReferencia</th>
-        </tr>
-
-        <?php foreach($recambios as $recambio): ?>
-            <tr>
-                <td>
-                    <a href="show.php?IdRecambio=<?=$recambio['IdRecambio']?>"><?=$recambio['IdRecambio']?></a>
-                </td>
-                <td><?=$recambio['Descripcion']?></td>
-                <td><?=$recambio['UnidadBase']?></td>
-                <td><?=$recambio['Stock']?></td>
-                <td><?=$recambio['PrecioReferencia']?></td>             
-            </tr>
-        <?php endforeach; ?>
-    </table>
-    <a href="form.php">Nuevo recambio</a>
+  <div class="main-container">
+    <main class="st_viewport contenedor">
+      <div class="st_wrap_table">
+        <header class="st_table_header bg-dark">
+          <h2>Recambios<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir recambio</a></h2>
+          <div class="st_row">
+            <div class="st_column Rec-IdRecambio">Id</div>
+            <div class="st_column Rec-Descripcion">Descripción</div>
+            <div class="st_column Rec-UnidadBase">Unidad base</div>
+            <div class="st_column Rec-Stock">Stock</div>
+            <div class="st_column Rec-PrecioReferencia">Precio</div>
+            <div class="st_column Rec-Acciones">Acciones</div>
+          </div>
+        </header>
+        <div class="st_table">
+          <?php foreach($recambios as $recambio): ?>
+            <div class="st_row">
+              <div class="st_column Rec-IdRecambio"><?=$recambio['IdRecambio']?></div>
+              <div class="st_column Rec-Descripcion"><?=$recambio['Descripcion']?></div>
+              <div class="st_column Rec-UnidadBase"><?=$recambio['UnidadBase']?></div>
+              <div class="st_column Rec-Stock"><?=$recambio['Stock']?></div>
+              <div class="st_column Rec-PrecioReferencia"><?=$recambio['PrecioReferencia']?></div>
+              <div class="st_column Rec-Acciones">
+                <a href="show.php?IdRecambio=<?=$recambio['IdRecambio']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
+                <a href="form.php?IdRecambio=<?=$recambio['IdRecambio']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                <a href="delete.php?IdRecambio=<?=$recambio['IdRecambio']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>

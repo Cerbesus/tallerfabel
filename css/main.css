@@ -31,8 +31,10 @@ body
     text-align: center;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     background: inherit;
-    overflow: auto; 
+    overflow: auto;
 }
+/* ?Formulario */
+
 .contenedor-blanco
 {
     background-color: white;
@@ -68,7 +70,7 @@ body
   }
   .st_viewport{
     max-height: 100%;
-    overflow: auto;
+    /* overflow: auto; */
   }
   
   /** Sticky table styles **/
@@ -124,7 +126,6 @@ body
     display: -ms-flexbox;
     display: flex;
     margin: 0;
-
   }
   .st_table .st_row:nth-child(even){
     background-color: rgba(0,0,0, .1)
@@ -142,63 +143,69 @@ body
 .A-Acciones{  width:20%;  min-width: 330px;}
 
 /*? Clientes */
-.C-CodCliente{  width:14.28%;  min-width: 120px;}
-.C-DNI{  width:14.28%;  min-width: 280px;}
-.C-Apellidos{  width:14.28%;  min-width: 80px;}
-.C-Nombre{  width:14.28%;  min-width: 100px;}
-.C-Direccion{  width:14.28%;  min-width: 330px;}
-.C-Telefono{  width:14.28%;  min-width: 330px;}
+.C-CodCliente{  width:14.28%;  min-width: 90px;}
+.C-DNI{  width:14.28%;  min-width: 140px;}
+.C-Apellidos{  width:14.28%;  min-width: 140px;}
+.C-Nombre{  width:14.28%;  min-width: 140px;}
+.C-Direccion{  width:14.28%;  min-width: 180px;}
+.C-Telefono{  width:14.28%;  min-width: 140px;}
 .C-Acciones{  width:14.28%;  min-width: 330px;}
 /*? Facturas */
-.F-IdFactura{  width:20%;  min-width: 120px;}
-.F-FechaFactura{  width:20%;  min-width: 280px;}
-.F-CodCliente{  width:20%;  min-width: 80px;}
-.F-IdReparacion{  width:20%;  min-width: 100px;}
+.F-IdFactura{  width:20%;  min-width: 90px;}
+.F-FechaFactura{  width:20%;  min-width: 160px;}
+.F-CodCliente{  width:20%;  min-width: 90px;}
+.F-IdReparacion{  width:20%;  min-width: 90px;}
 .F-Acciones{  width:20%;  min-width: 330px;}
 /*? Vehiculos */
 .V-Matricula{  width:14.28%;  min-width: 120px;}
-.V-Marca{  width:14.28%;  min-width: 280px;}
-.V-Modelo{  width:14.28%;  min-width: 80px;}
+.V-Marca{  width:14.28%;  min-width: 150px;}
+.V-Modelo{  width:14.28%;  min-width: 180px;}
 .V-Color{  width:14.28%;  min-width: 100px;}
-.V-FechaMatriculacion{  width:14.28%;  min-width: 100px;}
-.V-CodCliente{  width:14.28%;  min-width: 100px;}
+.V-FechaMatriculacion{  width:14.28%;  min-width: 140px;}
+.V-CodCliente{  width:14.28%;  min-width: 80px;}
 .V-Acciones{  width:14.28%;  min-width: 330px;}
+
 /*? Reparaciones */
-.R-IdReparacion{  width:11.11%;  min-width: 120px;}
-.R-Matricula{  width:11.11%;  min-width: 280px;}
-.R-FechaEntrada{  width:11.11%;  min-width: 80px;}
-.R-Km{  width:11.11%;  min-width: 100px;}
-.R-Averia{  width:11.11%;  min-width: 100px;}
-.R-FechaSalida{  width:11.11%;  min-width: 100px;}
-.R-Reparado{  width:11.11%;  min-width: 100px;}
-.R-Observaciones{  width:11.11%;  min-width: 100px;}
-.R-Acciones{  width:11.11%;  min-width: 330px;}
+.R-IdReparacion{  width:11%; min-width: 70px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.R-Matricula{  width:11%;  min-width: 120px;}
+.R-FechaEntrada{  width:11%;  min-width: 140px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.R-Km{  width:11%;  min-width: 110px;}
+.R-Averia{  width:11%;  min-width: 180px;}
+.R-FechaSalida{  width:11%;  min-width: 140px;}
+.R-Reparado{  width:11%;  min-width: 60px;white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.R-Observaciones { width:11%; min-width:10%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;padding: 10px 20px;word-wrap: break-word;}
+.R-Acciones{  width:11%;  min-width: 330px;}
+
 /*? Empleados */
-.E-CodEmpleado{  width:10%;  min-width: 120px;}
-.E-DNI{  width:10%;  min-width: 280px;}
+.E-CodEmpleado{  width:10%;  min-width: 80px;}
+.E-DNI{  width:10%;  min-width: 150px;}
 .E-Nombre{  width:10%;  min-width: 80px;}
-.E-Apellidos{  width:10%;  min-width: 100px;}
-.E-Direccion{  width:10%;  min-width: 100px;}
-.E-Telefono{  width:10%;  min-width: 100px;}
+.E-Apellidos{  width:10%;  min-width: 120px;}
+.E-Direccion{  width:10%;  min-width: 120px;}
+.E-Telefono{  width:10%;  min-width: 140px;}
 .E-CP{  width:10%;  min-width: 100px;}
-.E-FechaAlta{  width:10%;  min-width: 100px;}
-.E-Categoria{  width:10%;  min-width: 100px;}
+.E-FechaAlta{  width:10%;  min-width: 140px;}
+.E-Categoria{  width:10%;  min-width: 120px;}
 .E-Acciones{  width:10%;  min-width: 330px;}
+
 /*? Intervienen */
 .Int-CodEmpleado{  width:25%;  min-width: 120px;}
-.Int-IdReparacion{  width:25%;  min-width: 280px;}
-.Int-Horas{  width:25%;  min-width: 80px;}
+.Int-IdReparacion{  width:25%;  min-width: 140px;}
+.Int-Horas{  width:25%;  min-width: 120px;}
 .Int-Acciones{  width:25%;  min-width: 330px;}
+
 /*? Incluyen */
 .Inc-IdRecambio{  width:25%;  min-width: 120px;}
 .Inc-IdReparacion{  width:25%;  min-width: 280px;}
 .Inc-Unidades{  width:25%;  min-width: 80px;}
 .Inc-Acciones{  width:25%;  min-width: 330px;}
+
 /*? Realizan */
 .Rea-IdReparacion{  width:25%;  min-width: 120px;}
 .Rea-Referencia{  width:25%;  min-width: 280px;}
 .Rea-Horas{  width:25%;  min-width: 80px;}
 .Rea-Acciones{  width:25%;  min-width: 330px;}
+
 /*? Recambios */
 .Rec-IdRecambio{  width:16.66%;  min-width: 120px;}
 .Rec-Descripcion{  width:16.66%;  min-width: 280px;}

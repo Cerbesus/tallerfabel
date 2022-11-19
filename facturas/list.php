@@ -33,11 +33,11 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>facturas</title>
+    <title>Facturas</title>
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -130,26 +130,36 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <div.main.container>main.st_viewport.contenedor>div.st_wrap_table>header.st_table_header <h1>facturas</h1>
-    <table>
-        <tr>
-            <th>IdFactura</th>
-            <th>FechaFactura</th>
-            <th>CodCliente</th>
-            <th>IdReparacion</th>
-        </tr>
-
-        <?php foreach($facturas as $factura): ?>
-            <tr>
-                <td>
-                    <a href="show.php?IdFactura=<?=$factura['IdFactura']?>"><?=$factura['IdFactura']?></a>
-                </td>
-                <td><?=$factura['FechaFactura']?></td>
-                <td><?=$factura['CodCliente']?></td>
-                <td><?=$factura['IdReparacion']?></td>            
-            </tr>
-        <?php endforeach; ?>
-    </table>
-    <a href="form.php">Nuevo cliente</a>
+  <div class="main-container">
+    <main class="st_viewport contenedor">
+      <div class="st_wrap_table">
+        <header class="st_table_header">
+          <h2>Facturas<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir factura</a></h2>
+          <div class="st_row">
+            <div class="st_column F-IdFactura">IdFactura</div>
+            <div class="st_column F-FechaFactura">FechaFactura</div>
+            <div class="st_column F-CodCliente">CodCliente</div>
+            <div class="st_column F-IdReparacion">IdReparacion</div>
+            <div class="st_column F-Acciones">Acciones</div>
+          </div>
+        </header>
+        <div class="st_table">
+          <?php foreach($facturas as $factura): ?>
+            <div class="st_row">
+              <div class="st_column F-IdFactura"><?=$factura['IdFactura']?></div>
+              <div class="st_column F-FechaFactura"><?=$factura['FechaFactura']?></div>
+              <div class="st_column F-CodCliente"><?=$factura['CodCliente']?></div>
+              <div class="st_column F-IdReparacion"><?=$factura['IdReparacion']?></div>
+              <div class="st_column F-Acciones">
+                <a href="show.php?IdFactura=<?=$factura['IdFactura']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
+                <a href="form.php?IdFactura=<?=$factura['IdFactura']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                <a href="delete.php?IdFactura=<?=$factura['IdFactura']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>

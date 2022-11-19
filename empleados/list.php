@@ -33,11 +33,11 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>empleados</title>
+    <title>Empleados</title>
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -130,36 +130,46 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <h1>empleados</h1>
-    <table>
-        <tr>
-            <th>CodEmpleado</th>
-            <th>DNI</th>
-            <th>Apellidos</th>
-            <th>Nombre</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-            <th>CP</th>
-            <th>FechaAlta</th>
-            <th>Categoria</th>
-        </tr>
-
-        <?php foreach($empleados as $empleado): ?>
-            <tr>
-                <td>
-                    <a href="show.php?CodEmpleado=<?=$empleado['CodEmpleado']?>"><?=$empleado['CodEmpleado']?></a>
-                </td>
-                <td><?=$empleado['DNI']?></td>
-                <td><?=$empleado['Apellidos']?></td>
-                <td><?=$empleado['Nombre']?></td>
-                <td><?=$empleado['Direccion']?></td>
-                <td><?=$empleado['Telefono']?></td>                
-                <td><?=$empleado['CP']?></td>                
-                <td><?=$empleado['FechaAlta']?></td>                
-                <td><?=$empleado['Categoria']?></td>                
-            </tr>
-        <?php endforeach; ?>
-    </table>
-    <a href="form.php">Nuevo empleado</a>
+  <div class="main-container">
+    <main class="st_viewport contenedor">
+      <div class="st_wrap_table">
+        <header class="st_table_header bg_dark">
+          <h2>Empleados<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir empleado</a></h2>
+          <div class="st_row">
+            <div class="st_column E-CodEmpleado">Código</div>
+            <div class="st_column E-DNI">DNI</div>
+            <div class="st_column E-Nombre">Apellidos</div>
+            <div class="st_column E-Apellidos">Nombre</div>
+            <div class="st_column E-Direccion">Dirección</div>
+            <div class="st_column E-Telefono">Telefono</div>
+            <div class="st_column E-CP">CP</div>
+            <div class="st_column E-FechaAlta">FechaAlta</div>
+            <div class="st_column E-Categoria">Categoria</div>
+            <div class="st_column E-Acciones">Acciones</div>
+          </div>
+        </header>
+        <div class="st_table">
+          <?php foreach($empleados as $empleado): ?>
+            <div class="st_row">
+              <div class="st_column E-CodEmpleado"><?=$empleado['CodEmpleado']?></div>
+              <div class="st_column E-DNI"><?=$empleado['DNI']?></div>
+              <div class="st_column E-Nombre"><?=$empleado['Apellidos']?></div>
+              <div class="st_column E-Apellidos"><?=$empleado['Nombre']?></div>
+              <div class="st_column E-Direccion"><?=$empleado['Direccion']?></div>
+              <div class="st_column E-Telefono"><?=$empleado['Telefono']?></div>
+              <div class="st_column E-CP"><?=$empleado['CP']?></div>
+              <div class="st_column E-FechaAlta"><?=$empleado['FechaAlta']?></div>
+              <div class="st_column E-Categoria"><?=$empleado['Categoria']?></div>
+              <div class="st_column E-Acciones">
+                <a href="show.php?CodEmpleado=<?=$empleado['CodEmpleado']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
+                <a href="form.php?CodEmpleado=<?=$empleado['CodEmpleado']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                <a href="delete.php?CodEmpleado=<?=$empleado['CodEmpleado']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>

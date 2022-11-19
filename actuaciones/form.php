@@ -83,7 +83,7 @@ $conn = null;
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -176,34 +176,55 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <?php if (isset($errores) && count($errores) > 0): ?>
-        <p>Existen errores:</p>
-        <?php foreach ($errores as $error): ?>
-            <li><?=$error?></li>
-        <?php endforeach; ?>
-    <?php endif; ?>
-
-    <form action="form.php" method="post">
-            <input type="hidden" name="Referencia" value="<?=$actuacion['Referencia']?>">
-            <p>
-                <label for="Referencia">Referencia (automático): </label>
-                <input type="text" name="Referencia" id="Referencia" placeholder="Referencia" value="<?=$actuacion['Referencia']?>" readonly>
-            </p>
-            <p>
-                <label for="Descripcion">Descripcion: </label>
-                <input type="text" name="Descripcion" id="Descripcion" placeholder="Descripcion" value="<?=$actuacion['Descripcion']?>">
-            </p>
-            <p>
-                <label for="TiempoEstimado">TiempoEstimado: </label>
-                <input type="text" name="TiempoEstimado" id="TiempoEstimado" placeholder="TiempoEstimado" value="<?=$actuacion['TiempoEstimado']?>">
-            </p>
-            <p>
-                <label for="Importe">Importe: </label>
-                <input type="text" name="Importe" id="Importe" placeholder="Importe" value="<?=$actuacion['Importe']?>">
-            </p>        
-            
-            <input type="submit" name="save" value="Guardar">
-            <input type="submit" name="cancel" value="Cancelar">
-        </form>
+  <div class="card border-0 scroll-mt-3 active">
+    <div class="card-header">
+      <h2>Añadir/Modificar Actuación</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+        <?php if (isset($errores) && count($errores) > 0): ?>
+            <p>Existen errores:</p>
+            <?php foreach ($errores as $error): ?>
+                <li><?=$error?></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
+      <form action="form.php" method="post">
+        <input type="hidden" name="Referencia" value="<?=$actuacion['Referencia']?>">
+        <div class="row mb-4">
+          <div class="col-lg-3"><label for="Referencia" class="col-form-label">Referencia</label></div>
+          <div class="col-lg"><input type="text" class="form-control" name="Referencia" id="Referencia" placeholder="Referencia" value="<?=$actuacion['Referencia']?>" readonly></div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-lg-3">
+            <label for="Descripcion" class="col-form-label">Descripción</label>
+          </div>
+          <div class="col-lg">
+            <input type="text" name="Descripcion" id="Descripcion" placeholder="Descripción" class="form-control" value="<?=$actuacion['Descripcion']?>">
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-lg-3">
+            <label for="TiempoEstimado" class="col-form-label">Tiempo estimado</label>
+          </div>
+          <div class="col-lg">
+            <input type="text" name="TiempoEstimado" id="TiempoEstimado" placeholder="Tiempo estimado" class="form-control" value="<?=$actuacion['TiempoEstimado']?>">
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-lg-3">
+            <label for="Importe" class="col-form-label">Importe</label>
+          </div>
+          <div class="col-lg">
+            <input type="text" name="Importe" id="Importe" placeholder="Importe" class="form-control" value="<?=$actuacion['Importe']?>">
+          </div>
+        </div>    
+        <div class="d-flex justify-content-end mt-5">
+          <input type="submit" class="btn btn-primary" name="save" value="Guardar">
+          <input type="submit" class="btn btn-danger" name="cancel" value="Cancelar">
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

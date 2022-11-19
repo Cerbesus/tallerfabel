@@ -37,7 +37,7 @@ $conn = null;
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -130,37 +130,44 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <div.main.container>main.st_viewport.contenedor>div.st_wrap_table>header.st_table_header <h1>oficinas</h1>
-    <table>
-        <tr>
-            <th>IdReparacion</th>
-            <th>Matricula</th>
-            <th>FechaEntrada</th>
-            <th>Km</th>
-            <th>Averia</th>
-            <th>FechaSalida</th>
-            <th>Reparado</th>
-            <th>Observaciones</th>
-        </tr>
-
-        <?php foreach($reparaciones as $reparacion): ?>
-            <tr>
-                <td>
-                    <a href="show.php?IdReparacion=<?=$reparacion['IdReparacion']?>">
-                        <?=$reparacion['IdReparacion']?>
-                    </a>
-                </td>
-                <td><?=$reparacion['Matricula']?></td>
-                <td><?=$reparacion['FechaEntrada']?></td>
-                <td><?=$reparacion['Km']?></td>
-                <td><?=$reparacion['Averia']?></td>
-                <td><?=$reparacion['FechaSalida']?></td>
-                <td><?=$reparacion['Reparado']?></td>
-                <td><?=$reparacion['Observaciones']?></td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
-
-    <a href="form.php">Nueva Reparacion</a>
+  <div class="main-container">
+    <main class="st_viewport contenedor">
+      <div class="st_wrap_table">
+        <header class="st_table_header bg-dark">
+          <h2>Reparaciones<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir reparación</a></h2>
+          <div class="st_row">
+            <div class="st_column R-IdReparacion">IdReparacion</div>
+            <div class="st_column R-Matricula">Matricula</div>
+            <div class="st_column R-FechaEntrada">FechaEntrada</div>
+            <div class="st_column R-Km">Km</div>
+            <div class="st_column R-Averia">Averia</div>
+            <div class="st_column R-FechaSalida">FechaSalida</div>
+            <div class="st_column R-Reparado">Reparado</div>
+            <!-- <div class="st_column R-Observaciones">Observaciones</div> -->
+            <div class="st_column R-Acciones">Acciones</div>
+          </div>
+        </header>
+        <div class="st_table">
+          <?php foreach($reparaciones as $reparacion): ?>
+            <div class="st_row">
+              <div class="st_column R-IdReparacion"><?=$reparacion['IdReparacion']?></div>
+              <div class="st_column R-Matricula"><?=$reparacion['Matricula']?></div>
+              <div class="st_column R-FechaEntrada"><?=$reparacion['FechaEntrada']?></div>
+              <div class="st_column R-Km"><?=$reparacion['Km']?></div>
+              <div class="st_column R-Averia"><?=$reparacion['Averia']?></div>
+              <div class="st_column R-FechaSalida"><?=$reparacion['FechaSalida']?></div>
+              <div class="st_column R-Reparado"><?=$reparacion['Reparado']?></div>
+              <!-- <div class="R-Observaciones"><?=$reparacion['Observaciones']?></div> -->
+              <div class="st_column R-Acciones">
+                <a href="show.php?IdReparacion=<?=$reparacion['IdReparacion']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
+                <a href="form.php?IdReparacion=<?=$reparacion['IdReparacion']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                <a href="delete.php?IdReparacion=<?=$reparacion['IdReparacion']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </main>
+  </div> 
 </body>
 </html>

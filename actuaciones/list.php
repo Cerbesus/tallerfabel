@@ -33,7 +33,7 @@ $conn = null;
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <title>actuaciones</title>
+    <title>Actuaciones</title>
 </head>
 <body>
     <!-- Barra de navegación -->
@@ -140,20 +140,20 @@ $conn = null;
             <div class="st_column A-Descripcion">Descripcion</div>
             <div class="st_column A-Tiempo">Tiempo estimado</div>
             <div class="st_column A-Importe">Importe</div>
-            <div class="st_column Acciones">Acciones</div>
+            <div class="st_column A-Acciones">Acciones</div>
           </div>
         </header>
         <div class="st_table">
-          <?php foreach($actuaciones as $recambio): ?>
+          <?php foreach($actuaciones as $actuacion): ?>
               <div class="st_row">
-                  <div class="st_column A-Referencia"><?=$recambio['Referencia']?></div>
-                  <div class="st_column A-Descripcion"><?=$recambio['Descripcion']?></div>
-                  <div class="st_column A-Tiempo"><?=$recambio['TiempoEstimado']?></div>
-                  <div class="st_column A-Importe"><?=$recambio['Importe']?></div> 
-                  <div class="st_column Acciones">
-                    <a href="show.php?Referencia=<?=$recambio['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
-                    <a href="form.php?Referencia=<?=$recambio['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
-                    <a href="delete.php?Referencia=<?=$recambio['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
+                  <div class="st_column A-Referencia"><?=$actuacion['Referencia']?></div>
+                  <div class="st_column A-Descripcion"><?=$actuacion['Descripcion']?></div>
+                  <div class="st_column A-Tiempo"><?=$actuacion['TiempoEstimado']?></div>
+                  <div class="st_column A-Importe"><?=$actuacion['Importe']?></div> 
+                  <div class="st_column A-Acciones">
+                    <a href="show.php?Referencia=<?=$actuacion['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
+                    <a href="form.php?Referencia=<?=$actuacion['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                    <a href="delete.php?Referencia=<?=$actuacion['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
                   </div>            
               </div>
           <?php endforeach; ?>

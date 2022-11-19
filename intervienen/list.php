@@ -33,11 +33,11 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>Clientes</title>
+    <title>Intervienen</title>
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -130,26 +130,34 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <div.main.container>main.st_viewport.contenedor>div.st_wrap_table>header.st_table_header <h1>intervienen</h1>
-    <table>
-        <tr>
-            <th>CodEmpleado</th>
-            <th>IdReparacion</th>
-            <th>Horas</th>
-        </tr>
-
-        <?php foreach($intervienen1 as $intervienen2): ?>
-            <tr>
-                <td>
-                    <a href="show.php?CodEmpleado=<?=$intervienen2['CodEmpleado']?>&IdReparacion=<?=$intervienen2['IdReparacion']?>"><?=$intervienen2['CodEmpleado']?></a>
-                </td>
-                <td>
-                    <a href="show.php?CodEmpleado=<?=$intervienen2['CodEmpleado']?>&IdReparacion=<?=$intervienen2['IdReparacion']?>"><?=$intervienen2['IdReparacion']?></a>
-                </td>
-                <td><?=$intervienen2['Horas']?></td>               
-            </tr>
-        <?php endforeach; ?>
-    </table>
-    <a href="form.php">Nuevo cliente</a>
+  <div class="main-container">
+    <main class="st_viewport contenedor">
+      <div class="st_wrap_table">
+        <header class="st_table_header bg-dark">
+          <h2>Intervienen<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir relación</a></h2>
+          <div class="st_row">
+            <div class="st_column Int-CodEmpleado">Empleado</div>
+            <div class="st_column Int-IdReparacion">Reparación</div>
+            <div class="st_column Int-Horas">Horas</div>
+            <div class="st_column Int-Acciones">Acciones</div>
+          </div>
+        </header>
+        <div class="st_table">
+          <?php foreach($intervienen1 as $intervienen2): ?>
+            <div class="st_row">
+              <div class="st_column Int-CodEmpleado"><?=$intervienen2['CodEmpleado']?></div>
+              <div class="st_column Int-IdReparacion"><?=$intervienen2['IdReparacion']?></div>
+              <div class="st_column Int-Horas"><?=$intervienen2['Horas']?></div>
+              <div class="st_column Int-Acciones">
+                <a href="show.php?CodEmpleado=<?=$intervienen2['CodEmpleado']?>&IdReparacion=<?=$intervienen2['IdReparacion']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
+                <a href="form.php?CodEmpleado=<?=$intervienen2['CodEmpleado']?>&IdReparacion=<?=$intervienen2['IdReparacion']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                <a href="delete.php?CodEmpleado=<?=$intervienen2['CodEmpleado']?>&IdReparacion=<?=$intervienen2['IdReparacion']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a> 
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </main>
+  </div> 
 </body>
 </html>
