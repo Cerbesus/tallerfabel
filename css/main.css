@@ -220,24 +220,34 @@ body
     padding: 2rem;
   }
   .text {
-    background-image: url("../img/fondo.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 8rem;
-    font-weight: bold;
-    font-family: monospace;
-  }
-  .text-normal {
-    background-image: url("../img/fondo.jpg");
+    background-image: url("../img/gradient.gif");
     background-attachment: fixed;
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
     color: rgba(0, 0, 0, 0.75);
+    font-size: 8rem;
+    font-weight: bold;
+  }
+  .text-title {
+    background-image: url("../img/gradient.gif");
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, .2);
+    background-attachment: fixed;
+    font-size: 10rem;
+    font-weight: 900;
+  }
+  .text-normal {
+    background-image: url("../img/gradient.gif");
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0.5);
+    background-attachment: fixed;
     font-size: 2rem;
+    font-weight: bolder;
   }
 
 .maquina-escribir {

@@ -28,7 +28,7 @@ if (!isset($_SESSION['user'])) {
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -124,7 +124,7 @@ if (!isset($_SESSION['user'])) {
   <div class="main-container">
     <div class="contenedor-blanco">
       <div class="title">
-        <p class="text">Bienvenido a Talleres Faber <span class="maquina-escribir"><?=$_SESSION['user']?>!.</span></p>
+        <h1 class="text-title">Bienvenido a Talleres Faber <span class="text-title maquina-escribir"><?=$_SESSION['user']?>!.</span></h1>
         <p class="text-normal">Aquí podras <b class="text-success">añadir</b>, <b class="text-danger">eliminar</b> y <b class="text-primary">modificar</b> nuestra base de datos.</p>
       </div>
     </div>
