@@ -195,21 +195,21 @@ body
 .Int-Acciones{  width:25%;  min-width: 330px;}
 
 /*? Incluyen */
-.Inc-IdRecambio{  width:25%;  min-width: 120px;}
-.Inc-IdReparacion{  width:25%;  min-width: 280px;}
-.Inc-Unidades{  width:25%;  min-width: 80px;}
+.Inc-IdRecambio{  width:25%;  min-width: 80px;}
+.Inc-IdReparacion{  width:25%;  min-width: 80px;}
+.Inc-Unidades{  width:25%;  min-width: 120px;}
 .Inc-Acciones{  width:25%;  min-width: 330px;}
 
 /*? Realizan */
-.Rea-IdReparacion{  width:25%;  min-width: 120px;}
-.Rea-Referencia{  width:25%;  min-width: 280px;}
-.Rea-Horas{  width:25%;  min-width: 80px;}
+.Rea-IdReparacion{  width:25%;  min-width: 80px;}
+.Rea-Referencia{  width:25%;  min-width: 150px;}
+.Rea-Horas{  width:25%;  min-width: 120px;}
 .Rea-Acciones{  width:25%;  min-width: 330px;}
 
 /*? Recambios */
 .Rec-IdRecambio{  width:16.66%;  min-width: 120px;}
 .Rec-Descripcion{  width:16.66%;  min-width: 280px;}
-.Rec-UnidadBase{  width:16.66%;  min-width: 80px;}
+.Rec-UnidadBase{  width:16.66%;  min-width: 180px;}
 .Rec-Stock{  width:16.66%;  min-width: 80px;}
 .Rec-PrecioReferencia{  width:16.66%;  min-width: 80px;}
 .Rec-Acciones{  width:16.66%;  min-width: 330px;}  

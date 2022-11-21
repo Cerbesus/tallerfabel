@@ -37,7 +37,7 @@ $conn = null;
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -130,26 +130,34 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <div.main.container>main.st_viewport.contenedor>div.st_wrap_table>header.st_table_header <h1>incluyen</h1>
-    <table>
-        <tr>
-            <th>IdRecambio</th>
-            <th>IdReparacion</th>
-            <th>Unidades</th>
-        </tr>
-
-        <?php foreach($incluyen1 as $incluyen2): ?>
-            <tr>
-                <td>
-                    <a href="show.php?IdRecambio=<?=$incluyen2['IdRecambio']?>&IdReparacion=<?=$incluyen2['IdReparacion']?>"><?=$incluyen2['IdRecambio']?></a>
-                </td>
-                <td>
-                    <a href="show.php?IdRecambio=<?=$incluyen2['IdRecambio']?>&IdReparacion=<?=$incluyen2['IdReparacion']?>"><?=$incluyen2['IdReparacion']?></a>
-                </td>
-                <td><?=$incluyen2['Unidades']?></td>               
-            </tr>
-        <?php endforeach; ?>
-    </table>
-    <a href="form.php">Nuevo incluyen</a>
+    <div class="main-container">
+      <main class="st_viewport contenedor">
+        <div class="st_wrap_table">
+          <header class="st_table_header bg-dark">
+            <h2>Incluyen<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir relación</a></h2>
+            <div class="st_row">
+              <div class="st_column Inc-IdRecambio">IdRecambio</div>
+              <div class="st_column Inc-IdReparacion">IdReparacion</div>
+              <div class="st_column Inc-Unidades">Unidades</div>
+              <div class="st_column Inc-Acciones">Acciones</div>
+            </div>
+          </header>
+          <div class="st_table">
+            <?php foreach($incluyen1 as $incluyen2): ?>
+              <div class="st_row">
+                <div class="st_column Inc-IdRecambio"><?=$incluyen2['IdRecambio']?></div>
+                <div class="st_column Inc-IdReparacion"><?=$incluyen2['IdReparacion']?></div>
+                <div class="st_column Inc-Unidades"><?=$incluyen2['Unidades']?></div>
+                <div class="st_column Inc-Acciones">
+                  <a href="show.php?IdRecambio=<?=$incluyen2['IdRecambio']?>&IdReparacion=<?=$incluyen2['IdReparacion']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
+                  <a href="form.php?IdRecambio=<?=$incluyen2['IdRecambio']?>&IdReparacion=<?=$incluyen2['IdReparacion']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                  <a href="delete.php?IdRecambio=<?=$incluyen2['IdRecambio']?>&IdReparacion=<?=$incluyen2['IdReparacion']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a> 
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </main>
+    </div>
 </body>
 </html>
