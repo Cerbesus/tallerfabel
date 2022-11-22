@@ -7,6 +7,15 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
+$conn = require "database.php";
+
+$stm = $conn->query("select * from reparaciones order by IdReparacion");
+$stm->execute();
+$reparaciones = $stm->fetchAll();
+
+$stm = null;
+$conn = null;
+
 ?>
 
 <!DOCTYPE html>
@@ -116,7 +125,38 @@ if (!isset($_SESSION['user'])) {
                 <h1>Overview</h1>
                 <input type="date">
             </div>
-            
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Reparaciones Recientes</h2>
+                        <a href="#" class="btn">Ver todo</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>IdReparacion</td>
+                                <td>Matricula</td>
+                                <td>FechaEntrada</td>
+                                <td>Km</td>
+                                <td>Averia</td>
+                                <td>FechaSalida</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($reparaciones as $reparacion): ?>
+                            <tr>
+                                <td><?=$reparacion['IdReparacion']?></td>
+                                <td><?=$reparacion['Matricula']?></td>
+                                <td><?=$reparacion['FechaEntrada']?></td>
+                                <td><?=$reparacion['Km']?></td>
+                                <td><?=$reparacion['Averia']?></td>
+                                <td><?=$reparacion['FechaSalida']?></td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table> 
+                </div>
+            </div>
         </section>
         <!-- Final del Middle -->
 

@@ -305,6 +305,21 @@ main section.middle .header input[type="date"] {
     color: var(--color-gray-dark);
 }
 
+main section.middle .details {
+    position: relative;
+    width: 100%;
+    padding: 1.8rem;
+    margin-top: 1rem;
+}
+
+main section.middle .details .recentOrders{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    
+
+}
+
 /* ===================== MEDIA QUERIES FOR TABLETS =============== */
 @media screen and (max-width: 1024px) {
     nav .search-bar {
