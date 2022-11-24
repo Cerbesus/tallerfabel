@@ -176,7 +176,7 @@ $conn = null;
       </ul>
     </div>
   </div>
-  <div class="card border-0 scroll-mt-3 active">
+  <div class="card border-0 scroll-mt-3 ">
     <div class="card-header">
       <h2>Añadir/Modificar Actuación</h2>
     </div>
@@ -226,5 +226,8 @@ $conn = null;
       </form>
     </div>
   </div>
+
+  
+  
 </body>
 </html>

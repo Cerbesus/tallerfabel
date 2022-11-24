@@ -134,7 +134,7 @@ $conn = null;
       <main class="st_viewport contenedor">
         <div class="st_wrap_table">
           <header class="st_table_header">
-            <h2>Vehículos<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir vehículo</a></h2>
+            <h2>Vehículos<a href="form_add.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir vehículo</a></h2>
             <div class="st_row">
               <div class="st_column V-Matricula">Matricula</div>
               <div class="st_column V-Marca">Marca</div>
@@ -156,7 +156,7 @@ $conn = null;
                 <div class="st_column V-CodCliente"><?=$vehiculo['CodCliente']?></div>
                 <div class="st_column V-Acciones">
                   <a href="show.php?Matricula=<?=$vehiculo['Matricula']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
-                  <a href="form.php?Matricula=<?=$vehiculo['Matricula']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                  <a href="form_update.php?Matricula=<?=$vehiculo['Matricula']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
                   <a href="delete.php?Matricula=<?=$vehiculo['Matricula']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
                 </div>
               </div>

@@ -132,32 +132,43 @@ $conn = null;
   </div>
   <div class="main-container">
     <main class="st_viewport contenedor">
-      <div class="st_wrap_table" data-table_id="0">
-        <header class="st_table_header bg-dark">
-          <h2>Actuaciones<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir actuación</a></h2>
-          <div class="st_row">
-            <div class="st_column A-Referencia">Referencia</div>
-            <div class="st_column A-Descripcion">Descripcion</div>
-            <div class="st_column A-Tiempo">Tiempo estimado</div>
-            <div class="st_column A-Importe">Importe</div>
-            <div class="st_column A-Acciones">Acciones</div>
-          </div>
-        </header>
-        <div class="st_table">
-          <?php foreach($actuaciones as $actuacion): ?>
-              <div class="st_row">
-                  <div class="st_column A-Referencia"><?=$actuacion['Referencia']?></div>
-                  <div class="st_column A-Descripcion"><?=$actuacion['Descripcion']?></div>
-                  <div class="st_column A-Tiempo"><?=$actuacion['TiempoEstimado']?></div>
-                  <div class="st_column A-Importe"><?=$actuacion['Importe']?></div> 
-                  <div class="st_column A-Acciones">
-                    <a href="show.php?Referencia=<?=$actuacion['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
-                    <a href="form.php?Referencia=<?=$actuacion['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
-                    <a href="delete.php?Referencia=<?=$actuacion['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
-                  </div>            
-              </div>
-          <?php endforeach; ?>
-        </div>
+      <header class="st_table_header bg-dark">
+        <h2>Actuaciones<a href="form.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir actuación</a></h2>
+      </header>
+      <div class="table-responsive">
+        <table class="table table-striped
+        table-hover	
+        table-borderless
+        table-dark
+        align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>Referencia</th>
+              <th>Descripcion</th>
+              <th>Tiempo</th>
+              <th>Importe</th>
+              <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <?php foreach($actuaciones as $actuacion): ?>
+                <tr class="table-light">
+                    <td><?=$actuacion['Referencia']?></td>
+                    <td><?=$actuacion['Descripcion']?></td>
+                    <td><?=$actuacion['TiempoEstimado']?></td>
+                    <td><?=$actuacion['Importe']?></td> 
+                    <td>
+                      <a href="show.php?Referencia=<?=$actuacion['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-eye"></i> Ver</a>
+                      <a href="form.php?Referencia=<?=$actuacion['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                      <a href="delete.php?Referencia=<?=$actuacion['Referencia']?>" class="btn btn-link"><i class="fa-solid fa-trash-can"></i> Eliminar</a>
+                    </td>            
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+            <tfoot>
+              
+            </tfoot>
+        </table>
       </div>
     </main>
   </div> 
