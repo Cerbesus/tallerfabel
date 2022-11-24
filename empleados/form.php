@@ -97,7 +97,7 @@ $conn = null;
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -190,55 +190,66 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <?php if (isset($errores) && count($errores) > 0): ?>
+
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-header">
+      <h2>Añadir/Modificar Empleado</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+      <?php if (isset($errores) && count($errores) > 0): ?>
         <p>Existen errores:</p>
         <?php foreach ($errores as $error): ?>
             <li><?=$error?></li>
         <?php endforeach; ?>
-    <?php endif; ?>
+      <?php endif; ?>
+      </div>
+      <form action="form.php" method="post">
+      <input type="hidden" name="CodEmpleado" value="<?=$empleado['CodEmpleado']?>">
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="CodEmpleado">Código</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="CodEmpleado" id="CodEmpleado" placeholder="CodEmpleado" value="<?=$empleado['CodEmpleado']?>" readonly></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="DNI">DNI</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="DNI" id="DNI" placeholder="DNI" value="<?=$empleado['DNI']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Apellidos">Apellidos</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Apellidos" id="Apellidos" placeholder="Apellidos" value="<?=$empleado['Apellidos']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Nombre">Nombre</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Nombre" id="Nombre" placeholder="Nombre" value="<?=$empleado['Nombre']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Direccion">Direccion</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Direccion" id="Direccion" placeholder="Direccion" value="<?=$empleado['Direccion']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Telefono">Telefono</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Telefono" id="Telefono" placeholder="Telefono" value="<?=$empleado['Telefono']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="CP">CP</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="CP" id="CP" placeholder="CP" value="<?=$empleado['CP']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="FechaAlta">FechaAlta</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="FechaAlta" id="FechaAlta" placeholder="FechaAlta" value="<?=$empleado['FechaAlta']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Categoria">Categoria</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Categoria" id="Categoria" placeholder="Categoria" value="<?=$empleado['Categoria']?>"></div>
+      </div>
+      
+      <div class="d-flex justify-content-end mt-5">
+        <input type="submit" class="btn btn-primary" name="save" value="Guardar">
+        <input type="submit" class="btn btn-danger" name="cancel" value="Cancelar">
+      </div>
+    </form>
+    </div>
+  </div>
 
-    <form action="form.php" method="post">
-            <input type="hidden" name="CodEmpleado" value="<?=$empleado['CodEmpleado']?>">
-            <p>
-                <label for="CodEmpleado">CodEmpleado (automático): </label>
-                <input type="text" name="CodEmpleado" id="CodEmpleado" placeholder="CodEmpleado" value="<?=$empleado['CodEmpleado']?>" readonly>
-            </p>
-            <p>
-                <label for="DNI">DNI: </label>
-                <input type="text" name="DNI" id="DNI" placeholder="DNI" value="<?=$empleado['DNI']?>">
-            </p>
-            <p>
-                <label for="Apellidos">Apellidos: </label>
-                <input type="text" name="Apellidos" id="Apellidos" placeholder="Apellidos" value="<?=$empleado['Apellidos']?>">
-            </p>
-            <p>
-                <label for="Nombre">Nombre: </label>
-                <input type="text" name="Nombre" id="Nombre" placeholder="Nombre" value="<?=$empleado['Nombre']?>">
-            </p>
-            <p>
-                <label for="Direccion">Direccion: </label>
-                <input type="text" name="Direccion" id="Direccion" placeholder="Direccion" value="<?=$empleado['Direccion']?>">
-            </p>
-            <p>
-                <label for="Telefono">Telefono: </label>
-                <input type="text" name="Telefono" id="Telefono" placeholder="Telefono" value="<?=$empleado['Telefono']?>">
-            </p>
-            <p>
-                <label for="CP">CP: </label>
-                <input type="text" name="CP" id="CP" placeholder="CP" value="<?=$empleado['CP']?>">
-            </p>
-            <p>
-                <label for="FechaAlta">FechaAlta: </label>
-                <input type="text" name="FechaAlta" id="FechaAlta" placeholder="FechaAlta" value="<?=$empleado['FechaAlta']?>">
-            </p>
-            <p>
-                <label for="Categoria">Categoria: </label>
-                <input type="text" name="Categoria" id="Categoria" placeholder="Categoria" value="<?=$empleado['Categoria']?>">
-            </p>
-            
-            
-            <input type="submit" name="save" value="Guardar">
-            <input type="submit" name="cancel" value="Cancelar">
-        </form>
 </body>
 </html>

@@ -147,7 +147,7 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar al emp
       </div>
       <div class="d-flex justify-content-end mt-5">
         <input type="submit" class="btn btn-danger" name="delete" value="Eliminar">
-        <input type="submit" class="btn btn-success" name="cancel" value="Cancelar">
+        <input type="submit" class="btn btn-primary" name="cancel" value="Cancelar">
       </form>
       </div>
 

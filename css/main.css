@@ -176,13 +176,13 @@ body
 .A-Acciones{  width:20%;  min-width: 330px;}
 
 /*? Clientes */
-.C-CodCliente{  width:14.28%;  min-width: 90px;}
-.C-DNI{  width:14.28%;  min-width: 140px;}
-.C-Apellidos{  width:14.28%;  min-width: 140px;}
-.C-Nombre{  width:14.28%;  min-width: 140px;}
-.C-Direccion{  width:14.28%;  min-width: 180px;}
-.C-Telefono{  width:14.28%;  min-width: 140px;}
-.C-Acciones{  width:14.28%;  min-width: 330px;}
+.C-CodCliente{  width:14.2%;  min-width: 90px;}
+.C-DNI{  width:14.2%;  min-width: 140px;}
+.C-Apellidos{  width:14.2%;  min-width: 140px;}
+.C-Nombre{  width:14.2%;  min-width: 140px;}
+.C-Direccion{  width:14.2%;  min-width: 160px;}
+.C-Telefono{  width:14.2%;  min-width: 140px;}
+.C-Acciones{  width:14.2%;  min-width: 330px;}
 /*? Facturas */
 .F-IdFactura{  width:20%;  min-width: 90px;}
 .F-FechaFactura{  width:20%;  min-width: 160px;}
