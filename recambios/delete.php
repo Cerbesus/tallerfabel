@@ -134,13 +134,24 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar al emp
       </ul>
     </div>
   </div>
-    <form action="delete.php" method="post">
+
+  <div class="card boder-0 scroll-mt-3">
+    <div class="card-body">
+      <div class="row mb-4">
+      <form action="delete.php" method="post">
         <input type="hidden" name="IdRecambio" value="<?=$_GET['IdRecambio']?>">
 
-        ¿Seguro que quiere eliminar el recambio con código <?=$_GET['IdRecambio']?>?
+        ¿Seguro que quiere eliminar el recambio con código <strong><?=$_GET['IdRecambio']?></strong>?
 
-        <input type="submit" name="delete" value="Eliminar">
-        <input type="submit" name="cancel" value="Cancelar">
-    </form>
+
+      </div>
+      <div class="d-flex justify-content-end mt-5">
+          <input type="submit" class="btn btn-danger" name="delete" value="Eliminar">
+          <input type="submit" class="btn btn-primary" name="cancel" value="Cancelar">
+        </form>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

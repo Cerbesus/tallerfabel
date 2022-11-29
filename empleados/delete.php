@@ -41,7 +41,7 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar al emp
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -134,13 +134,23 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar al emp
       </ul>
     </div>
   </div>
-    <form action="delete.php" method="post">
-        <input type="hidden" name="CodEmpleado" value="<?=$_GET['CodEmpleado']?>">
 
-        ¿Seguro que quiere eliminar el empleado con código <?=$_GET['CodEmpleado']?>?
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-body">
+      <div class="row mb-4">
+        <form action="delete.php" method="post">
+          <input type="hidden" name="CodEmpleado" value="<?=$_GET['CodEmpleado']?>">
 
-        <input type="submit" name="delete" value="Eliminar">
-        <input type="submit" name="cancel" value="Cancelar">
-    </form>
+          ¿Seguro que quiere eliminar el empleado con código <strong><?=$_GET['CodEmpleado']?></strong>?
+      </div>
+      <div class="d-flex justify-content-end mt-5">
+         <input type="submit" class="btn btn-danger" name="delete" value="Eliminar">
+         <input type="submit" class="btn btn-primary" name="cancel" value="Cancelar">
+        </form>
+      </div>
+         
+    </div>
+  </div>
+
 </body>
 </html>
