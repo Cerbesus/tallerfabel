@@ -99,11 +99,11 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>Editar reparacion</title>
+    <title>Taller Faber - Editar reparacion</title>
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -196,57 +196,71 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <?php if (isset($errores) && count($errores) > 0): ?>
+
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-header">
+      <h2>Añadir/Modificar Reparación</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+      <?php if (isset($errores) && count($errores) > 0): ?>
         <p>Existen errores:</p>
         <?php foreach ($errores as $error): ?>
             <li><?=$error?></li>
         <?php endforeach; ?>
-    <?php endif; ?>
-
-    <form action="form.php" method="post">
-        <input type="hidden" name="IdReparacion" value="<?=$reparacion['IdReparacion']?>">
-        <p>
-            <label for="IdReparacion">IdReparacion</label>
-            <input type="text" name="IdReparacion" id="IdReparacion" value="<?=$reparacion['IdReparacion']?>" readonly>
-        </p>
-        <p>
-            <label for="Matricula">Matricula: </label>
-            <select name="Matricula">
-                <?php foreach($vehiculos as $vehiculo): ?>
-                    <option value="<?=$vehiculo['Matricula']?>"
-                        <?=$reparacion['Matricula']==$vehiculo['Matricula']? 'selected': ''?>>
-                        <?=$vehiculo['Matricula'].' - '.$vehiculo['Marca'].' '.$vehiculo['Modelo'] ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-        </p>  
-        <p>
-            <label for="FechaEntrada">FechaEntrada</label>
-            <input type="text" name="FechaEntrada" id="FechaEntrada" value="<?=$reparacion['FechaEntrada']?>">
-        </p>
-        <p>
-            <label for="Km">Km</label>
-            <input type="text" name="Km" id="Km" value="<?=$reparacion['Km']?>">
-        </p>
-        <p>
-            <label for="Averia">Averia</label>
-            <input type="text" name="Averia" id="Averia" value="<?=$reparacion['Averia']?>">
-        </p>
-        <p>
-            <label for="FechaSalida">FechaSalida</label>
-            <input type="text" name="FechaSalida" id="FechaSalida" value="<?=$reparacion['FechaSalida']?>">
-        </p>
-        <p>
-            <label for="Reparado">Reparado</label>
-            <input type="text" name="Reparado" id="Reparado" value="<?=$reparacion['Reparado']?>">
-        </p>
-        <p>
-            <label for="Observaciones">Observaciones</label>
-            <input type="text" name="Observaciones" id="Observaciones" value="<?=$reparacion['Observaciones']?>">
-        </p>
-
-        <input type="submit" name="save" value="Guardar">
-        <input type="submit" name="cancel" value="Cancelar">
+      <?php endif; ?>
+      </div>
+      <form action="form.php" method="post">
+      <input type="hidden" name="IdReparacion" value="<?=$reparacion['IdReparacion']?>">
+        
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="IdReparacion">IdReparacion</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="IdReparacion" id="IdReparacion" value="<?=$reparacion['IdReparacion']?>" readonly></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Matricula">Matricula: </label></div>
+        <div class="col-lg">
+          <select class="form-control" name="Matricula">
+            <?php foreach($vehiculos as $vehiculo): ?>
+                <option value="<?=$vehiculo['Matricula']?>"
+                    <?=$reparacion['Matricula']==$vehiculo['Matricula']? 'selected': ''?>>
+                    <?=$vehiculo['Matricula'].' - '.$vehiculo['Marca'].' '.$vehiculo['Modelo'] ?>
+                </option>
+            <?php endforeach; ?>
+          </select>  
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="FechaEntrada">FechaEntrada</label></div>
+        <div class="col-lg"><input class="form-control" type="date" name="FechaEntrada" id="FechaEntrada" value="<?=$reparacion['FechaEntrada']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Km">Km</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Km" id="Km" value="<?=$reparacion['Km']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Averia">Averia</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Averia" id="Averia" value="<?=$reparacion['Averia']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="FechaSalida">FechaSalida</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="FechaSalida" id="FechaSalida" value="<?=$reparacion['FechaSalida']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Reparado">Reparado</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Reparado" id="Reparado" value="<?=$reparacion['Reparado']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Observaciones">Observaciones</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Observaciones" id="Observaciones" value="<?=$reparacion['Observaciones']?>"></div>
+      </div>
+            
+      <div class="d-flex justify-content-end mt-5">
+        <input type="submit" class="btn btn-primary" name="save" value="Guardar">
+        <input type="submit" class="btn btn-danger" name="cancel" value="Cancelar">
+      </div>      
     </form>
+    </div>
+  </div>
 </body>
 </html>

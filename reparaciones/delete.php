@@ -37,7 +37,7 @@ if (isset($_POST['cancel'])) { //has cancelado porque no quieres eliminar la ofi
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>Eliminar reparacion</title>
+    <title>Taller Faber - Eliminar reparacion</title>
 </head>
 <body>
     <!-- Barra de navegación -->

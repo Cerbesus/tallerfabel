@@ -33,7 +33,7 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>Vehículos</title>
+    <title>Taller Faber - Vehículos</title>
 </head>
 <body>
     <!-- Barra de navegación -->

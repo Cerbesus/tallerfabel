@@ -102,11 +102,11 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>Editar intervienen</title>
+    <title>Taller Faber - Editar intervienen</title>
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -199,45 +199,71 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <?php if (isset($errores) && count($errores) > 0): ?>
+
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-header">
+      <h2>Añadir/Modificar relación</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+      <?php if (isset($errores) && count($errores) > 0): ?>
         <p>Existen errores:</p>
         <?php foreach ($errores as $error): ?>
             <li><?=$error?></li>
         <?php endforeach; ?>
-    <?php endif; ?>
-
-    <form action="form.php" method="post">
-            <input type="hidden" name="CodEmpleado" value="<?=$intervienen['CodEmpleado']?>">
-            <input type="hidden" name="IdReparacion" value="<?=$intervienen['IdReparacion']?>">
-            <p>
-            <label for="CodEmpleado">CodEmpleado: </label>
-                <select name="CodEmpleado">
-                    <?php foreach($empleados as $empleado): ?>
-                        <option value="<?=$empleado['CodEmpleado']?>"
-                            <?=$intervienen['CodEmpleado']==$empleado['CodEmpleado']? 'selected': ''?>>
-                            <?=$empleado['CodEmpleado'].' - '.$empleado['DNI'].' '.$empleado['Nombre'] ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </p>              
-            <label for="IdReparacion">IdReparacion: </label>
-                <select name="IdReparacion">
-                    <?php foreach($reparaciones as $reparacion): ?>
-                        <option value="<?=$reparacion['IdReparacion']?>"
-                            <?=$intervienen['IdReparacion']==$reparacion['IdReparacion']? 'selected': ''?>>
-                            <?=$reparacion['IdReparacion'].' - '.$reparacion['Matricula']?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </p> 
-            <p>
-                <label for="Horas">Horas: </label>
-                <input type="text" name="Horas" id="Horas" placeholder="Horas" value="<?=$intervienen['Horas']?>">
-            </p>
+      <?php endif; ?>
+      </div>
+      <form action="form.php" method="post">
+      <input type="hidden" name="CodEmpleado" value="<?=$intervienen['CodEmpleado']?>">
+      <input type="hidden" name="IdReparacion" value="<?=$intervienen['IdReparacion']?>">
+            
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="CodEmpleado">Empleado</label></div>
+        <div class="col-lg">
+          <select class="form-control" name="CodEmpleado">
+            <?php foreach($empleados as $empleado): ?>
+                <option value="<?=$empleado['CodEmpleado']?>"
+                    <?=$intervienen['CodEmpleado']==$empleado['CodEmpleado']? 'selected': ''?>>
+                    <?=$empleado['CodEmpleado'].' - '.$empleado['DNI'].' '.$empleado['Nombre'] ?>
+                </option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-4"><label class="col-form-label" for="IdReparacion">Reparación</label></div>
+        <div class="col-lg">
+          <select class="form-control" name="IdReparacion">
+            <?php foreach($reparaciones as $reparacion): ?>
+                <option value="<?=$reparacion['IdReparacion']?>"
+                    <?=$intervienen['IdReparacion']==$reparacion['IdReparacion']? 'selected': ''?>>
+                    <?=$reparacion['IdReparacion'].' - '.$reparacion['Matricula']?>
+                </option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Horas">Horas</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Horas" id="Horas" placeholder="Horas" value="<?=$intervienen['Horas']?>"></div>
+      </div>
+            
+      <div class="d-flex justify-content-end mt-5">
+        <input type="submit" class="btn btn-primary" name="save" value="Guardar">
+        <input type="submit" class="btn btn-danger" name="cancel" value="Cancelar">
+      </div>                 
+            
              
             
-            <input type="submit" name="save" value="Guardar">
-            <input type="submit" name="cancel" value="Cancelar">
-        </form>
+            
+             
+            
+
+      </form>
+    </div>
+  </div>
+
+
+    
 </body>
 </html>

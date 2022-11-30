@@ -93,7 +93,7 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>Editar empleados</title>
+    <title>Taller Faber - Editar empleados</title>
 </head>
 <body>
     <!-- Barra de navegación -->
@@ -223,11 +223,11 @@ $conn = null;
         <div class="col-lg"><input class="form-control" type="text" name="Nombre" id="Nombre" placeholder="Nombre" value="<?=$empleado['Nombre']?>"></div>
       </div>
       <div class="row mb-4">
-        <div class="col-lg-3"><label class="col-form-label" for="Direccion">Direccion</label></div>
+        <div class="col-lg-3"><label class="col-form-label" for="Direccion">Dirección</label></div>
         <div class="col-lg"><input class="form-control" type="text" name="Direccion" id="Direccion" placeholder="Direccion" value="<?=$empleado['Direccion']?>"></div>
       </div>
       <div class="row mb-4">
-        <div class="col-lg-3"><label class="col-form-label" for="Telefono">Telefono</label></div>
+        <div class="col-lg-3"><label class="col-form-label" for="Telefono">Teléfono</label></div>
         <div class="col-lg"><input class="form-control" type="text" name="Telefono" id="Telefono" placeholder="Telefono" value="<?=$empleado['Telefono']?>"></div>
       </div>
       <div class="row mb-4">
@@ -239,7 +239,7 @@ $conn = null;
         <div class="col-lg"><input class="form-control" type="text" name="FechaAlta" id="FechaAlta" placeholder="FechaAlta" value="<?=$empleado['FechaAlta']?>"></div>
       </div>
       <div class="row mb-4">
-        <div class="col-lg-3"><label class="col-form-label" for="Categoria">Categoria</label></div>
+        <div class="col-lg-3"><label class="col-form-label" for="Categoria">Categoría</label></div>
         <div class="col-lg"><input class="form-control" type="text" name="Categoria" id="Categoria" placeholder="Categoria" value="<?=$empleado['Categoria']?>"></div>
       </div>
       

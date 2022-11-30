@@ -81,11 +81,11 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>Editar recambios</title>
+    <title>Taller Faber - Editar recambios</title>
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -178,38 +178,50 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <?php if (isset($errores) && count($errores) > 0): ?>
+
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-header">
+      <h2>Añadir/Modificar Recambio</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+      <?php if (isset($errores) && count($errores) > 0): ?>
         <p>Existen errores:</p>
         <?php foreach ($errores as $error): ?>
             <li><?=$error?></li>
         <?php endforeach; ?>
-    <?php endif; ?>
-
-    <form action="form.php" method="post">
-            <input type="hidden" name="IdRecambio" value="<?=$recambio['IdRecambio']?>">
-            <p>
-                <label for="IdRecambio">IdRecambio (automático): </label>
-                <input type="text" name="IdRecambio" id="IdRecambio" placeholder="IdRecambio" value="<?=$recambio['IdRecambio']?>" readonly>
-            </p>
-            <p>
-                <label for="Descripcion">Descripcion: </label>
-                <input type="text" name="Descripcion" id="Descripcion" placeholder="Descripcion" value="<?=$recambio['Descripcion']?>">
-            </p>
-            <p>
-                <label for="UnidadBase">UnidadBase: </label>
-                <input type="text" name="UnidadBase" id="UnidadBase" placeholder="UnidadBase" value="<?=$recambio['UnidadBase']?>">
-            </p>
-            <p>
-                <label for="Stock">Stock: </label>
-                <input type="text" name="Stock" id="Stock" placeholder="Stock" value="<?=$recambio['Stock']?>">
-            </p>
-            <p>
-                <label for="PrecioReferencia">PrecioReferencia: </label>
-                <input type="text" name="PrecioReferencia" id="PrecioReferencia" placeholder="PrecioReferencia" value="<?=$recambio['PrecioReferencia']?>">
-            </p>            
+      <?php endif; ?>
+      </div>
+      <form action="form.php" method="post">
+      <input type="hidden" name="IdRecambio" value="<?=$recambio['IdRecambio']?>">
+      
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="IdRecambio">Id</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="IdRecambio" id="IdRecambio" placeholder="IdRecambio" value="<?=$recambio['IdRecambio']?>" readonly></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-4"><label class="col-form-label" for="Descripcion">Descripción</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Descripcion" id="Descripcion" placeholder="Descripcion" value="<?=$recambio['Descripcion']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="UnidadBase">Unidad base</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="UnidadBase" id="UnidadBase" placeholder="UnidadBase" value="<?=$recambio['UnidadBase']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Stock">Stock</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Stock" id="Stock" placeholder="Stock" value="<?=$recambio['Stock']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="PrecioReferencia">Precio</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="PrecioReferencia" id="PrecioReferencia" placeholder="PrecioReferencia" value="<?=$recambio['PrecioReferencia']?>">            </div>
+      </div>
             
-            <input type="submit" name="save" value="Guardar">
-            <input type="submit" name="cancel" value="Cancelar">
-        </form>
+      <div class="d-flex justify-content-end mt-5">
+        <input type="submit" class="btn btn-primary" name="save" value="Guardar">
+        <input type="submit" class="btn btn-danger" name="cancel" value="Cancelar">
+      </div>      
+      </form>
+    </div>
+  </div>
 </body>
 </html>

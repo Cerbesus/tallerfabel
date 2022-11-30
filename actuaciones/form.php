@@ -79,7 +79,7 @@ $conn = null;
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <title>Editar actuaciones</title>
+    <title>Taller Faber - Editar actuaciones</title>
 </head>
 <body>
     <!-- Barra de navegación -->
@@ -176,6 +176,7 @@ $conn = null;
       </ul>
     </div>
   </div>
+  
   <div class="card border-0 scroll-mt-3 ">
     <div class="card-header">
       <h2>Añadir/Modificar Actuación</h2>

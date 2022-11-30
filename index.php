@@ -10,7 +10,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <title>Proyecto TallerFaber</title>
+    <title>Taller Faber - Proyecto TallerFaber</title>
 </head>
 <body>
 <div class="px-4 pt-5 my-5 text-center border-bottom">

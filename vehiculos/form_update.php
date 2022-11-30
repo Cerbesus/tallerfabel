@@ -88,11 +88,11 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
-    <title>Editar reparaciones</title>
+    <title>Taller Faber - Editar reparaciones</title>
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -185,49 +185,63 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <?php if (isset($errores) && count($errores) > 0): ?>
-        <p>Existen errores:</p>
-        <?php foreach ($errores as $error): ?>
-            <li><?=$error?></li>
-        <?php endforeach; ?>
-    <?php endif; ?>
 
-    <form action="form_update.php" method="post">
-            <input type="hidden" name="MatriculaActual" value="<?=$vehiculo['Matricula']?>">
-            <p>
-                <label for="Matricula">Matricula (automático): </label>
-                <input type="text" name="Matricula" id="Matricula" placeholder="Matricula" value="<?=$vehiculo['Matricula']?>">
-            </p>
-            <p>
-                <label for="Marca">Marca: </label>
-                <input type="text" name="Marca" id="Marca" placeholder="Marca" value="<?=$vehiculo['Marca']?>">
-            </p>
-            <p>
-                <label for="Modelo">Modelo: </label>
-                <input type="text" name="Modelo" id="Modelo" placeholder="Modelo" value="<?=$vehiculo['Modelo']?>">
-            </p>
-            <p>
-                <label for="Color">Color: </label>
-                <input type="text" name="Color" id="Color" placeholder="Color" value="<?=$vehiculo['Color']?>">
-            </p>
-            <p>
-                <label for="FechaMatriculacion">FechaMatriculacion: </label>
-                <input type="text" name="FechaMatriculacion" id="FechaMatriculacion" placeholder="FechaMatriculacion" value="<?=$vehiculo['FechaMatriculacion']?>">
-            </p>
-            <p>
-              <label for="CodCliente">CodCliente: </label>
-              <select name="CodCliente">
-               <?php foreach($clientes as $cliente): ?>
-                <option value="<?=$cliente['CodCliente']?>"
-                    <?=$vehiculo['CodCliente']==$cliente['CodCliente']? 'selected': ''?>>
-                    <?=$cliente['CodCliente'].' - '.$cliente['Nombre']?>
-                </option>
-              <?php endforeach; ?>
-             </select>
-            </p>        
-            
-            <input type="submit" name="save" value="Guardar">
-            <input type="submit" name="cancel" value="Cancelar">
-        </form>
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-header">
+      <h2>Añadir/Modificar Vehículo</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+        <?php if (isset($errores) && count($errores) > 0): ?>
+          <p>Existen errores:</p>
+          <?php foreach ($errores as $error): ?>
+              <li><?=$error?></li>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
+      <form action="form_update.php" method="post">
+      <input type="hidden" name="MatriculaActual" value="<?=$vehiculo['Matricula']?>">
+          
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Matricula">Matrícula</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Matricula" id="Matricula" placeholder="Matricula" value="<?=$vehiculo['Matricula']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Marca">Marca</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Marca" id="Marca" placeholder="Marca" value="<?=$vehiculo['Marca']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Modelo">Modelo</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Modelo" id="Modelo" placeholder="Modelo" value="<?=$vehiculo['Modelo']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="Color">Color</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="Color" id="Color" placeholder="Color" value="<?=$vehiculo['Color']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="FechaMatriculacion">Fecha</label></div>
+        <div class="col-lg"><input class="form-control" type="text" name="FechaMatriculacion" id="FechaMatriculacion" placeholder="FechaMatriculacion" value="<?=$vehiculo['FechaMatriculacion']?>"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-3"><label class="col-form-label" for="CodCliente">Cliente</label></div>
+        <div class="col-lg">
+          <select class="form-control" name="CodCliente">
+            <?php foreach($clientes as $cliente): ?>
+              <option value="<?=$cliente['CodCliente']?>"
+                  <?=$vehiculo['CodCliente']==$cliente['CodCliente']? 'selected': ''?>>
+                  <?=$cliente['CodCliente'].' - '.$cliente['Nombre']?>
+              </option>
+            <?php endforeach; ?>
+          </select> 
+        </div>
+      </div>
+      
+      <div class="d-flex justify-content-end mt-5">
+        <input type="submit" class="btn btn-primary" name="save" value="Guardar">
+        <input type="submit" class="btn btn-danger" name="cancel" value="Cancelar">
+      </div>    
+    </form>
+    </div>
+  </div>
 </body>
 </html>
