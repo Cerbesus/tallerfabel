@@ -40,7 +40,7 @@ $conn = null;
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -133,39 +133,48 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <h1>Oficina</h1>
-    <p>
-        IdReparacion: <?=$reparacion['IdReparacion'] ?>
-    </p>
-    <p>
-        Matricula: <?=$reparacion['Matricula'] ?>
-    </p>
-    <p>
-        FechaEntrada: <?=$reparacion['FechaEntrada'] ?>
-    </p>
-    <p>
-        Km: <?=$reparacion['Km'] ?>
-    </p>
-    <p>
-        Averia: <?=$reparacion['Averia'] ?>
-    </p>
-    <p>
-        FechaSalida: <?=$reparacion['FechaSalida'] ?>
-    </p>
-    <p>
-        Reparado: <?=$reparacion['Reparado'] ?>
-    </p>
-    <p>
-        Observaciones: <?=$reparacion['Observaciones'] ?>
-    </p>
-    <p>
-        <a href="list.php">Ver todas las reparaciones</a>
-    </p>
-    <p>
-        <a href="form.php?IdReparacion=<?=$reparacion['IdReparacion']?>">Modificar</a>
-    </p>
-    <p>
-        <a href="delete.php?IdReparacion=<?=$reparacion['IdReparacion']?>">Eliminar</a>
-    </p>
+
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-header">
+      <h2>Información de reparación</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col-lg"><strong>IdReparacion:</strong></div>
+        <div class="col-lg"><?=$reparacion['IdReparacion'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Matricula:</strong></div>
+        <div class="col-lg"><?=$reparacion['Matricula'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>FechaEntrada:</strong></div>
+        <div class="col-lg"><?=$reparacion['FechaEntrada'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Km:</strong></div>
+        <div class="col-lg"><?=$reparacion['Km'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Averia:</strong></div>
+        <div class="col-lg"><?=$reparacion['Averia'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>FechaSalida:</strong></div>
+        <div class="col-lg"><?=$reparacion['FechaSalida'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Reparado:</strong></div>
+        <div class="col-lg"><?=$reparacion['Reparado'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Observaciones:</strong></div>
+        <div class="col-lg" style="word-break: break-word; overflow:hidden;"><?=$reparacion['Observaciones'] ?></div>
+      </div>
+      <div class="d-flex justify-content-end mt-5">
+        <a href="list.php" class="btn btn-primary">Volver</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

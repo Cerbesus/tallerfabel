@@ -40,7 +40,7 @@ $conn = null;
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -133,18 +133,28 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <h1>realizan</h1>
-    <p>IdReparacion: <?=$realizan['IdReparacion']?></p>
-    <p>Referencia: <?=$realizan['Referencia']?></p>
-    <p>Horas: <?=$realizan['Horas']?></p>
-    <p>
-        <a href="list.php">Ver todos los realizan</a>
-    </p>
-    <p>
-        <a href="form.php?Referencia=<?=$realizan['Referencia']."&IdReparacion=".$realizan['IdReparacion']?>">Modificar</a>
-    </p>
-    <p>
-        <a href="delete.php?Referencia=<?=$realizan['Referencia']."&IdReparacion=".$realizan['IdReparacion']?>">Eliminar</a>
-    </p>
+
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-header">
+      <h2>Información de relación</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col-lg"><strong>IdReparacion:</strong></div>
+        <div class="col-lg"><?=$realizan['IdReparacion']?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Referencia:</strong></div>
+        <div class="col-lg"><?=$realizan['Referencia']?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Horas:</strong></div>
+        <div class="col-lg"><?=$realizan['Horas']?></div>
+      </div>
+      <div class="d-flex justify-content-end mt-5">
+         <a href="list.php" class="btn btn-primary">Volver</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

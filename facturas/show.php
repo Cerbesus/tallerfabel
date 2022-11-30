@@ -40,7 +40,7 @@ $conn = null;
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -133,19 +133,32 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <h1>facturas</h1>
-    <p>IdFactura: <?=$factura['IdFactura'] ?></p>
-    <p>FechaFactura: <?=$factura['FechaFactura'] ?></p>
-    <p>CodCliente: <?=$factura['CodCliente'] ?></p>
-    <p>IdReparacion: <?=$factura['IdReparacion'] ?></p>
-    <p>
-        <a href="list.php">Ver todas los facturas</a>
-    </p>
-    <p>
-        <a href="form.php?IdFactura=<?=$factura['IdFactura']?>">Modificar</a>
-    </p>
-    <p>
-        <a href="delete.php?IdFactura=<?=$factura['IdFactura']?>">Eliminar</a>
-    </p>
+
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-header">
+      <h2>Información de factura</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col-lg"><strong>IdFactura:</strong></div>
+        <div class="col-lg"><?=$factura['IdFactura'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>FechaFactura:</strong></div>
+        <div class="col-lg"><?=$factura['FechaFactura'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>CodCliente:</strong></div>
+        <div class="col-lg"><?=$factura['CodCliente'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>IdReparacion:</strong></div>
+        <div class="col-lg"><?=$factura['IdReparacion'] ?></div>
+      </div>
+      <div class="d-flex justify-content-end mt-5">
+        <a href="list.php" class="btn btn-primary">Volver</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

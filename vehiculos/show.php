@@ -133,26 +133,40 @@ $conn = null;
       </ul>
     </div>
   </div>
-  <div class="main-container">
-    <main class="st_viewport contenedor">
-      <h1>vehiculos</h1>
-      <p>Matricula: <?=$vehiculo['Matricula'] ?></p>
-      <p>Marca: <?=$vehiculo['Marca'] ?></p>
-      <p>Modelo: <?=$vehiculo['Modelo'] ?></p>
-      <p>Color: <?=$vehiculo['Color'] ?></p>
-      <p>FechaMatriculacion: <?=$vehiculo['FechaMatriculacion'] ?></p>
-      <p>CodCliente: <?=$vehiculo['CodCliente'] ?></p>
 
-      <p>
-          <a href="list.php">Ver todas los vehiculos</a>
-      </p>
-      <p>
-          <a href="form_update.php?Matricula=<?=$vehiculo['Matricula']?>">Modificar</a>
-      </p>
-      <p>
-          <a href="delete.php?Matricula=<?=$vehiculo['Matricula']?>">Eliminar</a>
-      </p>
-    </main>
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-header">
+      <h2>Información de vehículo</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Matricula:</strong></div>
+        <div class="col-lg"><?=$vehiculo['Matricula'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Marca:</strong></div>
+        <div class="col-lg"><?=$vehiculo['Marca'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Modelo:</strong></div>
+        <div class="col-lg"><?=$vehiculo['Modelo'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Color:</strong></div>
+        <div class="col-lg"><?=$vehiculo['Color'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>FechaMatriculacion:</strong></div>
+        <div class="col-lg"><?=$vehiculo['FechaMatriculacion'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>CodCliente:</strong></div>
+        <div class="col-lg"><?=$vehiculo['CodCliente'] ?></div>
+      </div>
+      <div class="d-flex justify-content-end mt-5">
+        <a href="list.php" class="btn btn-primary">Volver</a>
+      </div>
+    </div>
   </div>
 </body>
 </html>

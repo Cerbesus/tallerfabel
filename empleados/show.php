@@ -40,7 +40,7 @@ $conn = null;
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -133,24 +133,52 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <h1>empleados</h1>
-    <p>CodEmpleado: <?=$empleado['CodEmpleado'] ?></p>
-    <p>DNI: <?=$empleado['DNI'] ?></p>
-    <p>Apellidos: <?=$empleado['Apellidos'] ?></p>
-    <p>Nombre: <?=$empleado['Nombre'] ?></p>
-    <p>Direccion: <?=$empleado['Direccion'] ?></p>
-    <p>Telefono: <?=$empleado['Telefono'] ?></p>
-    <p>CP: <?=$empleado['CP'] ?></p>
-    <p>FechaAlta: <?=$empleado['FechaAlta'] ?></p>
-    <p>Categoria: <?=$empleado['Categoria'] ?></p>
-    <p>
-        <a href="list.php">Ver todos los empleados</a>
-    </p>
-    <p>
-        <a href="form.php?CodEmpleado=<?=$empleado['CodEmpleado']?>">Modificar</a>
-    </p>
-    <p>
-        <a href="delete.php?CodEmpleado=<?=$empleado['CodEmpleado']?>">Eliminar</a>
-    </p>
+
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-header">
+      <h2>Información de empleado</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col-lg"><strong>CodEmpleado:</strong></div>
+        <div class="col-lg"><?=$empleado['CodEmpleado'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>DNI:</strong></div>
+        <div class="col-lg"><?=$empleado['DNI'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Apellidos:</strong></div>
+        <div class="col-lg"><?=$empleado['Apellidos'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Nombre:</strong></div>
+        <div class="col-lg"><?=$empleado['Nombre'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Direccion:</strong></div>
+        <div class="col-lg"><?=$empleado['Direccion'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Telefono:</strong></div>
+        <div class="col-lg"><?=$empleado['Telefono'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>CP:</strong></div>
+        <div class="col-lg"><?=$empleado['CP'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>FechaAlta:</strong></div>
+        <div class="col-lg"><?=$empleado['FechaAlta'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Categoria:</strong></div>
+        <div class="col-lg"><?=$empleado['Categoria'] ?></div>
+      </div>
+      <div class="d-flex justify-content-end mt-5">
+        <a href="list.php" class="btn btn-primary">Volver</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

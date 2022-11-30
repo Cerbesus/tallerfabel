@@ -40,7 +40,7 @@ $conn = null;
 </head>
 <body>
     <!-- Barra de navegación -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; min-height: 100vh;">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <img class="bi me-2" width="40" height="40" src="../img/logo.png" alt="">
       <span class="fs-4">Taller Faber</span>
@@ -133,20 +133,36 @@ $conn = null;
       </ul>
     </div>
   </div>
-    <h1>recambios</h1>
-    <p>IdRecambio: <?=$empleado['IdRecambio'] ?></p>
-    <p>Descripcion: <?=$empleado['Descripcion'] ?></p>
-    <p>UnidadBase: <?=$empleado['UnidadBase'] ?></p>
-    <p>Stock: <?=$empleado['Stock'] ?></p>
-    <p>PrecioReferencia: <?=$empleado['PrecioReferencia'] ?></p>
-    <p>
-        <a href="list.php">Ver todos los recambios</a>
-    </p>
-    <p>
-        <a href="form.php?IdRecambio=<?=$empleado['IdRecambio']?>">Modificar</a>
-    </p>
-    <p>
-        <a href="delete.php?IdRecambio=<?=$empleado['IdRecambio']?>">Eliminar</a>
-    </p>
+
+  <div class="card border-0 scroll-mt-3">
+    <div class="card-header">
+      <h2>Información de recambio</h2>
+    </div>
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col-lg"><strong>IdRecambio:</strong></div>
+        <div class="col-lg"><?=$empleado['IdRecambio'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Descripcion:</strong></div>
+        <div class="col-lg"><?=$empleado['Descripcion'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>UnidadBase:</strong></div>
+        <div class="col-lg"><?=$empleado['UnidadBase'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>Stock:</strong></div>
+        <div class="col-lg"><?=$empleado['Stock'] ?></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg"><strong>PrecioReferencia:</strong></div>
+        <div class="col-lg"><?=$empleado['PrecioReferencia'] ?></div>
+      </div>
+      <div class="d-flex justify-content-end mt-5">
+        <a href="list.php" class="btn btn-primary">Volver</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
